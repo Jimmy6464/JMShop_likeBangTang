@@ -13,6 +13,16 @@
 		BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */; };
 		BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D51CF808DB008A6B63 /* AppDelegate.m */; };
 		BF5D21DA1CF808DB008A6B63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D61CF808DB008A6B63 /* main.m */; };
+		BF6CD72D1CFC78D600E4C691 /* JMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD72C1CFC78D600E4C691 /* JMMessageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD7301CFC78EA00E4C691 /* JMMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD72F1CFC78EA00E4C691 /* JMMineViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD7331CFC78FA00E4C691 /* JMSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7321CFC78FA00E4C691 /* JMSquareViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7361CFC7E0100E4C691 /* NSObject+JMModel.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD73E1CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7381CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD73F1CFC7E0100E4C691 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD73A1CFC7E0100E4C691 /* UIView+AutoLayout.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD7401CFC7E0100E4C691 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD73C1CFC7E0100E4C691 /* UIView+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7431CFC8A0000E4C691 /* JMUtilities.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC41CFC4418001F1E35 /* JMTabBar.m */; settings = {ASSET_TAGS = (); }; };
 		BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC71CFC4756001F1E35 /* JMTabBarButton.m */; settings = {ASSET_TAGS = (); }; };
@@ -30,6 +40,28 @@
 		BF5D21D41CF808DB008A6B63 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF5D21D51CF808DB008A6B63 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BF5D21D61CF808DB008A6B63 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF6CD72B1CFC78D600E4C691 /* JMMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMessageViewController.h; sourceTree = "<group>"; };
+		BF6CD72C1CFC78D600E4C691 /* JMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMessageViewController.m; sourceTree = "<group>"; };
+		BF6CD72E1CFC78EA00E4C691 /* JMMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMineViewController.h; sourceTree = "<group>"; };
+		BF6CD72F1CFC78EA00E4C691 /* JMMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMineViewController.m; sourceTree = "<group>"; };
+		BF6CD7311CFC78FA00E4C691 /* JMSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSquareViewController.h; sourceTree = "<group>"; };
+		BF6CD7321CFC78FA00E4C691 /* JMSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSquareViewController.m; sourceTree = "<group>"; };
+		BF6CD7351CFC7E0100E4C691 /* NSObject+JMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JMModel.h"; sourceTree = "<group>"; };
+		BF6CD7361CFC7E0100E4C691 /* NSObject+JMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JMModel.m"; sourceTree = "<group>"; };
+		BF6CD7371CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RemoveEmptyCell.h"; sourceTree = "<group>"; };
+		BF6CD7381CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RemoveEmptyCell.m"; sourceTree = "<group>"; };
+		BF6CD7391CFC7E0100E4C691 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		BF6CD73A1CFC7E0100E4C691 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		BF6CD73B1CFC7E0100E4C691 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		BF6CD73C1CFC7E0100E4C691 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		BF6CD7411CFC7E2F00E4C691 /* JMHalfSugar.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMHalfSugar.pch; sourceTree = "<group>"; };
+		BF6CD7421CFC8A0000E4C691 /* JMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMUtilities.h; sourceTree = "<group>"; };
+		BF6CD7431CFC8A0000E4C691 /* JMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMUtilities.m; sourceTree = "<group>"; };
+		BF6CD7451CFC8A5400E4C691 /* JMCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCommon.h; sourceTree = "<group>"; };
+		BF6CD7461CFC93E600E4C691 /* JMCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCameraViewController.h; sourceTree = "<group>"; };
+		BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCameraViewController.m; sourceTree = "<group>"; };
+		BF6CD7491CFC9C8000E4C691 /* JMNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMNaviViewController.h; sourceTree = "<group>"; };
+		BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMNaviViewController.m; sourceTree = "<group>"; };
 		BF87CEC01CFC4380001F1E35 /* JMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMainViewController.h; sourceTree = "<group>"; };
 		BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMainViewController.m; sourceTree = "<group>"; };
 		BF87CEC31CFC4418001F1E35 /* JMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabBar.h; sourceTree = "<group>"; };
@@ -114,6 +146,8 @@
 		BF5D21C01CF808DB008A6B63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF6CD7461CFC93E600E4C691 /* JMCameraViewController.h */,
+				BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +212,8 @@
 		BF5D21C81CF808DB008A6B63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF6CD72B1CFC78D600E4C691 /* JMMessageViewController.h */,
+				BF6CD72C1CFC78D600E4C691 /* JMMessageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +245,8 @@
 		BF5D21CC1CF808DB008A6B63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF6CD72E1CFC78EA00E4C691 /* JMMineViewController.h */,
+				BF6CD72F1CFC78EA00E4C691 /* JMMineViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +278,8 @@
 		BF5D21D01CF808DB008A6B63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF6CD7311CFC78FA00E4C691 /* JMSquareViewController.h */,
+				BF6CD7321CFC78FA00E4C691 /* JMSquareViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,11 +301,31 @@
 		BF5D21D31CF808DB008A6B63 /* SystemConfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				BF6CD7341CFC7E0100E4C691 /* Category */,
 				BF5D21D41CF808DB008A6B63 /* AppDelegate.h */,
 				BF5D21D51CF808DB008A6B63 /* AppDelegate.m */,
 				BF5D21D61CF808DB008A6B63 /* main.m */,
+				BF6CD7411CFC7E2F00E4C691 /* JMHalfSugar.pch */,
+				BF6CD7421CFC8A0000E4C691 /* JMUtilities.h */,
+				BF6CD7431CFC8A0000E4C691 /* JMUtilities.m */,
+				BF6CD7451CFC8A5400E4C691 /* JMCommon.h */,
 			);
 			path = SystemConfiguration;
+			sourceTree = "<group>";
+		};
+		BF6CD7341CFC7E0100E4C691 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BF6CD7351CFC7E0100E4C691 /* NSObject+JMModel.h */,
+				BF6CD7361CFC7E0100E4C691 /* NSObject+JMModel.m */,
+				BF6CD7371CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.h */,
+				BF6CD7381CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m */,
+				BF6CD7391CFC7E0100E4C691 /* UIView+AutoLayout.h */,
+				BF6CD73A1CFC7E0100E4C691 /* UIView+AutoLayout.m */,
+				BF6CD73B1CFC7E0100E4C691 /* UIView+Extension.h */,
+				BF6CD73C1CFC7E0100E4C691 /* UIView+Extension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		BF87CEBD1CFC434D001F1E35 /* Main */ = {
@@ -282,6 +342,8 @@
 			children = (
 				BF87CEC01CFC4380001F1E35 /* JMMainViewController.h */,
 				BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */,
+				BF6CD7491CFC9C8000E4C691 /* JMNaviViewController.h */,
+				BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,12 +433,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF87CECB1CFC47C1001F1E35 /* JMBadgeView.m in Sources */,
+				BF6CD7301CFC78EA00E4C691 /* JMMineViewController.m in Sources */,
+				BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */,
+				BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */,
+				BF6CD7331CFC78FA00E4C691 /* JMSquareViewController.m in Sources */,
 				BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */,
 				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
+				BF6CD73F1CFC7E0100E4C691 /* UIView+AutoLayout.m in Sources */,
 				BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */,
 				BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
+				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
+				BF6CD7401CFC7E0100E4C691 /* UIView+Extension.m in Sources */,
+				BF6CD73E1CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m in Sources */,
+				BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */,
 				BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */,
+				BF6CD72D1CFC78D600E4C691 /* JMMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +560,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = JMHalfSugar/Classes/SystemConfiguration/JMHalfSugar.pch;
 				INFOPLIST_FILE = JMHalfSugar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -500,6 +575,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = JMHalfSugar/Classes/SystemConfiguration/JMHalfSugar.pch;
 				INFOPLIST_FILE = JMHalfSugar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

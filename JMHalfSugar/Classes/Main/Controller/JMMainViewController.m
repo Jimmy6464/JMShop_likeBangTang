@@ -7,9 +7,16 @@
 //
 
 #import "JMMainViewController.h"
-
-@interface JMMainViewController ()
-
+#import "JMNaviViewController.h"
+#import "JMHomeViewController.h"
+#import "JMMessageViewController.h"
+#import "JMSquareViewController.h"
+#import "JMMineViewController.h"
+#import "JMCameraViewController.h"
+#import "JMTabBar.h"
+@interface JMMainViewController ()<JMTabBarDelegate>
+@property (nonatomic, strong) JMTabBar *customTabBar;
+@property (nonatomic, assign) NSInteger selectIndex;
 @end
 
 @implementation JMMainViewController
@@ -28,7 +35,57 @@
 #pragma mark - initialized all subviews
 - (void)initializedSubviews
 {
+    JMTabBar *tabBar = [[JMTabBar alloc]init];
+    tabBar.frame = self.tabBar.frame;
+    tabBar.backgroundColor = [UIColor redColor];
+    tabBar.delegate = self;
+    [self.tabBar addSubview:tabBar];
+//    [self setValue:tabBar forKey:@"tabBar"];
+    _customTabBar = tabBar;
     
+    //initialized all childViewController
+    [self addAllChildViewController];
 }
+- (void)addAllChildViewController
+{
+    //Home
+    JMHomeViewController *home = [JMHomeViewController new];
+    [self setUpOneChildViewController:home title:@"Home" image:[UIImage imageNamed:@"Home_unselected"] selectedImage:[UIImage imageNamed:@"Home_selected"]];
+    
+    //Message
+    JMMessageViewController *message = [JMMessageViewController new];
+    [self setUpOneChildViewController:message title:@"Message" image:[UIImage imageNamed:@"Message_normal"] selectedImage:[UIImage imageNamed:@"Message_selected"]];
+    
+    //Square
+    JMSquareViewController *square = [JMSquareViewController new];
+    [self setUpOneChildViewController:square title:@"Square" image:[UIImage imageNamed:@"Square_normal"] selectedImage:[UIImage imageNamed:@"Square_selected"]];
+    
+    //Mine
+    JMMineViewController *mine = [JMMineViewController new];
+    [self setUpOneChildViewController:mine title:@"Mine" image:[UIImage imageNamed:@"PersonCenter_unlogin"] selectedImage:[UIImage imageNamed:@"PersonCenter_unlogin"]];
+}
+- (void)setUpOneChildViewController:(UIViewController *)viewController title:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
+{
+    viewController.title = title;
+    viewController.tabBarItem.image = image;
+    viewController.tabBarItem.selectedImage = selectedImage;
 
+    [self addChildViewController:[[JMNaviViewController alloc] initWithRootViewController:viewController]];
+    [self.customTabBar addTabBarButtomWithItem:viewController.tabBarItem];
+}
+#pragma mark - JMTabBarDelegate
+- (void)tabBar:(JMTabBar *)tabBar didSelectedAtindex:(NSInteger)selectedIndex
+{
+    if (selectedIndex == 0 && selectedIndex == _selectIndex) {
+        //refresh
+        
+    }
+    self.selectedIndex = selectedIndex;
+    _selectIndex = selectedIndex;
+}
+- (void)tabBarDidClickAddBtn:(JMTabBar *)tabBar
+{
+    //add button clicked
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:[JMCameraViewController new]] animated:YES completion:nil];
+}
 @end
