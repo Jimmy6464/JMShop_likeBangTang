@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF5D21B21CF80549008A6B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B01CF80549008A6B63 /* Main.storyboard */; };
+		BF5D21B41CF80549008A6B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B31CF80549008A6B63 /* Assets.xcassets */; };
+		BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */; };
+		BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D51CF808DB008A6B63 /* AppDelegate.m */; };
+		BF5D21DA1CF808DB008A6B63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D61CF808DB008A6B63 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BF5D21A41CF80548008A6B63 /* JMHalfSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMHalfSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5D21B11CF80549008A6B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF5D21B31CF80549008A6B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5D21B61CF80549008A6B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF5D21B81CF80549008A6B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5D21D41CF808DB008A6B63 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF5D21D51CF808DB008A6B63 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF5D21D61CF808DB008A6B63 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF5D21A11CF80548008A6B63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF5D219B1CF80548008A6B63 = {
+			isa = PBXGroup;
+			children = (
+				BF5D21A61CF80549008A6B63 /* JMHalfSugar */,
+				BF5D21A51CF80548008A6B63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF5D21A51CF80548008A6B63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21A41CF80548008A6B63 /* JMHalfSugar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF5D21A61CF80549008A6B63 /* JMHalfSugar */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21BE1CF808DB008A6B63 /* Classes */,
+				BF5D21B01CF80549008A6B63 /* Main.storyboard */,
+				BF5D21B31CF80549008A6B63 /* Assets.xcassets */,
+				BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */,
+				BF5D21B81CF80549008A6B63 /* Info.plist */,
+				BF5D21A71CF80549008A6B63 /* Supporting Files */,
+			);
+			path = JMHalfSugar;
+			sourceTree = "<group>";
+		};
+		BF5D21A71CF80549008A6B63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF5D21BE1CF808DB008A6B63 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21BF1CF808DB008A6B63 /* Camera */,
+				BF5D21C31CF808DB008A6B63 /* Home */,
+				BF5D21C71CF808DB008A6B63 /* Message */,
+				BF5D21CB1CF808DB008A6B63 /* Mine */,
+				BF5D21CF1CF808DB008A6B63 /* Square */,
+				BF5D21D31CF808DB008A6B63 /* SystemConfiguration */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BF5D21BF1CF808DB008A6B63 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21C01CF808DB008A6B63 /* Controller */,
+				BF5D21C11CF808DB008A6B63 /* Model */,
+				BF5D21C21CF808DB008A6B63 /* View */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		BF5D21C01CF808DB008A6B63 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF5D21C11CF808DB008A6B63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF5D21C21CF808DB008A6B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF5D21C31CF808DB008A6B63 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21C41CF808DB008A6B63 /* Controller */,
+				BF5D21C51CF808DB008A6B63 /* Model */,
+				BF5D21C61CF808DB008A6B63 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BF5D21C41CF808DB008A6B63 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF5D21C51CF808DB008A6B63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF5D21C61CF808DB008A6B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF5D21C71CF808DB008A6B63 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21C81CF808DB008A6B63 /* Controller */,
+				BF5D21C91CF808DB008A6B63 /* Model */,
+				BF5D21CA1CF808DB008A6B63 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		BF5D21C81CF808DB008A6B63 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF5D21C91CF808DB008A6B63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF5D21CA1CF808DB008A6B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF5D21CB1CF808DB008A6B63 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21CC1CF808DB008A6B63 /* Controller */,
+				BF5D21CD1CF808DB008A6B63 /* Model */,
+				BF5D21CE1CF808DB008A6B63 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		BF5D21CC1CF808DB008A6B63 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF5D21CD1CF808DB008A6B63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF5D21CE1CF808DB008A6B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF5D21CF1CF808DB008A6B63 /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21D01CF808DB008A6B63 /* Controller */,
+				BF5D21D11CF808DB008A6B63 /* Model */,
+				BF5D21D21CF808DB008A6B63 /* View */,
+			);
+			path = Square;
+			sourceTree = "<group>";
+		};
+		BF5D21D01CF808DB008A6B63 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF5D21D11CF808DB008A6B63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF5D21D21CF808DB008A6B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF5D21D31CF808DB008A6B63 /* SystemConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D21D41CF808DB008A6B63 /* AppDelegate.h */,
+				BF5D21D51CF808DB008A6B63 /* AppDelegate.m */,
+				BF5D21D61CF808DB008A6B63 /* main.m */,
+			);
+			path = SystemConfiguration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF5D21A31CF80548008A6B63 /* JMHalfSugar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5D21BB1CF80549008A6B63 /* Build configuration list for PBXNativeTarget "JMHalfSugar" */;
+			buildPhases = (
+				BF5D21A01CF80548008A6B63 /* Sources */,
+				BF5D21A11CF80548008A6B63 /* Frameworks */,
+				BF5D21A21CF80548008A6B63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JMHalfSugar;
+			productName = JMHalfSugar;
+			productReference = BF5D21A41CF80548008A6B63 /* JMHalfSugar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF5D219C1CF80548008A6B63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = HDCircles;
+				TargetAttributes = {
+					BF5D21A31CF80548008A6B63 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = BF5D219F1CF80548008A6B63 /* Build configuration list for PBXProject "JMHalfSugar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF5D219B1CF80548008A6B63;
+			productRefGroup = BF5D21A51CF80548008A6B63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF5D21A31CF80548008A6B63 /* JMHalfSugar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF5D21A21CF80548008A6B63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */,
+				BF5D21B41CF80549008A6B63 /* Assets.xcassets in Resources */,
+				BF5D21B21CF80549008A6B63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF5D21A01CF80548008A6B63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
+				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BF5D21B01CF80549008A6B63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5D21B11CF80549008A6B63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5D21B61CF80549008A6B63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF5D21B91CF80549008A6B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BF5D21BA1CF80549008A6B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF5D21BC1CF80549008A6B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JMHalfSugar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hdcircles.JMHalfSugar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF5D21BD1CF80549008A6B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JMHalfSugar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hdcircles.JMHalfSugar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF5D219F1CF80548008A6B63 /* Build configuration list for PBXProject "JMHalfSugar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D21B91CF80549008A6B63 /* Debug */,
+				BF5D21BA1CF80549008A6B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5D21BB1CF80549008A6B63 /* Build configuration list for PBXNativeTarget "JMHalfSugar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D21BC1CF80549008A6B63 /* Debug */,
+				BF5D21BD1CF80549008A6B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF5D219C1CF80548008A6B63 /* Project object */;
+}
