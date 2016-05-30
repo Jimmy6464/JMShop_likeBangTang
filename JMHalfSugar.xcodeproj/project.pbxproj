@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2AA9761CFC3D9C00525B9A /* JMHomeViewController.m */; };
 		BF5D21B21CF80549008A6B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B01CF80549008A6B63 /* Main.storyboard */; };
 		BF5D21B41CF80549008A6B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B31CF80549008A6B63 /* Assets.xcassets */; };
 		BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2AA9751CFC3D9C00525B9A /* JMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMHomeViewController.h; sourceTree = "<group>"; };
+		BF2AA9761CFC3D9C00525B9A /* JMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMHomeViewController.m; sourceTree = "<group>"; };
 		BF5D21A41CF80548008A6B63 /* JMHalfSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMHalfSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5D21B11CF80549008A6B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF5D21B31CF80549008A6B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 		BF5D21C41CF808DB008A6B63 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF2AA9751CFC3D9C00525B9A /* JMHomeViewController.h */,
+				BF2AA9761CFC3D9C00525B9A /* JMHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
+				BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +476,7 @@
 				BF5D21BD1CF80549008A6B63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
