@@ -13,6 +13,10 @@
 		BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */; };
 		BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D51CF808DB008A6B63 /* AppDelegate.m */; };
 		BF5D21DA1CF808DB008A6B63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D61CF808DB008A6B63 /* main.m */; };
+		BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC41CFC4418001F1E35 /* JMTabBar.m */; settings = {ASSET_TAGS = (); }; };
+		BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC71CFC4756001F1E35 /* JMTabBarButton.m */; settings = {ASSET_TAGS = (); }; };
+		BF87CECB1CFC47C1001F1E35 /* JMBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CECA1CFC47C1001F1E35 /* JMBadgeView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		BF5D21D41CF808DB008A6B63 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF5D21D51CF808DB008A6B63 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BF5D21D61CF808DB008A6B63 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF87CEC01CFC4380001F1E35 /* JMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMainViewController.h; sourceTree = "<group>"; };
+		BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMainViewController.m; sourceTree = "<group>"; };
+		BF87CEC31CFC4418001F1E35 /* JMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabBar.h; sourceTree = "<group>"; };
+		BF87CEC41CFC4418001F1E35 /* JMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTabBar.m; sourceTree = "<group>"; };
+		BF87CEC61CFC4756001F1E35 /* JMTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabBarButton.h; sourceTree = "<group>"; };
+		BF87CEC71CFC4756001F1E35 /* JMTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTabBarButton.m; sourceTree = "<group>"; };
+		BF87CEC91CFC47C1001F1E35 /* JMBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBadgeView.h; sourceTree = "<group>"; };
+		BF87CECA1CFC47C1001F1E35 /* JMBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBadgeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 		BF5D21BE1CF808DB008A6B63 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BF87CEBD1CFC434D001F1E35 /* Main */,
 				BF5D21BF1CF808DB008A6B63 /* Camera */,
 				BF5D21C31CF808DB008A6B63 /* Home */,
 				BF5D21C71CF808DB008A6B63 /* Message */,
@@ -255,6 +268,37 @@
 			path = SystemConfiguration;
 			sourceTree = "<group>";
 		};
+		BF87CEBD1CFC434D001F1E35 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BF87CEBE1CFC434D001F1E35 /* Controller */,
+				BF87CEBF1CFC434D001F1E35 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BF87CEBE1CFC434D001F1E35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF87CEC01CFC4380001F1E35 /* JMMainViewController.h */,
+				BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF87CEBF1CFC434D001F1E35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF87CEC31CFC4418001F1E35 /* JMTabBar.h */,
+				BF87CEC41CFC4418001F1E35 /* JMTabBar.m */,
+				BF87CEC61CFC4756001F1E35 /* JMTabBarButton.h */,
+				BF87CEC71CFC4756001F1E35 /* JMTabBarButton.m */,
+				BF87CEC91CFC47C1001F1E35 /* JMBadgeView.h */,
+				BF87CECA1CFC47C1001F1E35 /* JMBadgeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +325,7 @@
 		BF5D219C1CF80548008A6B63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JM;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = HDCircles;
 				TargetAttributes = {
@@ -325,9 +370,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF87CECB1CFC47C1001F1E35 /* JMBadgeView.m in Sources */,
+				BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */,
 				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
+				BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */,
 				BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
+				BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JMHalfSugar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hdcircles.JMHalfSugar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JMHalfSugar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hdcircles.JMHalfSugar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
