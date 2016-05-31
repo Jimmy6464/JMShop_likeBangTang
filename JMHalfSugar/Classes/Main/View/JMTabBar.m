@@ -24,13 +24,14 @@
 }
 - (UIButton *)addButton
 {
-    if (!_addButton) {
+    if (_addButton == nil) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-#warning need add the image;
+
         [button setImage:[UIImage imageNamed:@"Show_normal"] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"Show_normal"] forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(clickedAddButton) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
+        _addButton = button;
     }
     return _addButton;
 }
@@ -80,7 +81,7 @@
     CGFloat centerX = self.width * 0.5;
     CGFloat centerY = self.height * 0.5;
     
-    self.addButton.size = [self.addButton backgroundImageForState:UIControlStateNormal].size;
+    self.addButton.size = CGSizeMake(45, 45);
     self.addButton.center = CGPointMake(centerX, centerY);
 }
 - (void)setUpTabBarButtonsFrame
