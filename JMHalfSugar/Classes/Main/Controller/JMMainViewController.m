@@ -36,11 +36,11 @@
 - (void)initializedSubviews
 {
     JMTabBar *tabBar = [[JMTabBar alloc]init];
-    tabBar.frame = self.tabBar.frame;
-    tabBar.backgroundColor = [UIColor redColor];
+    tabBar.frame = self.tabBar.bounds;
+    tabBar.backgroundColor = [UIColor whiteColor];
     tabBar.delegate = self;
     [self.tabBar addSubview:tabBar];
-//    [self setValue:tabBar forKey:@"tabBar"];
+
     _customTabBar = tabBar;
     
     //initialized all childViewController
@@ -62,7 +62,7 @@
     
     //Mine
     JMMineViewController *mine = [JMMineViewController new];
-    [self setUpOneChildViewController:mine title:@"Mine" image:[UIImage imageNamed:@"PersonCenter_unlogin"] selectedImage:[UIImage imageNamed:@"PersonCenter_unlogin"]];
+    [self setUpOneChildViewController:mine title:@"Mine" image:[UIImage imageNamed:@"PersonCenter_unlogin"] selectedImage:[UIImage imageNamed:@"PersonCenter_normal_login"]];
 }
 - (void)setUpOneChildViewController:(UIViewController *)viewController title:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
 {
