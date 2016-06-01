@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2AA9761CFC3D9C00525B9A /* JMHomeViewController.m */; };
+		BF34CD311CFED9770099A951 /* JMHomeSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF34CD301CFED9770099A951 /* JMHomeSectionHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		BF34CD341CFEDB8A0099A951 /* JMTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF34CD331CFEDB8A0099A951 /* JMTitleScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		BF34CD371CFEE70E0099A951 /* JMBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF34CD361CFEE70E0099A951 /* JMBannerView.m */; settings = {ASSET_TAGS = (); }; };
+		BF34CD3A1CFEE8BA0099A951 /* JMDailyBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF34CD391CFEE8BA0099A951 /* JMDailyBannerModel.m */; settings = {ASSET_TAGS = (); }; };
 		BF5D21B21CF80549008A6B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B01CF80549008A6B63 /* Main.storyboard */; };
 		BF5D21B41CF80549008A6B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B31CF80549008A6B63 /* Assets.xcassets */; };
 		BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */; };
@@ -32,6 +36,14 @@
 /* Begin PBXFileReference section */
 		BF2AA9751CFC3D9C00525B9A /* JMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMHomeViewController.h; sourceTree = "<group>"; };
 		BF2AA9761CFC3D9C00525B9A /* JMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMHomeViewController.m; sourceTree = "<group>"; };
+		BF34CD2F1CFED9770099A951 /* JMHomeSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMHomeSectionHeaderView.h; sourceTree = "<group>"; };
+		BF34CD301CFED9770099A951 /* JMHomeSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMHomeSectionHeaderView.m; sourceTree = "<group>"; };
+		BF34CD321CFEDB8A0099A951 /* JMTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTitleScrollView.h; sourceTree = "<group>"; };
+		BF34CD331CFEDB8A0099A951 /* JMTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTitleScrollView.m; sourceTree = "<group>"; };
+		BF34CD351CFEE70E0099A951 /* JMBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBannerView.h; sourceTree = "<group>"; };
+		BF34CD361CFEE70E0099A951 /* JMBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBannerView.m; sourceTree = "<group>"; };
+		BF34CD381CFEE8BA0099A951 /* JMDailyBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMDailyBannerModel.h; sourceTree = "<group>"; };
+		BF34CD391CFEE8BA0099A951 /* JMDailyBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMDailyBannerModel.m; sourceTree = "<group>"; };
 		BF5D21A41CF80548008A6B63 /* JMHalfSugar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMHalfSugar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5D21B11CF80549008A6B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF5D21B31CF80549008A6B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +200,8 @@
 		BF5D21C51CF808DB008A6B63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF34CD381CFEE8BA0099A951 /* JMDailyBannerModel.h */,
+				BF34CD391CFEE8BA0099A951 /* JMDailyBannerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +209,12 @@
 		BF5D21C61CF808DB008A6B63 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF34CD2F1CFED9770099A951 /* JMHomeSectionHeaderView.h */,
+				BF34CD301CFED9770099A951 /* JMHomeSectionHeaderView.m */,
+				BF34CD321CFEDB8A0099A951 /* JMTitleScrollView.h */,
+				BF34CD331CFEDB8A0099A951 /* JMTitleScrollView.m */,
+				BF34CD351CFEE70E0099A951 /* JMBannerView.h */,
+				BF34CD361CFEE70E0099A951 /* JMBannerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,6 +454,7 @@
 			files = (
 				BF87CECB1CFC47C1001F1E35 /* JMBadgeView.m in Sources */,
 				BF6CD7301CFC78EA00E4C691 /* JMMineViewController.m in Sources */,
+				BF34CD3A1CFEE8BA0099A951 /* JMDailyBannerModel.m in Sources */,
 				BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */,
 				BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */,
 				BF6CD7331CFC78FA00E4C691 /* JMSquareViewController.m in Sources */,
@@ -441,7 +462,9 @@
 				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
 				BF6CD73F1CFC7E0100E4C691 /* UIView+AutoLayout.m in Sources */,
 				BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */,
+				BF34CD371CFEE70E0099A951 /* JMBannerView.m in Sources */,
 				BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */,
+				BF34CD341CFEDB8A0099A951 /* JMTitleScrollView.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
 				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
 				BF6CD7401CFC7E0100E4C691 /* UIView+Extension.m in Sources */,
@@ -449,6 +472,7 @@
 				BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */,
 				BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */,
 				BF6CD72D1CFC78D600E4C691 /* JMMessageViewController.m in Sources */,
+				BF34CD311CFED9770099A951 /* JMHomeSectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
