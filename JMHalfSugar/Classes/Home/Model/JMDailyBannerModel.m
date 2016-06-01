@@ -13,4 +13,10 @@
 {
     NSLog(@"UndefinedKey:%@",key);
 }
++ (instancetype)dailyBannerModelWithDictionary:(NSDictionary *)dict
+{
+    JMDailyBannerModel *model = [JMDailyBannerModel new];
+    [model setValuesForKeysWithDictionary:dict];
+    return model;
+}
 @end
