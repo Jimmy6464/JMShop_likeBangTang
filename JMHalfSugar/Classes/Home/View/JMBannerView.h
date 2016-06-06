@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JMBannerView : UIView
+@protocol JMBannerViewDelegate <NSObject>
 
+
+
+@end
+@interface JMBannerView : UIView
+@property (nonatomic, weak) id <JMBannerViewDelegate> delegate;
 @end
