@@ -27,6 +27,9 @@
 		BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7431CFC8A0000E4C691 /* JMUtilities.m */; settings = {ASSET_TAGS = (); }; };
 		BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF750A071D05D0080025691B /* JMProductRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = BF750A061D05D0080025691B /* JMProductRecommend.m */; settings = {ASSET_TAGS = (); }; };
+		BF750A0A1D05D55E0025691B /* JMProductRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF750A091D05D55E0025691B /* JMProductRecommendModel.m */; settings = {ASSET_TAGS = (); }; };
+		BF750A0D1D05E0D20025691B /* JMCatergoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF750A0C1D05E0D20025691B /* JMCatergoryModel.m */; settings = {ASSET_TAGS = (); }; };
 		BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC41CFC4418001F1E35 /* JMTabBar.m */; settings = {ASSET_TAGS = (); }; };
 		BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC71CFC4756001F1E35 /* JMTabBarButton.m */; settings = {ASSET_TAGS = (); }; };
@@ -74,6 +77,12 @@
 		BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCameraViewController.m; sourceTree = "<group>"; };
 		BF6CD7491CFC9C8000E4C691 /* JMNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMNaviViewController.h; sourceTree = "<group>"; };
 		BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMNaviViewController.m; sourceTree = "<group>"; };
+		BF750A051D05D0080025691B /* JMProductRecommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMProductRecommend.h; sourceTree = "<group>"; };
+		BF750A061D05D0080025691B /* JMProductRecommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMProductRecommend.m; sourceTree = "<group>"; };
+		BF750A081D05D55E0025691B /* JMProductRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMProductRecommendModel.h; sourceTree = "<group>"; };
+		BF750A091D05D55E0025691B /* JMProductRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMProductRecommendModel.m; sourceTree = "<group>"; };
+		BF750A0B1D05E0D20025691B /* JMCatergoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCatergoryModel.h; sourceTree = "<group>"; };
+		BF750A0C1D05E0D20025691B /* JMCatergoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCatergoryModel.m; sourceTree = "<group>"; };
 		BF87CEC01CFC4380001F1E35 /* JMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMainViewController.h; sourceTree = "<group>"; };
 		BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMainViewController.m; sourceTree = "<group>"; };
 		BF87CEC31CFC4418001F1E35 /* JMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMTabBar.h; sourceTree = "<group>"; };
@@ -134,6 +143,7 @@
 		BF5D21BE1CF808DB008A6B63 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BF750A041D05CFD30025691B /* Tool */,
 				BF87CEBD1CFC434D001F1E35 /* Main */,
 				BF5D21BF1CF808DB008A6B63 /* Camera */,
 				BF5D21C31CF808DB008A6B63 /* Home */,
@@ -348,6 +358,19 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		BF750A041D05CFD30025691B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BF750A051D05D0080025691B /* JMProductRecommend.h */,
+				BF750A061D05D0080025691B /* JMProductRecommend.m */,
+				BF750A081D05D55E0025691B /* JMProductRecommendModel.h */,
+				BF750A091D05D55E0025691B /* JMProductRecommendModel.m */,
+				BF750A0B1D05E0D20025691B /* JMCatergoryModel.h */,
+				BF750A0C1D05E0D20025691B /* JMCatergoryModel.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		BF87CEBD1CFC434D001F1E35 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,10 +486,13 @@
 				BF6CD73F1CFC7E0100E4C691 /* UIView+AutoLayout.m in Sources */,
 				BF87CEC81CFC4756001F1E35 /* JMTabBarButton.m in Sources */,
 				BF34CD371CFEE70E0099A951 /* JMBannerView.m in Sources */,
+				BF750A0A1D05D55E0025691B /* JMProductRecommendModel.m in Sources */,
 				BF2AA9771CFC3D9C00525B9A /* JMHomeViewController.m in Sources */,
+				BF750A0D1D05E0D20025691B /* JMCatergoryModel.m in Sources */,
 				BF34CD341CFEDB8A0099A951 /* JMTitleScrollView.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
 				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
+				BF750A071D05D0080025691B /* JMProductRecommend.m in Sources */,
 				BF6CD7401CFC7E0100E4C691 /* UIView+Extension.m in Sources */,
 				BF6CD73E1CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m in Sources */,
 				BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */,
