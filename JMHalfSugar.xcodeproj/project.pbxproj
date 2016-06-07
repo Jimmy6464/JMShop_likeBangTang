@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -1882,7 +1882,6 @@ fi
 	<string>BF5D219C1CF80548008A6B63</string>
 </dict>
 </plist>
-=======
 // !$*UTF8*$!
 {
 	archiveVersion = 1;
