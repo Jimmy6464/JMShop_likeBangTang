@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface JMProductRecommend : NSObject
-- (NSMutableArray *)createProductRecommendModelAtCategoryIndex:(NSInteger)index
+- (NSMutableArray *)createProductRecommendModelAtCategoryIndex:(NSInteger)index;
 @end
