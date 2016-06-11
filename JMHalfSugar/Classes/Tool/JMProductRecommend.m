@@ -37,7 +37,7 @@ static NSString* _fileNmae = @"app_JSON";
 - (NSArray *)jsonNameArray
 {
     if (!_jsonNameArray) {
-        _jsonNameArray = @[@"app_JOSN",@"json_Art",@"json_Gift",@"json_Guide",@"json_LoveBeauty",@"json_Design",@"json_Eater",@"json_Kitchen",@"json_WageEarners",@"json_Student",@"json_Party",@"json_Holiday",@"json_Dormitory"];
+        _jsonNameArray = @[@"app_JSON",@"json_Art",@"json_Gift",@"json_Guide",@"json_LoveBeauty",@"json_Design",@"json_Eater",@"json_Kitchen",@"json_WageEarners",@"json_Student",@"json_Party",@"json_Holiday",@"json_Dormitory"];
     }
     return _jsonNameArray;
 }
@@ -45,9 +45,10 @@ static NSString* _fileNmae = @"app_JSON";
 #pragma mark - 
 - (void)getDataFromJSONFileAtindex:(NSInteger)index
 {
-    _fileNmae = _jsonNameArray[index];
+    _fileNmae = self.jsonNameArray[index];
     //get resource file
     NSString *path = [[NSBundle mainBundle] pathForResource:_fileNmae ofType:nil];
+    NSLog(@"%@",path);
     NSData *data = [NSData dataWithContentsOfFile:path];
     _dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 }

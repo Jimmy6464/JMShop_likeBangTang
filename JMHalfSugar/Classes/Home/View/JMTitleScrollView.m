@@ -22,9 +22,16 @@ CGFloat _buttonSpacing = 30.0f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initializedSubviews];
+        self.normalColor = [UIColor colorWithRed:109/255.0 green:109/255.0 blue:109/255.0 alpha:1.0];
+        self.highlightColor = [UIColor redColor];
+        
     }
     return self;
+}
+- (void)setTitleArray:(NSArray *)titleArray
+{
+    _titleArray = titleArray;
+    [self initializedSubviews];
 }
 - (void)initializedSubviews
 {
@@ -40,7 +47,7 @@ CGFloat _buttonSpacing = 30.0f;
         [self addSubview:btn];
     }
     //set the arrange of scrollerview
-    self.contentSize =  CGSizeMake(_titleArray.count*2*_fontSize+(_titleArray.count-1)*30+24, 0);
+//    self.contentSize =  CGSizeMake(_titleArray.count*2*_fontSize+(_titleArray.count-1)*30+24, 36.0);
     self.backgroundColor = [UIColor whiteColor];
     self.showsHorizontalScrollIndicator = false;
     

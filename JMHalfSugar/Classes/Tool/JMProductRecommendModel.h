@@ -20,7 +20,7 @@
 /*
  *  二级标题
  */
-@property (nonatomic, copy) NSString *subTitle;
+@property (nonatomic, copy) NSString *tags;
 /*
  *  图片url
  */
@@ -28,11 +28,11 @@
 /*
  *  喜欢人数
  */
-@property (nonatomic, copy) NSString *likesNumber;
+@property (nonatomic, copy) NSString *likes;
 /*
  *  是否已经喜欢
  */
-@property (nonatomic, copy) NSString *isLike;
+@property (nonatomic, copy) NSString *islike;
 /*
  *  更新时间
  */

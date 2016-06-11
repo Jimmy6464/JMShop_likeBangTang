@@ -10,4 +10,5 @@
 
 @interface JMProductRecommend : NSObject
 - (NSMutableArray *)createProductRecommendModelAtCategoryIndex:(NSInteger)index;
+- (NSMutableArray *)createDailyBannerModel;
 @end

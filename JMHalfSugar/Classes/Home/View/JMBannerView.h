@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+enum ClickType{
+    GoodThingClickType,
+    SearchClickType,
+    PlantGrassClickType,
+    SignInClickType
+};
 @protocol JMBannerViewDelegate <NSObject>
-
-
-
+- (void)bannerButtonClickeWithType:(enum ClickType)clickType;
 @end
 @interface JMBannerView : UIView
+@property (nonatomic, strong) NSMutableArray *bannerArray;
 @property (nonatomic, weak) id <JMBannerViewDelegate> delegate;
 @end

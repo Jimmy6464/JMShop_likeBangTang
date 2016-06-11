@@ -11,6 +11,10 @@
 @implementation JMDailyBannerModel
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
+    if ([key isEqualToString:@"id"]) {
+        self.bannerID = value;
+    }
+    
     NSLog(@"UndefinedKey:%@",key);
 }
 + (instancetype)dailyBannerModelWithDictionary:(NSDictionary *)dict

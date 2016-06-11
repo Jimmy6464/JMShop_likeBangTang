@@ -30,7 +30,7 @@
 /*
  *  imageUrl
  */
-@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) NSString *photo;
 + (instancetype)dailyBannerModelWithDictionary:(NSDictionary *)dict;
 
 @end

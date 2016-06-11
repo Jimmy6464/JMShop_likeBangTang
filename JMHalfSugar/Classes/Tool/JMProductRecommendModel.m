@@ -17,6 +17,12 @@
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
+    if ([key isEqualToString:@"id"]) {
+        _productID = value;
+    }
+    if ([key isEqualToString:@"pic"]) {
+        _imageUrl = value;
+    }
     NSLog(@"undefine:%@",key);
 }
 @end
