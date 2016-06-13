@@ -7,9 +7,10 @@
 //
 
 #import "JMSquareViewController.h"
-
-@interface JMSquareViewController ()
-
+#import "JMTitleScrollView.h"
+#import "JMSquareCategoryCell.h"
+@interface JMSquareViewController ()<JMTitleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@property (nonatomic, weak)UICollectionView *collectionView;
 @end
 
 @implementation JMSquareViewController
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
+    [self initializedSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,14 +27,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (void)initializedSubviews
+{
+    //titleview
+    CGFloat margin = (JMDeviceWidth - 24 - 4 * 15 * 4) / 3;
+    JMTitleScrollView *titleScrollView = [[JMTitleScrollView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 45) titleArray:@[@"热门推荐",@"深夜食堂",@"变美神器",@"一种生活"] fontSize:15.0f _textLength:4.0f andButtonSpacing:margin];
+    titleScrollView.tDelegate = self;
+    [self.view addSubview:titleScrollView];
+    
+    //UICollectionView
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    layout.minimumInteritemSpacing = 30;
+    layout.minimumLineSpacing = 30;
+    
+    UICollectionView *collectioView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 450/2) collectionViewLayout:layout];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    collectioView.backgroundColor = [UIColor whiteColor];
+    collectioView.scrollEnabled = false;
+    [collectioView registerNib:[UINib nibWithNibName:@"JMSquareCategoryCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"JMSquareCategoryCell"];
+    collectioView.delegate = self;
+    collectioView.dataSource = self;
+    
 }
-*/
-
+#pragma mark - JMTitleScrollViewDelegate
+- (void)clickedTitleView:(JMTitleScrollView *)titleView atIndex:(NSInteger)index
+{
+    NSLog(@"clicked index:%ld",index);
+}
 @end

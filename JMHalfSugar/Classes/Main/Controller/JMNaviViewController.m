@@ -8,12 +8,23 @@
 
 #import "JMNaviViewController.h"
 #import "JMTabBar.h"
+#import "UIColor+Hex.h"
 @interface JMNaviViewController ()<UINavigationControllerDelegate>
 
 @end
 
 @implementation JMNaviViewController
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+{
+    self = [super initWithRootViewController:rootViewController];
+    if (self) {
 
+        self.navigationBar.translucent = NO;
+        self.navigationBar.barTintColor = [UIColor colorWithHexString:@"EC5252"];
+        self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

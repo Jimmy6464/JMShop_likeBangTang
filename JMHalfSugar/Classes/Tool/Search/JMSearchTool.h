@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface JMSearchTool : NSObject
-
++ (NSMutableArray *)createSearchModel;
++ (NSMutableArray *)createSearchListModel;
 @end

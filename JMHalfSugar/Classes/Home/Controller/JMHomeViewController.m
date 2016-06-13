@@ -89,11 +89,11 @@ static NSInteger _titleIndex = 0;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    JMTitleScrollView *titleScrollView = [[JMTitleScrollView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 36.0)];
+    NSArray *array = @[@"最新",@"文艺",@"礼物",@"指南",@"爱美",@"设计",@"吃货",@"厨房",@"上班",@"学生",@"聚会",@"节日",@"宿舍"];
+    JMTitleScrollView *titleScrollView = [[JMTitleScrollView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 36.0) titleArray:array fontSize:16.0 _textLength:2.0 andButtonSpacing:30.0];
     titleScrollView.delegate = self;
     titleScrollView.tDelegate = self;
-    titleScrollView.titleArray = @[@"最新",@"文艺",@"礼物",@"指南",@"爱美",@"设计",@"吃货",@"厨房",@"上班",@"学生",@"聚会",@"节日",@"宿舍"];
-    titleScrollView.contentSize = CGSizeMake(titleScrollView.titleArray.count*2*16+(titleScrollView.titleArray.count-1)*30+24, 36.0);
+    titleScrollView.contentSize = CGSizeMake(array.count*2*16+(array.count-1)*30+24, 36.0);
     [titleScrollView setBottomViewAtIndex:_titleIndex];
     _titleScrollView = titleScrollView;
     return _titleScrollView;

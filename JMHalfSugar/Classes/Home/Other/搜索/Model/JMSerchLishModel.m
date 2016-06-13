@@ -9,5 +9,20 @@
 #import "JMSerchLishModel.h"
 
 @implementation JMSerchLishModel
-
++ (instancetype)searchListModelWithDictionary:(NSDictionary *)dictionary
+{
+    JMSerchLishModel *model = [JMSerchLishModel new];
+    [model setValuesForKeysWithDictionary:dictionary];
+    return model;
+}
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    if ([key isEqualToString:@"id"]) {
+        _categoryID = value;
+    }
+    if ([key isEqualToString:@"icon"]) {
+        _iconUrl = value;
+    }
+    NSLog(@"SearchModel undefined key:%@",key);
+}
 @end

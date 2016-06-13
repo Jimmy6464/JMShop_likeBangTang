@@ -12,27 +12,29 @@
 @property (nonatomic, strong) UIColor *normalColor;
 @property (nonatomic, strong) UIColor *highlightColor;
 @property (nonatomic, weak) UIView *indicator;//horizontalIndicator:red
+@property (nonatomic, strong)NSArray *titleArray;
+@property (nonatomic, assign)CGFloat buttonSpacing;
+@property (nonatomic, assign)CGFloat fontSize;
+@property (nonatomic, assign)CGFloat textLength;
 @end
 @implementation JMTitleScrollView
-CGFloat _fontSize = 16.0f;
-CGFloat _textLength = 2.0f;
+
 NSInteger _currentPage = 0;
-CGFloat _buttonSpacing = 30.0f;
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame titleArray:(NSArray *)titles fontSize:(CGFloat)font _textLength:(CGFloat)length andButtonSpacing:(CGFloat)buttonSpacing
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.normalColor = [UIColor colorWithRed:109/255.0 green:109/255.0 blue:109/255.0 alpha:1.0];
         self.highlightColor = [UIColor redColor];
-        
+        self.buttonSpacing = buttonSpacing;
+        self.titleArray = titles;
+        _fontSize = font;
+        _textLength = length;
+        [self initializedSubviews];
     }
     return self;
 }
-- (void)setTitleArray:(NSArray *)titleArray
-{
-    _titleArray = titleArray;
-    [self initializedSubviews];
-}
+
 - (void)initializedSubviews
 {
     for (NSInteger i = 0; i<_titleArray.count; i++) {
@@ -43,6 +45,7 @@ CGFloat _buttonSpacing = 30.0f;
         [btn setTitle:_titleArray[i] forState:UIControlStateNormal];
         [btn setTitleColor:self.normalColor forState:UIControlStateNormal];
         [btn setTitleColor:self.highlightColor forState:UIControlStateSelected];
+
         [btn addTarget:self action:@selector(observeTitleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
     }

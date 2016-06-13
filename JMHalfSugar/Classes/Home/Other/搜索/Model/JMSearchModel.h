@@ -8,6 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+@class JMSearchModel;
 @interface JMSearchModel : NSObject
 
+/*
+ *  分类id
+ */
+@property (nonatomic, copy) NSString *categoryID;
+/*
+ *  分类 名称
+ */
+@property (nonatomic, copy) NSString *name;
+/*
+ *  imageURL
+ */
+@property (nonatomic, copy) NSString *iconUrl;
+/*
+ *  english name
+ */
+@property (nonatomic, copy) NSString *en_name;
+/*
+ *  sublist
+ */
+@property (nonatomic, strong) NSMutableArray<JMSearchModel *> *subList;
++ (instancetype)searchModelWithDictionary:(NSDictionary *)dict;
 @end
