@@ -50,7 +50,7 @@
 {
     //Home
     JMHomeViewController *home = [JMHomeViewController new];
-    [self setUpOneChildViewController:home title:@"Home" image:[UIImage imageNamed:@"Home_unselected"] selectedImage:[UIImage imageNamed:@"Home_selected"]];
+    [self setUpOneChildViewController:home title:@"" image:[UIImage imageNamed:@"Home_unselected"] selectedImage:[UIImage imageNamed:@"Home_selected"]];
     
     //Message
     JMMessageViewController *message = [JMMessageViewController new];

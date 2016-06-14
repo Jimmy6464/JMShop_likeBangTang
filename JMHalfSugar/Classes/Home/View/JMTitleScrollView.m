@@ -105,7 +105,7 @@ NSInteger _currentPage = 0;
             CGFloat width = btn.x - self.contentOffset.x;
             //要移动的距离
             CGFloat length = width - JMDeviceWidth/2;
-            [self setContentOffset:CGPointMake(length, 0) animated:YES];
+            [self setContentOffset:CGPointMake(self.contentOffset.x+length, 0) animated:YES];
         }
     }];
 }

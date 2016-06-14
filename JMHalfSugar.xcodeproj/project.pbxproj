@@ -69,6 +69,10 @@
 		BFC546751D0BC3DA00C7EC48 /* 深夜图书馆 in Resources */ = {isa = PBXBuildFile; fileRef = BFC5465D1D0BC3DA00C7EC48 /* 深夜图书馆 */; settings = {ASSET_TAGS = (); }; };
 		BFC546761D0BC3DA00C7EC48 /* 用户推荐 in Resources */ = {isa = PBXBuildFile; fileRef = BFC5465E1D0BC3DA00C7EC48 /* 用户推荐 */; settings = {ASSET_TAGS = (); }; };
 		BFC546771D0BC3DA00C7EC48 /* 种草小分队 in Resources */ = {isa = PBXBuildFile; fileRef = BFC5465F1D0BC3DA00C7EC48 /* 种草小分队 */; settings = {ASSET_TAGS = (); }; };
+		BFEBCF001D0FAB5700A7DA6E /* JMSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEBCEFF1D0FAB5700A7DA6E /* JMSegmentView.m */; settings = {ASSET_TAGS = (); }; };
+		BFEBCF031D0FDACC00A7DA6E /* JMInventoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEBCF021D0FDACC00A7DA6E /* JMInventoryView.m */; settings = {ASSET_TAGS = (); }; };
+		BFEBCF071D0FDDC600A7DA6E /* JMSearchSingleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEBCF051D0FDDC600A7DA6E /* JMSearchSingleCell.m */; settings = {ASSET_TAGS = (); }; };
+		BFEBCF0B1D0FE1A100A7DA6E /* JMSearchListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEBCF0A1D0FE1A100A7DA6E /* JMSearchListCell.m */; settings = {ASSET_TAGS = (); }; };
 		E6A395EF53889F538AF9CDDC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E821C7106006BF8509ED356A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +177,14 @@
 		BFC5465D1D0BC3DA00C7EC48 /* 深夜图书馆 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "深夜图书馆"; sourceTree = "<group>"; };
 		BFC5465E1D0BC3DA00C7EC48 /* 用户推荐 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "用户推荐"; sourceTree = "<group>"; };
 		BFC5465F1D0BC3DA00C7EC48 /* 种草小分队 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "种草小分队"; sourceTree = "<group>"; };
+		BFEBCEFE1D0FAB5700A7DA6E /* JMSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSegmentView.h; sourceTree = "<group>"; };
+		BFEBCEFF1D0FAB5700A7DA6E /* JMSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSegmentView.m; sourceTree = "<group>"; };
+		BFEBCF011D0FDACC00A7DA6E /* JMInventoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMInventoryView.h; sourceTree = "<group>"; };
+		BFEBCF021D0FDACC00A7DA6E /* JMInventoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMInventoryView.m; sourceTree = "<group>"; };
+		BFEBCF041D0FDDC600A7DA6E /* JMSearchSingleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSearchSingleCell.h; sourceTree = "<group>"; };
+		BFEBCF051D0FDDC600A7DA6E /* JMSearchSingleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSearchSingleCell.m; sourceTree = "<group>"; };
+		BFEBCF091D0FE1A100A7DA6E /* JMSearchListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSearchListCell.h; sourceTree = "<group>"; };
+		BFEBCF0A1D0FE1A100A7DA6E /* JMSearchListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSearchListCell.m; sourceTree = "<group>"; };
 		E821C7106006BF8509ED356A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -288,6 +300,14 @@
 			children = (
 				BF7EBC121D0E4D1600CBF517 /* JMSearchBar.h */,
 				BF7EBC131D0E4D1600CBF517 /* JMSearchBar.m */,
+				BFEBCEFE1D0FAB5700A7DA6E /* JMSegmentView.h */,
+				BFEBCEFF1D0FAB5700A7DA6E /* JMSegmentView.m */,
+				BFEBCF011D0FDACC00A7DA6E /* JMInventoryView.h */,
+				BFEBCF021D0FDACC00A7DA6E /* JMInventoryView.m */,
+				BFEBCF041D0FDDC600A7DA6E /* JMSearchSingleCell.h */,
+				BFEBCF051D0FDDC600A7DA6E /* JMSearchSingleCell.m */,
+				BFEBCF091D0FE1A100A7DA6E /* JMSearchListCell.h */,
+				BFEBCF0A1D0FE1A100A7DA6E /* JMSearchListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -816,12 +836,14 @@
 				BF87CECB1CFC47C1001F1E35 /* JMBadgeView.m in Sources */,
 				BF2CC47D1D0C5D7400E7A79A /* JMSearchModel.m in Sources */,
 				BF6CD7301CFC78EA00E4C691 /* JMMineViewController.m in Sources */,
+				BFEBCF0B1D0FE1A100A7DA6E /* JMSearchListCell.m in Sources */,
 				BF34CD3A1CFEE8BA0099A951 /* JMDailyBannerModel.m in Sources */,
 				BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */,
 				BF7EBC141D0E4D1600CBF517 /* JMSearchBar.m in Sources */,
 				BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */,
 				BF6CD7331CFC78FA00E4C691 /* JMSquareViewController.m in Sources */,
 				BF2CC4791D0C5D1A00E7A79A /* JMProductRecommendModel.m in Sources */,
+				BFEBCF001D0FAB5700A7DA6E /* JMSegmentView.m in Sources */,
 				BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */,
 				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
 				BF6CD73F1CFC7E0100E4C691 /* UIView+AutoLayout.m in Sources */,
@@ -838,7 +860,9 @@
 				BF2CC44F1D0C2EB300E7A79A /* JMHomeProductCell.m in Sources */,
 				BF6CD72D1CFC78D600E4C691 /* JMMessageViewController.m in Sources */,
 				BF2CC4651D0C5BA400E7A79A /* JMSearchViewController.m in Sources */,
+				BFEBCF031D0FDACC00A7DA6E /* JMInventoryView.m in Sources */,
 				BF2CC4801D0C5E5C00E7A79A /* JMSerchLishModel.m in Sources */,
+				BFEBCF071D0FDDC600A7DA6E /* JMSearchSingleCell.m in Sources */,
 				BF2CC4771D0C5D1A00E7A79A /* JMListDetailTool.m in Sources */,
 				BF34CD311CFED9770099A951 /* JMHomeSectionHeaderView.m in Sources */,
 				BFC546441D0BC20800C7EC48 /* JMCatergoryModel.m in Sources */,
