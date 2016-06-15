@@ -13,5 +13,5 @@
 @property (nonatomic, strong) JMSearchModel *searchModel;
 @property (nonatomic, weak)UIImageView *iconImageView;
 @property (nonatomic, weak)UILabel *nameLabel;
-
+- (void)initializedSubviews;
 @end

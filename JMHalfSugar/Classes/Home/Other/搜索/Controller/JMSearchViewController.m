@@ -102,11 +102,11 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.sectionInset = UIEdgeInsetsZero;
-    flowLayout.minimumInteritemSpacing = 0.0f;
-    flowLayout.minimumLineSpacing = 0.0f;
+    flowLayout.minimumInteritemSpacing = 20.0f;
+    flowLayout.minimumLineSpacing = 20.0f;
     
     CGFloat cHeight = JMDeviceWidth- CGRectGetMaxY(_segmentView.frame);
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(JMDeviceWidth, 0, JMDeviceWidth, cHeight) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(JMDeviceWidth, 0, JMDeviceWidth, JMDeviceHeight) collectionViewLayout:flowLayout];
     collectionView.dataSource = self;
     collectionView.delegate = self;
     collectionView.contentSize = CGSizeMake(0, cHeight);
@@ -155,9 +155,9 @@
 #pragma mark - 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(15, 35, 0, 35);
+    return UIEdgeInsetsMake(10, 15, 25, 15);
 }
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(60, 100);
 }

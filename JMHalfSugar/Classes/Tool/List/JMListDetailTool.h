@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class JMListModel;
 @interface JMListDetailTool : NSObject
-
++ (JMListModel *)createListModelWithListID:(NSString *)listID;
 @end
