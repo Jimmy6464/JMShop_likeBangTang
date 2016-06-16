@@ -45,6 +45,14 @@
 		BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7431CFC8A0000E4C691 /* JMUtilities.m */; settings = {ASSET_TAGS = (); }; };
 		BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C031D1245A0004992BD /* UIAlertController+JMShowTips.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C021D1245A0004992BD /* UIAlertController+JMShowTips.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C061D124631004992BD /* JMProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C051D124631004992BD /* JMProductDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C091D125A99004992BD /* JMProductTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C081D125A99004992BD /* JMProductTitleView.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C0B1D125ACC004992BD /* JMProductTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6D1C0A1D125ACC004992BD /* JMProductTitleView.xib */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C101D127E99004992BD /* JMPorductDetailTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C0F1D127E99004992BD /* JMPorductDetailTool.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C131D127EBF004992BD /* JMProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C121D127EBF004992BD /* JMProductDetailModel.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C161D127EE2004992BD /* JMCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C151D127EE2004992BD /* JMCommentModel.m */; settings = {ASSET_TAGS = (); }; };
+		BF6D1C191D127F33004992BD /* JMCommentUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1C181D127F33004992BD /* JMCommentUsersModel.m */; settings = {ASSET_TAGS = (); }; };
 		BF79B32F1D112C1F00560DD8 /* JMSingleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79B32D1D112C1F00560DD8 /* JMSingleCell.m */; settings = {ASSET_TAGS = (); }; };
 		BF79B3301D112C1F00560DD8 /* JMSingleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF79B32E1D112C1F00560DD8 /* JMSingleCell.xib */; settings = {ASSET_TAGS = (); }; };
 		BF79B3351D11319500560DD8 /* JMUserRecommendTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79B3341D11319500560DD8 /* JMUserRecommendTool.m */; settings = {ASSET_TAGS = (); }; };
@@ -168,6 +176,21 @@
 		BF6CD7471CFC93E600E4C691 /* JMCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCameraViewController.m; sourceTree = "<group>"; };
 		BF6CD7491CFC9C8000E4C691 /* JMNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMNaviViewController.h; sourceTree = "<group>"; };
 		BF6CD74A1CFC9C8000E4C691 /* JMNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMNaviViewController.m; sourceTree = "<group>"; };
+		BF6D1C011D1245A0004992BD /* UIAlertController+JMShowTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JMShowTips.h"; sourceTree = "<group>"; };
+		BF6D1C021D1245A0004992BD /* UIAlertController+JMShowTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+JMShowTips.m"; sourceTree = "<group>"; };
+		BF6D1C041D124631004992BD /* JMProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMProductDetailViewController.h; sourceTree = "<group>"; };
+		BF6D1C051D124631004992BD /* JMProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMProductDetailViewController.m; sourceTree = "<group>"; };
+		BF6D1C071D125A99004992BD /* JMProductTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMProductTitleView.h; sourceTree = "<group>"; };
+		BF6D1C081D125A99004992BD /* JMProductTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMProductTitleView.m; sourceTree = "<group>"; };
+		BF6D1C0A1D125ACC004992BD /* JMProductTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMProductTitleView.xib; sourceTree = "<group>"; };
+		BF6D1C0E1D127E99004992BD /* JMPorductDetailTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMPorductDetailTool.h; sourceTree = "<group>"; };
+		BF6D1C0F1D127E99004992BD /* JMPorductDetailTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMPorductDetailTool.m; sourceTree = "<group>"; };
+		BF6D1C111D127EBF004992BD /* JMProductDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMProductDetailModel.h; sourceTree = "<group>"; };
+		BF6D1C121D127EBF004992BD /* JMProductDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMProductDetailModel.m; sourceTree = "<group>"; };
+		BF6D1C141D127EE2004992BD /* JMCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCommentModel.h; sourceTree = "<group>"; };
+		BF6D1C151D127EE2004992BD /* JMCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCommentModel.m; sourceTree = "<group>"; };
+		BF6D1C171D127F33004992BD /* JMCommentUsersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCommentUsersModel.h; sourceTree = "<group>"; };
+		BF6D1C181D127F33004992BD /* JMCommentUsersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCommentUsersModel.m; sourceTree = "<group>"; };
 		BF79B32C1D112C1F00560DD8 /* JMSingleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSingleCell.h; sourceTree = "<group>"; };
 		BF79B32D1D112C1F00560DD8 /* JMSingleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSingleCell.m; sourceTree = "<group>"; };
 		BF79B32E1D112C1F00560DD8 /* JMSingleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMSingleCell.xib; sourceTree = "<group>"; };
@@ -377,6 +400,8 @@
 				BF2CC4641D0C5BA400E7A79A /* JMSearchViewController.m */,
 				BF1894111D10F4C200291F62 /* JMSingleGoodsViewController.h */,
 				BF1894121D10F4C200291F62 /* JMSingleGoodsViewController.m */,
+				BF6D1C041D124631004992BD /* JMProductDetailViewController.h */,
+				BF6D1C051D124631004992BD /* JMProductDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -397,6 +422,9 @@
 				BF79B32C1D112C1F00560DD8 /* JMSingleCell.h */,
 				BF79B32D1D112C1F00560DD8 /* JMSingleCell.m */,
 				BF79B32E1D112C1F00560DD8 /* JMSingleCell.xib */,
+				BF6D1C071D125A99004992BD /* JMProductTitleView.h */,
+				BF6D1C081D125A99004992BD /* JMProductTitleView.m */,
+				BF6D1C0A1D125ACC004992BD /* JMProductTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,6 +442,7 @@
 		BF2CC46F1D0C5D1A00E7A79A /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				BF6D1C0C1D127E7C004992BD /* Detail */,
 				BF2CC4701D0C5D1A00E7A79A /* JMProductRecommend.h */,
 				BF2CC4711D0C5D1A00E7A79A /* JMProductRecommend.m */,
 				BF2CC4721D0C5D1A00E7A79A /* JMProductRecommendModel.h */,
@@ -684,6 +713,8 @@
 		BF6CD7341CFC7E0100E4C691 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BF6D1C011D1245A0004992BD /* UIAlertController+JMShowTips.h */,
+				BF6D1C021D1245A0004992BD /* UIAlertController+JMShowTips.m */,
 				BF2CC4511D0C3D0800E7A79A /* UIColor+Hex.h */,
 				BF2CC4521D0C3D0800E7A79A /* UIColor+Hex.m */,
 				BF6CD7351CFC7E0100E4C691 /* NSObject+JMModel.h */,
@@ -696,6 +727,29 @@
 				BF6CD73C1CFC7E0100E4C691 /* UIView+Extension.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		BF6D1C0C1D127E7C004992BD /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BF6D1C0D1D127E7C004992BD /* model */,
+				BF6D1C0E1D127E99004992BD /* JMPorductDetailTool.h */,
+				BF6D1C0F1D127E99004992BD /* JMPorductDetailTool.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BF6D1C0D1D127E7C004992BD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BF6D1C111D127EBF004992BD /* JMProductDetailModel.h */,
+				BF6D1C121D127EBF004992BD /* JMProductDetailModel.m */,
+				BF6D1C141D127EE2004992BD /* JMCommentModel.h */,
+				BF6D1C151D127EE2004992BD /* JMCommentModel.m */,
+				BF6D1C171D127F33004992BD /* JMCommentUsersModel.h */,
+				BF6D1C181D127F33004992BD /* JMCommentUsersModel.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		BF79B3311D11315E00560DD8 /* UserRecommend */ = {
@@ -893,6 +947,7 @@
 				BFC546651D0BC3DA00C7EC48 /* json_Dormitory in Resources */,
 				BFC546641D0BC3DA00C7EC48 /* json_Design in Resources */,
 				BFC546741D0BC3DA00C7EC48 /* 搜索清单 in Resources */,
+				BF6D1C0B1D125ACC004992BD /* JMProductTitleView.xib in Resources */,
 				BF5D21B21CF80549008A6B63 /* Main.storyboard in Resources */,
 				BFC5466A1D0BC3DA00C7EC48 /* json_Kitchen in Resources */,
 				BFC546701D0BC3DA00C7EC48 /* stylenand 打底霜 in Resources */,
@@ -954,12 +1009,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6D1C161D127EE2004992BD /* JMCommentModel.m in Sources */,
 				BF2CC4571D0C575B00E7A79A /* JMSquareCategoryCell.m in Sources */,
 				BF2CC4781D0C5D1A00E7A79A /* JMProductRecommend.m in Sources */,
 				BF79B32F1D112C1F00560DD8 /* JMSingleCell.m in Sources */,
 				BF79B3441D113B8400560DD8 /* JMUserRecommendTagsModel.m in Sources */,
+				BF6D1C091D125A99004992BD /* JMProductTitleView.m in Sources */,
 				BF1894271D10F86600291F62 /* JMSerchLishModel.m in Sources */,
 				BF79B3471D113C8200560DD8 /* JMUserRecommendModel.m in Sources */,
+				BF6D1C031D1245A0004992BD /* UIAlertController+JMShowTips.m in Sources */,
 				BF87CECB1CFC47C1001F1E35 /* JMBadgeView.m in Sources */,
 				BF18942A1D10FABA00291F62 /* JMLikeListModel.m in Sources */,
 				BF6CD7301CFC78EA00E4C691 /* JMMineViewController.m in Sources */,
@@ -967,11 +1025,13 @@
 				BF34CD3A1CFEE8BA0099A951 /* JMDailyBannerModel.m in Sources */,
 				BF6CD7481CFC93E600E4C691 /* JMCameraViewController.m in Sources */,
 				BF7EBC141D0E4D1600CBF517 /* JMSearchBar.m in Sources */,
+				BF6D1C101D127E99004992BD /* JMPorductDetailTool.m in Sources */,
 				BF79B3351D11319500560DD8 /* JMUserRecommendTool.m in Sources */,
 				BF6CD74B1CFC9C8000E4C691 /* JMNaviViewController.m in Sources */,
 				BF6CD7331CFC78FA00E4C691 /* JMSquareViewController.m in Sources */,
 				BF2CC4791D0C5D1A00E7A79A /* JMProductRecommendModel.m in Sources */,
 				BFEBCF001D0FAB5700A7DA6E /* JMSegmentView.m in Sources */,
+				BF6D1C131D127EBF004992BD /* JMProductDetailModel.m in Sources */,
 				BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */,
 				BF5D21DA1CF808DB008A6B63 /* main.m in Sources */,
 				BF6CD73F1CFC7E0100E4C691 /* UIView+AutoLayout.m in Sources */,
@@ -986,6 +1046,7 @@
 				BF79B3381D1131A300560DD8 /* JMAuthor.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
 				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
+				BF6D1C191D127F33004992BD /* JMCommentUsersModel.m in Sources */,
 				BF6CD7401CFC7E0100E4C691 /* UIView+Extension.m in Sources */,
 				BF6CD73E1CFC7E0100E4C691 /* UITableView+RemoveEmptyCell.m in Sources */,
 				BF6CD7441CFC8A0000E4C691 /* JMUtilities.m in Sources */,
@@ -995,6 +1056,7 @@
 				BF6CD72D1CFC78D600E4C691 /* JMMessageViewController.m in Sources */,
 				BF18941D1D10F82500291F62 /* JMListDetailProductModel.m in Sources */,
 				BF2CC4651D0C5BA400E7A79A /* JMSearchViewController.m in Sources */,
+				BF6D1C061D124631004992BD /* JMProductDetailViewController.m in Sources */,
 				BFEBCF031D0FDACC00A7DA6E /* JMInventoryView.m in Sources */,
 				BFEBCF071D0FDDC600A7DA6E /* JMSearchSingleCell.m in Sources */,
 				BF2CC4771D0C5D1A00E7A79A /* JMListDetailTool.m in Sources */,

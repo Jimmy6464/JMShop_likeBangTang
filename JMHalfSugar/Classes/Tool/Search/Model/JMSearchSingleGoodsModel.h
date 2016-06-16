@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "JMListDetailProductModel.h"
+@class JMAuthor;
 @interface JMSearchSingleGoodsModel : JMListDetailProductModel
 /*
  *  imageUrl
@@ -16,5 +17,6 @@
 /*
  *  author
  */
-@property (nonatomic, copy) NSString *author;
+@property (nonatomic, strong) JMAuthor *author;
++ (instancetype)searchSingleGoodsWithDictionary:(NSDictionary *)dictionary;
 @end

@@ -24,7 +24,7 @@
     if ([key isEqualToString:@"likes"]) {
         _likeNumbers = value;
     }
-    if ([key isEqualToString:@"pic"]) {
+    if ([key isEqualToString:@"pic"] && [value isKindOfClass:[NSArray class]]) {
         NSArray *pics = value;
         NSMutableArray *pictures = [ NSMutableArray array];
         [pics enumerateObjectsUsingBlock:^(NSDictionary* obj, NSUInteger idx, BOOL * _Nonnull stop) {

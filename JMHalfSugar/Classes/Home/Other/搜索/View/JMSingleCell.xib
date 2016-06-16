@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -23,7 +24,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-Z5-inl">
                         <rect key="frame" x="10" y="86" width="144" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG1-Q9-llP">
@@ -41,7 +42,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-GI-2eV">
                         <rect key="frame" x="0.0" y="0.0" width="154" height="81"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="81" id="l6j-qL-7a5"/>
+                            <constraint firstAttribute="height" constant="81" id="7kX-WG-DT2"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itu-8u-G6r">
@@ -62,6 +63,7 @@
                 <constraint firstItem="6kT-Z5-inl" firstAttribute="top" secondItem="yhx-GI-2eV" secondAttribute="bottom" constant="5" id="Rd6-yD-JBG"/>
                 <constraint firstAttribute="trailing" secondItem="yhx-GI-2eV" secondAttribute="trailing" id="Rhl-CG-1VQ"/>
                 <constraint firstItem="yhx-GI-2eV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Urp-dj-X3V"/>
+                <constraint firstItem="yhx-GI-2eV" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" id="V5X-iB-RJE"/>
                 <constraint firstItem="itu-8u-G6r" firstAttribute="top" secondItem="6kT-Z5-inl" secondAttribute="bottom" constant="5" id="YtT-w1-gn7"/>
                 <constraint firstItem="6kT-Z5-inl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="bMg-pa-UoZ"/>
                 <constraint firstItem="GG1-Q9-llP" firstAttribute="top" secondItem="itu-8u-G6r" secondAttribute="bottom" constant="5" id="fdk-JX-nUY"/>
@@ -71,8 +73,14 @@
                 <constraint firstItem="yhx-GI-2eV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vEm-z5-jjQ"/>
             </constraints>
             <size key="customSize" width="154" height="149"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="V5X-iB-RJE"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="descriptionLabel" destination="itu-8u-G6r" id="wM1-gk-4Uy"/>
+                <outlet property="imageHeight" destination="7kX-WG-DT2" id="dCN-ZP-QaM"/>
                 <outlet property="likesNumLabel" destination="IMX-LG-3De" id="Tlq-pb-spw"/>
                 <outlet property="proNameLabel" destination="6kT-Z5-inl" id="M7T-uO-Sk7"/>
                 <outlet property="proPriceLabel" destination="GG1-Q9-llP" id="Dbx-JD-5I7"/>

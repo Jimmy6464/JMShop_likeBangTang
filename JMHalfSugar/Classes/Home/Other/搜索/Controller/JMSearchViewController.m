@@ -7,7 +7,7 @@
 //
 
 #import "JMSearchViewController.h"
-
+#import "JMSingleGoodsViewController.h"
 #import "SDImageCache.h"
 #import "JMSegmentView.h"
 #import "JMInventoryView.h"
@@ -16,7 +16,7 @@
 #import "JMSerchLishModel.h"
 #import "JMSearchListCell.h"
 
-@interface JMSearchViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,JMSegmentViewDelegate>
+@interface JMSearchViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,JMSegmentViewDelegate,JMINventoryViewDelegate>
 @property (nonatomic, weak)UISearchBar *searchBar;
 @property (nonatomic, weak)JMSegmentView *segmentView;
 @property (nonatomic, weak)JMInventoryView *inventoryView;
@@ -75,6 +75,7 @@
 #pragma mark - initialized subviews
 - (void)initializedSubviews
 {
+    //
     UISearchBar *searchBar  = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, JMDeviceWidth-60, 44)];
     searchBar.layer.cornerRadius = 20.0f;
     for (UIView *view in searchBar.subviews) {
@@ -97,6 +98,7 @@
     //
     JMInventoryView *inventoryView = [[JMInventoryView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight-CGRectGetMaxY(_segmentView.frame))];
     inventoryView.categoryModel = self.searchSingleModels;
+    inventoryView.delegate = self;
     [self.view addSubview:inventoryView];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
@@ -152,7 +154,7 @@
     cell.searchListModel = self.searchListModels[indexPath.row];
     return cell;
 }
-#pragma mark - 
+#pragma mark - UICollectionViewDelegateFlowLayout
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(10, 15, 25, 15);
@@ -161,12 +163,24 @@
 {
     return CGSizeMake(60, 100);
 }
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"clicked");
+}
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView == _mainScrollView) {
         _segmentView.currentIndex = scrollView.contentOffset.x/JMDeviceWidth;
     }
+}
+#pragma mark - JMINventoryViewDelegate
+- (void)didSelectedItem:(NSIndexPath *)indexPath
+{
+    JMSingleGoodsViewController *singleGoods = [[JMSingleGoodsViewController alloc]init];
+    
+    [self.navigationController pushViewController:singleGoods animated:YES];
 }
 #pragma mark - JMSegmentViewDelegate
 - (void)clickSegmentViewAtIndex:(NSInteger)index

@@ -11,5 +11,6 @@
 #import "UIView+Extension.h"
 #import "JMCommon.h"
 #import "JMUtilities.h"
-
+#import "UIAlertController+JMShowTips.h"
+#import "JMNaviViewController.h"
 #endif

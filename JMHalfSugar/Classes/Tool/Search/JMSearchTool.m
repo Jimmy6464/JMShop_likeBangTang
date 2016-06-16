@@ -9,6 +9,7 @@
 #import "JMSearchTool.h"
 #import "JMSearchModel.h"
 #import "JMSerchLishModel.h"
+#import "JMSearchSingleGoodsModel.h"
 @implementation JMSearchTool
 + (NSMutableArray *)createSearchModel
 {
@@ -80,4 +81,24 @@
     
     return nil;
 }
++ (NSArray *)createSearchSingleGoodsModel
+{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"底妆" ofType:nil];
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    NSError *error = nil;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+    if (error) {
+        return nil;
+    }
+    NSArray *dataArray = dict[@"data"][@"list"];
+    NSMutableArray *singleGoods = [NSMutableArray array];
+    [dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        JMSearchSingleGoodsModel *model = [JMSearchSingleGoodsModel searchSingleGoodsWithDictionary:obj];
+        [singleGoods addObject:model];
+    }];
+    return singleGoods;
+    
+}
+
+
 @end

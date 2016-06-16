@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class JMSearchModel;
 @interface JMSingleGoodsViewController : UIViewController
-
+@property (nonatomic, strong) JMSearchModel *searchModel;
 @end

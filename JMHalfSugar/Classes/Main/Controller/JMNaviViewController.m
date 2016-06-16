@@ -22,6 +22,17 @@
         self.navigationBar.translucent = NO;
         self.navigationBar.barTintColor = [UIColor colorWithHexString:@"EC5252"];
         self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+        /*
+         self.backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.navigationBar.width, self.navigationBar.height+20)];
+         self.backgroundView.backgroundColor = [UIColor whiteColor];
+         self.backgroundView.alpha = 0.0f;
+         [self.view insertSubview:self.backgroundView aboveSubview:self.navigationBar];
+         
+         self.navigationBar.barTintColor = [UIColor clearColor];
+         [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"transparent"] forBarMetrics:UIBarMetricsCompactPrompt];
+         self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+         self.navigationBar.clipsToBounds = YES;
+         */
     }
     return self;
 }

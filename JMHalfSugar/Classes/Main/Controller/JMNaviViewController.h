@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface JMNaviViewController : UINavigationController
-
+/*
+ *  navigationBar alpha
+ */
+@property (nonatomic, assign) CGFloat bgAlpha;
 @end

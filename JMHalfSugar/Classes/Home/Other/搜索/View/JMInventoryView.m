@@ -106,6 +106,11 @@
 {
     return UIEdgeInsetsMake(15, 15, 0, 15);
 }
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.delegate didSelectedItem:indexPath];
+}
 - (void)setCategoryModel:(NSMutableArray<JMSearchModel *> *)categoryModel
 {
     _categoryModel = categoryModel;

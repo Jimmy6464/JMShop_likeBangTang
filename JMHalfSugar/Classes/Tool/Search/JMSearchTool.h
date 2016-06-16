@@ -11,4 +11,5 @@
 @interface JMSearchTool : NSObject
 + (NSMutableArray *)createSearchModel;
 + (NSMutableArray *)createSearchListModel;
++ (NSArray *)createSearchSingleGoodsModel;
 @end
