@@ -11,7 +11,7 @@
 @implementation JMPictureModel
 - (void)setImageUrl:(NSString *)imageUrl
 {
-    if (imageUrl.length < 30) {
+    if (imageUrl.length < 30 && imageUrl.length>0) {
         _imageUrl = [NSString stringWithFormat:@"http://bt.img.17gwx.com/%@",imageUrl];
     }else {
         _imageUrl = imageUrl;

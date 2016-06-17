@@ -10,15 +10,16 @@
 #import "JMProductDetailModel.h"
 #import "JMCommentModel.h"
 @implementation JMPorductDetailTool
-#warning stop right here
+
 +(JMProductDetailModel *)createProductDetailModel
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"stylenand 打底霜" ofType:nil];
     NSData *JSONData = [NSData dataWithContentsOfFile:path];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
     NSDictionary *dataDict = dict[@"data"];
-    
+    NSDictionary *dataProduct = dict[@"data"][@"product"];
     JMProductDetailModel *model = [JMProductDetailModel productDetailModelWithDictionary:dataDict];
+    [model setValuesForKeysWithDictionary:dataProduct];
     return model;
 }
 + (NSMutableArray  *)createCommentList:(NSArray *)commentData

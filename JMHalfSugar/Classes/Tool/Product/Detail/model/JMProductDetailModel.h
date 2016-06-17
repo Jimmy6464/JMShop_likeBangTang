@@ -21,5 +21,18 @@
  *  like users
  */
 @property (nonatomic, strong) NSArray *likeUser;
+
+
+/*
+ islike,
+ comments,
+ product{},
+ id,
+ likes_list[],
+ comment_list[],
+ likes,
+ commodity,
+ iscomments
+ */
 + (instancetype)productDetailModelWithDictionary:(NSDictionary *)dict;
 @end

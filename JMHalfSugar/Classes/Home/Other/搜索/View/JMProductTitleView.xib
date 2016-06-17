@@ -8,39 +8,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JMProductTitleView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="278"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5B-vw-hGk">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="154" id="wSh-f7-Zzb"/>
-                    </constraints>
-                </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="proName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3Y-fc-p78">
-                    <rect key="frame" x="10" y="164" width="300" height="21"/>
+                    <rect key="frame" x="10" y="260" width="300" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVi-TY-AWR">
-                    <rect key="frame" x="10" y="195" width="300" height="21"/>
+                    <rect key="frame" x="10" y="291" width="300" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotline" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-Q6-8Ql">
-                    <rect key="frame" x="10" y="226" width="300" height="12"/>
+                    <rect key="frame" x="10" y="322" width="300" height="12"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="lC8-27-2d3"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-Ob-fez">
-                    <rect key="frame" x="10" y="248" width="300" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-Ob-fez">
+                    <rect key="frame" x="10" y="344" width="300" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5B-vw-hGk">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="wSh-f7-Zzb"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="OVb-WV-l5Q"/>
+                    </connections>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -67,8 +70,9 @@
                 <outlet property="priceLabel" destination="vVi-TY-AWR" id="z2d-ai-F3c"/>
                 <outlet property="proNameLabel" destination="L3Y-fc-p78" id="daJ-0L-6fZ"/>
                 <outlet property="scrollView" destination="c5B-vw-hGk" id="EoM-kC-GfY"/>
+                <outlet property="scrollViewHeight" destination="wSh-f7-Zzb" id="kg1-Df-5Ap"/>
             </connections>
-            <point key="canvasLocation" x="324" y="161"/>
+            <point key="canvasLocation" x="324" y="208"/>
         </view>
     </objects>
     <resources>

@@ -17,6 +17,12 @@
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
+    if ([key isEqualToString:@"user_id"]) {
+        _userID = value;
+    }
+    if ([key isEqualToString:@"avatar"]) {
+        _headerImageUrl = value;
+    }
     NSLog(@"--------Like list 's undefined key is %@",key);
 }
 @end

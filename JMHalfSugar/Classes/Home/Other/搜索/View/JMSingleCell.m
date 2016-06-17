@@ -7,7 +7,7 @@
 //
 
 #import "JMSingleCell.h"
-#import "UIImageView+WebCache.h"
+
 #import "JMSearchSingleGoodsModel.h"
 @interface JMSingleCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;

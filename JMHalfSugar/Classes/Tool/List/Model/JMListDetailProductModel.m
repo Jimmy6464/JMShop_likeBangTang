@@ -29,26 +29,20 @@
         NSMutableArray *pictures = [ NSMutableArray array];
         [pics enumerateObjectsUsingBlock:^(NSDictionary* obj, NSUInteger idx, BOOL * _Nonnull stop) {
             JMPictureModel *model = [JMPictureModel new];
-            model.imageUrl = obj[@"p"];
-            model.im_width = [obj[@"w"] floatValue];
-            model.im_height = [obj[@"h"] floatValue];
+            model.imageUrl = obj[@"pic"];
+            model.im_width = [obj[@"width"] floatValue];
+            model.im_height = [obj[@"height"] floatValue];
             [pictures addObject:model];
         }];
         _picArray = pictures;
     }
-    if ([key isEqualToString:@"likes_list"]) {
-        NSArray *likes = value;
-        NSMutableArray *likesList = [ NSMutableArray array];
-        [likes enumerateObjectsUsingBlock:^(NSDictionary* obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            JMLikeListModel *model = [JMLikeListModel new];
-            model.headerImageUrl = obj[@"a"];
-            model.userID = obj[@"u"];
-            [likesList addObject:model];
-        }];
-        _likes_list = likesList;
+
+    if ([key isEqualToString:@"user"]) {
+        NSLog(@"%@",value);
     }
     NSLog(@"*****************the undefined key is %@",key);
 }
+
 + (instancetype)listDeatilProductWithDictionary:(NSDictionary *)dict
 {
     JMListDetailProductModel *model = [JMListDetailProductModel new];

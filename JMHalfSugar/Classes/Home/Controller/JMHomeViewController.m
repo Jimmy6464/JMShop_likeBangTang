@@ -108,7 +108,9 @@ static CGFloat _currentContentOffSetX = 0.0f;
 }
 - (void)showSearching
 {
-    [self.navigationController pushViewController:[JMSearchViewController new] animated:YES];
+    JMSearchViewController *search = [JMSearchViewController new];
+    [search setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:search animated:YES];
 }
 #pragma makr -UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

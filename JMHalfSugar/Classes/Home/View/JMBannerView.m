@@ -8,7 +8,6 @@
 
 #import "JMBannerView.h"
 #import "JMDailyBannerModel.h"
-#import "UIImageView+WebCache.h"
 @interface JMBannerView ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIScrollView *showScrollView;
 @property (nonatomic, weak) UIPageControl *pageControl;

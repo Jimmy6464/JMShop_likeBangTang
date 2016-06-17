@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIImageView+WebCache.h"
+
 @class JMSearchModel;
 @interface JMSearchSingleCell : UICollectionViewCell
 @property (nonatomic, strong) JMSearchModel *searchModel;

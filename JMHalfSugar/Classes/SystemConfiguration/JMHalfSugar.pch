@@ -12,5 +12,7 @@
 #import "JMCommon.h"
 #import "JMUtilities.h"
 #import "UIAlertController+JMShowTips.h"
+#import "UIImageView+WebCache.h"
 #import "JMNaviViewController.h"
+#import "UIColor+Hex.h"
 #endif

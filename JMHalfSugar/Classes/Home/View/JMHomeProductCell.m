@@ -7,7 +7,6 @@
 //
 
 #import "JMHomeProductCell.h"
-#import "UIImageView+WebCache.h"
 #import "JMProductRecommendModel.h"
 @interface JMHomeProductCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
