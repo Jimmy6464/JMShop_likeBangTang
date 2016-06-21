@@ -25,7 +25,7 @@
     [super initializedSubviews];
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 80, 60, 20)];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = JMColor(153, 153, 153);
+    label.textColor = JMSubTitleColor;
     label.font = [UIFont systemFontOfSize:13.0];
     [self.contentView addSubview:label];
     _englishNameLabel = label;

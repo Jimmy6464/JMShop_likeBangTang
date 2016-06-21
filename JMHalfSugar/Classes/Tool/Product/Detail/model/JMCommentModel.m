@@ -7,7 +7,7 @@
 //
 
 #import "JMCommentModel.h"
-
+#import "JMAuthor.h"
 @implementation JMCommentModel
 + (instancetype)commentWithDictionary:(NSDictionary *)dict
 {
@@ -28,7 +28,7 @@
         _headerImageURL = value;
     }
     
-    if ([key isEqualToString:@"datastr"]) {
+    if ([key isEqualToString:@"datestr"]) {
         _createTime = value;
     }
     if ([key isEqualToString:@"praise"]) {
@@ -39,7 +39,10 @@
         if (userDict.count != 0) {
             _isReplyed = YES;
         }
+        _at_User = [JMAuthor authorWithDictionary:userDict];
     }
-
+    if ([key isEqualToString:@"conent"]) {
+        _content = value;
+    }
 }
 @end

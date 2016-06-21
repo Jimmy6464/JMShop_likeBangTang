@@ -16,7 +16,7 @@
 /*
  *  nickeName
  */
-@property (nonatomic, copy) NSString *nickName;
+@property (nonatomic, copy) NSString *nickname;
 /*
  *  avatar URL
  */

@@ -18,6 +18,10 @@
  */
 @property (nonatomic, copy) NSString *category;
 /*
+ *  title
+ */
+@property (nonatomic, copy) NSString *title;
+/*
  *  Description for detail
  */
 @property (nonatomic, copy) NSString *detailText;

@@ -29,7 +29,7 @@
     _iconImageView = imageView;
     
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_iconImageView.frame), 60, 20)];
-    nameLabel.textColor = JMColor(153, 153, 153);
+    nameLabel.textColor = JMSubTitleColor;
     nameLabel.font = [UIFont systemFontOfSize:13.0];
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:nameLabel];
