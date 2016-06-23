@@ -10,5 +10,6 @@
 @class JMProductRecommendModel;
 @interface JMHomeProductCell : UITableViewCell
 @property (nonatomic, strong) JMProductRecommendModel *model;
+@property (nonatomic, weak) UIImageView *imageV;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

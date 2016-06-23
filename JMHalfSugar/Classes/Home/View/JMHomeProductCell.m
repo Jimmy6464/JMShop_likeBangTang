@@ -48,6 +48,7 @@
         return;
     }
     [self.productImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:PlaceHolderImage]];
+    self.imageV = self.productImageView;
     self.titleLable.text = model.tags;
     self.likeLabel.text =[NSString stringWithFormat:@"喜欢:%@", model.likes];
 }

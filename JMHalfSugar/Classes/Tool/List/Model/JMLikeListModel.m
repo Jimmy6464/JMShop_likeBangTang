@@ -17,11 +17,11 @@
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    if ([key isEqualToString:@"user_id"]) {
+    if ([key isEqualToString:@"user_id"] || [key isEqualToString:@"u"]) {
         _userID = value;
     }
-    if ([key isEqualToString:@"avatar"]) {
-        _headerImageUrl = value;
+    if ([key isEqualToString:@"avatar"] || [key isEqualToString:@"a"]) {
+        _headerImageUrl = [NSString stringWithFormat:@"http://7te7t9.com2.z0.glb.qiniucdn.com/\%@",value];
     }
     NSLog(@"--------Like list 's undefined key is %@",key);
 }

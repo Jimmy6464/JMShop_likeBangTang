@@ -14,6 +14,9 @@
     if ([key isEqualToString:@"pic"]) {
         _picUrl = value ;
     }
+    if ([key isEqualToString:@"id"]) {
+        _ID = value;
+    }
 }
 
 + (instancetype)userRecommendProductWithDictionary:(NSDictionary *)dict

@@ -15,4 +15,5 @@
 #import "UIImageView+WebCache.h"
 #import "JMNaviViewController.h"
 #import "UIColor+Hex.h"
+#import "UIView+AutoLayout.h"
 #endif

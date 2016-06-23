@@ -8,10 +8,12 @@
 
 #import "JMHomeViewController.h"
 #import "JMSearchViewController.h"
+#import "JMListDetailViewController.h"
 #import "JMBannerView.h"
 #import "JMTitleScrollView.h"
 #import "JMHomeProductCell.h"
 #import "JMProductRecommend.h"
+#import "JMProductRecommendModel.h"
 @interface JMHomeViewController ()<UITableViewDataSource,UITableViewDelegate,JMBannerViewDelegate,JMTitleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak)UITableView *tableView;
 @property (nonatomic, weak)JMBannerView *bannerView;
@@ -173,6 +175,16 @@ static CGFloat _currentContentOffSetX = 0.0f;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 188;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    JMHomeProductCell *cell =(JMHomeProductCell *) [tableView cellForRowAtIndexPath:indexPath];
+    JMProductRecommendModel *model = self.productArray[indexPath.row];
+    JMListDetailViewController *list = [JMListDetailViewController new];
+    list.image = cell.imageV.image;
+    list.listID = model.productID;
+    [list setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:list animated:YES];
 }
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

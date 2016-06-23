@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface JMUserRecommendTool : NSObject
-
++ (NSArray *)createUserRecommendModelWithListID:(NSString *)listID;
 @end

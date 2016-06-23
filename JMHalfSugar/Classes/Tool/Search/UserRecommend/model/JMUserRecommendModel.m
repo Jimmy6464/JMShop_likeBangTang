@@ -24,7 +24,7 @@
     if ([key isEqualToString:@"id"]) {
         _userRecommendID = value;
     }
-    if ([key isEqualToString:@"dateStr"]) {
+    if ([key isEqualToString:@"datestr"]) {
         _createTime = value;
     }
     if ([key isEqualToString:@"author"]) {
@@ -43,5 +43,43 @@
         [_dynamic setValuesForKeysWithDictionary:value];
     }
     
+    if ([key isEqualToString:@"product"]) {
+        NSMutableArray *productArray = [NSMutableArray new];
+        NSArray *products = value;
+        [products enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            JMUserRecommendProductModel *model = [JMUserRecommendProductModel userRecommendProductWithDictionary:obj];
+            [productArray addObject:model];
+        }];
+        _productArray = productArray;
+    }
+    
+    if ([key isEqualToString:@"tags"]) {
+        NSMutableArray *tagsArray = [NSMutableArray new];
+        NSArray *tags = value;
+        [tags enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            JMUserRecommendTagsModel *model = [JMUserRecommendTagsModel userRecommendTagsWithDcitionary:obj];
+            [tagsArray addObject:model];
+        }];
+        _tagArray = tagsArray;
+    }
+    
+}
+- (void)setAuthor:(JMAuthor *)author
+{
+    if ([author isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dcit = (NSDictionary *)author;
+        _author =[JMAuthor authorWithDictionary:dcit];
+    }else {
+        _author = author;
+    }
+}
+- (void)setDynamic:(JMUserRecommendDynamicModel *)dynamic
+{
+    if ([dynamic isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dcit = (NSDictionary *)dynamic;
+        _dynamic = [JMUserRecommendDynamicModel userRecommentDynamicWithDictionary:dcit];
+    }else {
+        _dynamic = dynamic;
+    }
 }
 @end

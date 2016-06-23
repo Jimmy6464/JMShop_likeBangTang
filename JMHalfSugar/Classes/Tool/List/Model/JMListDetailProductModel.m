@@ -32,6 +32,11 @@
             model.imageUrl = obj[@"pic"];
             model.im_width = [obj[@"width"] floatValue];
             model.im_height = [obj[@"height"] floatValue];
+            if ([obj.allKeys containsObject:@"p"]) {
+                model.imageUrl = obj[@"p"];
+                model.im_width = [obj[@"w"] floatValue];
+                model.im_height = [obj[@"h"] floatValue];
+            }
             [pictures addObject:model];
         }];
         _picArray = pictures;
@@ -48,5 +53,14 @@
     JMListDetailProductModel *model = [JMListDetailProductModel new];
     [model setValuesForKeysWithDictionary:dict];
     return model;
+}
+- (void)setLikes_list:(NSArray*)likes_list
+{
+    NSMutableArray *list = [NSMutableArray array];
+    [likes_list enumerateObjectsUsingBlock:^(NSDictionary *  obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        JMLikeListModel *model = [JMLikeListModel likeListModelWithDictionary:obj];
+        [list addObject:model];
+    }];
+    _likes_list = list;
 }
 @end

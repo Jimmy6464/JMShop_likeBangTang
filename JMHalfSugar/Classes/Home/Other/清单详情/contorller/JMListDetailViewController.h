@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface JMListDetailViewController : UIViewController
-
+@property (nonatomic, copy) NSString *listID;
+@property (nonatomic, strong) UIImage *image;
 @end

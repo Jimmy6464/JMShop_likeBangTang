@@ -65,7 +65,7 @@
 /*
  *  喜欢列表
  */
-@property (nonatomic, strong) NSArray<JMLikeListModel *> *likes_list;
+@property (nonatomic, strong) NSArray *likes_list;
 /*
  *  cell高度
  */

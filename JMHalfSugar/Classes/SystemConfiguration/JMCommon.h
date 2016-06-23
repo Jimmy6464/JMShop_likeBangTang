@@ -20,6 +20,7 @@
 #define JMPlaceHolderColor [UIColor colorWithHexString:@"B6B6B6"]
 #define JMViewGrayBackgroundColor [UIColor colorWithHexString:@"F5F5F5"]
 #define JMHalfBlackTitleColor [UIColor colorWithHexString:@"959595"]
+#define JMLightLineColor [UIColor colorWithHexString:@"F9F9F9"]
 
 #define ThinFont @"PingFangSC-Thin"
 #define LightFont @"PingFangSC-Light"
