@@ -43,7 +43,7 @@
 
 @property (nonatomic, strong)JMUserRecommendModel *model;
 @end
-
+static NSIndexPath *currentIndexPath;
 @implementation JMListRecommendCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -103,21 +103,45 @@
     [bottomLine autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.likesLabel withOffset:15];
     [bottomLine autoSetDimensionsToSize:CGSizeMake(JMDeviceWidth, 1.0)];
     
+    self.commentImageView.userInteractionEnabled = YES;
+    [self.commentImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickCenter:)]];
 }
 #pragma mark - clicked center
 - (void)clickCenter:(id)sender
 {
+    if ([sender isKindOfClass:[UITapGestureRecognizer class]]) {
+        [self.delegate listRecommendClickCenter:AllowComment_type atIndexPath:currentIndexPath];
+    }
+    [self.delegate listRecommendClickCenter:BuyThisProduct_type atIndexPath:currentIndexPath];
     
+}
+- (IBAction)commentAction:(id)sender {
+    [self.delegate listRecommendClickCenter:AllowComment_type atIndexPath:currentIndexPath];
+}
+- (IBAction)addToFavoriteAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    [self.delegate listRecommendClickCenter:LikeIt_type atIndexPath:currentIndexPath];
+}
+- (IBAction)shareAction:(UIButton *)sender {
+    [self.delegate  listRecommendClickCenter:ShareProduct_type atIndexPath:currentIndexPath];
 }
 
 - (void)tapProImageView:(UITapGestureRecognizer *)tap
 {
+    UIImageView * imageView = (UIImageView *)tap.view;
+    JMUserRecommendPicModel *picModel = _model.picArray[0];
     
-}
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    if(picModel.tagDict[@"x"] != nil && picModel.tagDict[@"y"] != nil)
+    {
+        if (imageView.subviews.count>0) {
+            for (UIView *view in imageView.subviews) {
+                [view removeFromSuperview];
+            }
+        }else {
+            [JMDrawLine createLineInView:BrokenLine contentView:imageView titleDict:picModel.tagDict];
+        }
+        
+    }
 }
 + (instancetype)cellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath withModel:(JMUserRecommendModel *)model
 {
@@ -125,8 +149,10 @@
     JMListRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
         cell = [[JMListRecommendCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.model = model;
+    currentIndexPath = indexPath;
     return cell;
 }
 - (void)setModel:(JMUserRecommendModel *)model

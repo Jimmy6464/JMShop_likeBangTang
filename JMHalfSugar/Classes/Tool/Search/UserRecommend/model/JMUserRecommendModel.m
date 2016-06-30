@@ -34,7 +34,7 @@
         NSArray *array = value;
         NSMutableArray *pics = [NSMutableArray new];
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            JMUserRecommendProductModel *model = [JMUserRecommendProductModel userRecommendProductWithDictionary:obj];
+            JMUserRecommendPicModel *model = [JMUserRecommendPicModel userRecommendPicWithDictionary:obj];
             [pics addObject:model];
         }];
         _picArray = pics;

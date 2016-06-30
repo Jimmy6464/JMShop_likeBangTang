@@ -20,8 +20,11 @@
     if ([key isEqualToString:@"id"]) {
         _categoryID = value;
     }
-    if ([key isEqualToString:@"icon"]) {
+    if ([key isEqualToString:@"icon" ]|| [key isEqualToString:@"photo"]) {
         _iconUrl = value;
+    }
+    if ([key isEqualToString:@"title"]) {
+        _name = value;
     }
     NSLog(@"SearchModel undefined key:%@",key);
 }

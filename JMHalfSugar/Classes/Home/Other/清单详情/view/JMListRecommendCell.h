@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JMListDetailCell.h"
 @class JMUserRecommendModel;
+
+@protocol  JMListRecommendCellDelegate <NSObject>
+- (void)listRecommendClickCenter:(ListDetailCellClickType)clickType atIndexPath:(NSIndexPath *)indexPath;
+
+@end
 @interface JMListRecommendCell : UITableViewCell
+@property (nonatomic, weak) id<JMListRecommendCellDelegate> delegate;
 + (instancetype)cellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath withModel:(JMUserRecommendModel *)model;
 @end

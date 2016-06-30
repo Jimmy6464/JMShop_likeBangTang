@@ -30,6 +30,7 @@
 @property (nonatomic, copy) NSString *subTitle;
 @property (nonatomic, strong) UIImage *image;
 @end
+
 @implementation JMListHeaderView
 - (instancetype)initWithFrame:(CGRect)frame withTitle:(NSString *)title subTitle:(NSString *)subTitle andImage:(UIImage *)image
 {

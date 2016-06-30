@@ -17,6 +17,7 @@
 @interface JMHomeViewController ()<UITableViewDataSource,UITableViewDelegate,JMBannerViewDelegate,JMTitleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak)UITableView *tableView;
 @property (nonatomic, weak)JMBannerView *bannerView;
+@property (nonatomic, weak)UIView *navigationBarBgView;
 @property (nonatomic, weak)UIView *headerView;
 @property (nonatomic, weak)UICollectionView *collectionView;
 @property (nonatomic, weak)JMTitleScrollView *titleScrollView;
@@ -54,7 +55,9 @@ static CGFloat _currentContentOffSetX = 0.0f;
     self.view.backgroundColor = [UIColor cyanColor];
     // Do any additional setup after loading the view.
     [self loadData];
+
     [self initializedSubviews];
+        [self createCustomNavgationBar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +70,30 @@ static CGFloat _currentContentOffSetX = 0.0f;
     self.productArray = [[JMProductRecommend alloc] createProductRecommendModelAtCategoryIndex:0];
 }
 #pragma mark - initialized subviews
+- (void)createCustomNavgationBar
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    UIView *navBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
+    
+    UIView *navBgView = [[UIView alloc]initWithFrame:navBar.bounds];
+    navBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+    [navBar addSubview:navBgView];
+    _navigationBarBgView = navBgView;
+    
+    UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    searchButton.frame = CGRectMake(10, 0, 28, 28);
+    searchButton.centerY = 42;
+    [searchButton setImage:[UIImage imageNamed:@"iconfont_search"] forState:UIControlStateNormal];
+    [navBar addSubview:searchButton];
+    
+    UIButton *signInBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [signInBtn setImage:[UIImage imageNamed:@"sign-in"] forState:UIControlStateNormal];
+    signInBtn.frame = CGRectMake(JMDeviceWidth-32-10, 0, 28, 28);
+    signInBtn.centerY = 42;
+    [navBar addSubview:signInBtn];
+    
+    [self.view addSubview:navBar];
+}
 - (void)initializedSubviews
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 257+36)];
@@ -212,15 +239,15 @@ static CGFloat _currentContentOffSetX = 0.0f;
         
         if (_headerView.y == -257+64) {
             //make the naviBar to be tranclent;
-            self.navigationController.navigationBar.alpha = 1.0f;
+            _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
         }else{
             //show the Bar;
-            self.navigationController.navigationBar.alpha = 0.0f;
+            _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0];
         }
         if (_headerView.y > -257+64 && scrollView.contentOffset.y > 0) {
             if (scrollView.contentOffset.y /43.0 < 1.0) {
                 //change th bar.alpha
-                self.navigationController.navigationBar.alpha = scrollView.contentOffset.y/43.0;
+                _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:scrollView.contentOffset.y/43.0];
             }
             _collectionView.frame = CGRectMake(0, _collectionView.y-scrollView.contentOffset.y, JMDeviceWidth, JMDeviceHeight);
             _headerView.center = CGPointMake(JMDeviceWidth/2, _headerView.y-scrollView.contentOffset.y);
@@ -231,14 +258,14 @@ static CGFloat _currentContentOffSetX = 0.0f;
         }else if (_headerView.y <= 0 && _collectionView.y <= 293 && scrollView.contentOffset.y < 0){
             if (-scrollView.y/43.0 < 1.0 && _headerView.y< 0) {
                 //change the bar.alpha
-                self.navigationController.navigationBar.alpha = -scrollView.contentOffset.y/43.0;
+                _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha: -scrollView.contentOffset.y/43.0];
             }
             _collectionView.center = CGPointMake(_collectionView.centerX, _collectionView.centerY-scrollView.contentOffset.y);
             _headerView.center = CGPointMake(JMDeviceWidth/2, _headerView.centerY-scrollView.contentOffset.y);
             if (_headerView.frame.origin.y > 0) {
                 _headerView.frame = CGRectMake(0, 0, JMDeviceWidth, 293);
                 _collectionView.frame = CGRectMake(0, CGRectGetMaxY(_headerView.frame), JMDeviceWidth, JMDeviceHeight);
-                self.navigationController.navigationBar.alpha = 0.0;
+                _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0];
             }
         }
     }

@@ -7,22 +7,26 @@
 //
 
 #import "JMListDetailViewController.h"
+#import "JMBuyProductViewController.h"
+#import "JMCommentViewController.h"
 
 #import "JMListDetailCell.h"
 #import "JMListRecommendCell.h"
 #import "JMListHeaderView.h"
 #import "JMSegmentView.h"
-#import "JMListDetailTool.h"
+#import "JMMoveToMyFavoriteViw.h"
 
+#import "JMListDetailTool.h"
 #import "JMUserRecommendTool.h"
 #import "JMUserRecommendModel.h"
+#import "JMUserRecommendProductModel.h"
 #import "JMListDetailProductModel.h"
 #import "JMListModel.h"
 typedef enum : NSUInteger {
     BanTangGoodSelectMode,
     UserRecommendMode,
 } TableViewMode;
-@interface JMListDetailViewController ()<JMSegmentViewDelegate,UITableViewDataSource,UITableViewDelegate,JMListDetailCellDelegate>
+@interface JMListDetailViewController ()<JMSegmentViewDelegate,UITableViewDataSource,UITableViewDelegate,JMListDetailCellDelegate,JMListRecommendCellDelegate>
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) JMListHeaderView *headerview;
 @property (nonatomic, strong) JMListModel *listModel;
@@ -38,7 +42,7 @@ typedef enum : NSUInteger {
 
 
 @end
-
+static CGFloat _headerViewH ;
 @implementation JMListDetailViewController
 
 - (void)viewDidLoad {
@@ -82,14 +86,17 @@ typedef enum : NSUInteger {
     CGRect frame = headerView.frame;
     frame.size.height +=45;
     headerView.frame = frame;
+    [self.view addSubview:headerView];
+    _headerview = headerView;
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight) style:UITableViewStylePlain];
+    
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_headerview.frame), JMDeviceWidth, JMDeviceHeight) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.tableHeaderView = headerView;
+//    tableView.tableHeaderView = headerView;
     [self.view addSubview:tableView];
     _tableView = tableView;
-    _headerview = headerView;
+
     
     [self.view bringSubviewToFront:_navBackView];
     [self.view bringSubviewToFront:_customBar];
@@ -215,6 +222,7 @@ typedef enum : NSUInteger {
         return cell;
     }else {
         JMListRecommendCell *cell = [JMListRecommendCell cellWithTableView:tableView atIndexPath:indexPath withModel:self.recommendArray[indexPath.section]];
+        cell.delegate = self;
         return cell;
     }
 }
@@ -255,6 +263,80 @@ typedef enum : NSUInteger {
 }
 - (void)clickCenterWithType:(ListDetailCellClickType)clickType atIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"clicked");
+    switch (clickType) {
+        case AllowComment_type:
+        {
+            [self.navigationController pushViewController:[JMCommentViewController new] animated:YES];
+            break;
+        }
+        case NotAllowComment_type:
+        {
+            [self.navigationController pushViewController:[JMCommentViewController new] animated:YES];
+            break;
+        }
+        case LikeIt_type:
+        {
+            NSLog(@"collected");
+            break;
+        }
+        case MoveToOtherFavoriteList_type:
+        {
+            JMListDetailProductModel *model = _listModel.prouctArray[0];
+            JMMoveToMyFavoriteViw *moveView = [[JMMoveToMyFavoriteViw alloc]initWithFrame:CGRectMake(0, JMDeviceHeight, JMDeviceWidth, JMDeviceHeight)];
+            [moveView showWithAnimation:model.productID];
+            break;
+        }
+        case BuyThisProduct_type:
+        {
+            JMListDetailProductModel *product = _listModel.prouctArray[0];
+            JMBuyProductViewController *buyPro = [[JMBuyProductViewController alloc]init];
+            buyPro.productURL = product.productUrl;
+            [self.navigationController pushViewController:buyPro animated:YES];
+        }
+        default:
+            break;
+    }
+}
+#pragma mark - JMListRecommendCellDelegate
+- (void)listRecommendClickCenter:(ListDetailCellClickType)clickType atIndexPath:(NSIndexPath *)indexPath
+{
+    switch (clickType) {
+        case AllowComment_type:
+        {
+            [self.navigationController pushViewController:[JMCommentViewController new] animated:YES];
+            break;
+        }
+        case LikeIt_type:
+        {
+            JMUserRecommendModel *model = _recommendArray[indexPath.section];
+            JMUserRecommendProductModel *product = model.productArray[0];
+            product.isCollect = YES;
+            [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:[NSString stringWithFormat:@"%d",product.isCollect]];
+            break;
+        }
+        case BuyThisProduct_type:
+        {
+            JMUserRecommendModel *model = _recommendArray[indexPath.section];
+            JMUserRecommendProductModel *product = model.productArray[0];
+            JMBuyProductViewController *buyPro = [[JMBuyProductViewController alloc]init];
+            buyPro.productURL = product.url;
+            [self.navigationController pushViewController:buyPro animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y < 0) {
+//        _headerview.y = scrollView.contentOffset.y;
+        
+    }else {
+//        _headerview.y -= scrollView.contentOffset.y;
+    }
+    NSLog(@"%lf",scrollView.contentOffset.y);
 }
 @end

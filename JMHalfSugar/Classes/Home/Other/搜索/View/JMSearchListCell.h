@@ -10,4 +10,5 @@
 @class JMSerchLishModel;
 @interface JMSearchListCell : JMSearchSingleCell
 @property (nonatomic, strong)JMSerchLishModel *searchListModel;
+- (void)setImageToCircle;
 @end

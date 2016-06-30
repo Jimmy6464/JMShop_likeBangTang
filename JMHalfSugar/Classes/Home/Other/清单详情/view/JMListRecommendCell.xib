@@ -56,11 +56,17 @@
                     <button opaque="NO" tag="10000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10S-Va-CVx">
                         <rect key="frame" x="16" y="328" width="22" height="23"/>
                         <state key="normal" image="comments"/>
+                        <connections>
+                            <action selector="commentAction:" destination="JSC-iv-B4B" eventType="touchUpInside" id="mof-6k-f3Y"/>
+                        </connections>
                     </button>
                     <button opaque="NO" tag="10001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnw-oP-gBJ">
                         <rect key="frame" x="48" y="329" width="24" height="22"/>
                         <state key="normal" image="addToFavoriteBtn"/>
                         <state key="highlighted" image="addToFavorite_selected"/>
+                        <connections>
+                            <action selector="addToFavoriteAction:" destination="JSC-iv-B4B" eventType="touchUpInside" id="xKo-az-ITL"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFd-do-LxL">
                         <rect key="frame" x="8" y="480" width="304" height="60"/>
@@ -175,6 +181,9 @@
                     <button opaque="NO" tag="10002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jER-1l-FX3">
                         <rect key="frame" x="82" y="327" width="24" height="24"/>
                         <state key="normal" image="Share_fire"/>
+                        <connections>
+                            <action selector="shareAction:" destination="JSC-iv-B4B" eventType="touchUpInside" id="kd7-zG-JgY"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZW-F7-7Hy">
                         <rect key="frame" x="0.0" y="359" width="320" height="43"/>

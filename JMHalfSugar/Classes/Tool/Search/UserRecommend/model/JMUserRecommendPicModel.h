@@ -26,7 +26,7 @@
 /*
  *  the sign of image
  */
-@property (nonatomic, copy) NSString *tag;
+@property (nonatomic, copy) NSString *tags;
 @property (nonatomic ,strong) NSDictionary *tagDict;
 
 + (instancetype)userRecommendPicWithDictionary:(NSDictionary *)dict;

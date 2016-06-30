@@ -177,7 +177,7 @@
     likeBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
     likeBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
     
-    [likeBtn addTarget:self action:@selector(clickeComment:) forControlEvents:UIControlEventTouchUpInside];
+    [likeBtn addTarget:self action:@selector(addToFavoriteClicked:) forControlEvents:UIControlEventTouchUpInside];
     NSNumber *isLike = [[NSUserDefaults standardUserDefaults] objectForKey:_model.productID];
     if (isLike == nil || isLike == NO) {
         likeBtn.selected = NO;

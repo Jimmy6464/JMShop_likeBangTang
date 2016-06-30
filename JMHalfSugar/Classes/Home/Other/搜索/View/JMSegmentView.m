@@ -13,9 +13,8 @@
 @property (nonatomic, copy)NSString *firstTitle;
 @property (nonatomic, weak)UILabel *secondLabel;
 @property (nonatomic, copy)NSString *secondTitle;
-@property (nonatomic, strong)UIColor *normalColor;
 @property (nonatomic, weak)UIView *indicatorView;
-@property (nonatomic, weak)UIView *middleLine;
+@property (nonatomic, strong)UIView *middleLine;
 @property (nonatomic, weak)UIView *topLine;
 @property (nonatomic, weak)UIView *bottomLline;
 
@@ -28,6 +27,7 @@
         self.normalColor = JMColor(109, 109, 109);
         self.firstTitle = firstTitle;
         self.secondTitle = secondTitle;
+        self.highlightColor = JMCustomBarTintColor;
         [self initializeSubviews];
     }
     return self;
@@ -61,7 +61,8 @@
     _secondLabel = secondLabel;
     
     //midel line
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, self.height*(2/3))];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(self.width/2-0.5, 0, 1, self.height*2/3)];
+    lineView.centerY = self.height/2;
     lineView.backgroundColor = [UIColor colorWithHexString:@"D8D8D8"];
     [self addSubview:lineView];
     _middleLine = lineView;
@@ -108,12 +109,12 @@
     CGFloat centerX;
     if (_currentIndex == 0) {
         centerX = _firstLabel.centerX;
-        _firstLabel.textColor = JMCustomBarTintColor;
+        _firstLabel.textColor = self.highlightColor;
         _secondLabel.textColor = self.normalColor;
     }else {
         centerX = _secondLabel.centerX;
         _firstLabel.textColor = _normalColor;
-        _secondLabel.textColor = JMCustomBarTintColor;
+        _secondLabel.textColor = self.highlightColor;
     }
     __weak JMSegmentView *weakSelf = self;
     [UIView animateWithDuration:0.3f animations:^{
@@ -127,8 +128,9 @@
 }
 - (void)setShowMidelSeparator:(BOOL)showMidelSeparator
 {
-    _showTopBottomSeparator = showMidelSeparator;
+    _showMidelSeparator = showMidelSeparator;
     _middleLine.hidden = _showMidelSeparator;
+
 }
 - (void)setShowTopBottomSeparator:(BOOL)showTopBottomSeparator
 {

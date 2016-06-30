@@ -37,4 +37,12 @@
     self.nameLabel.text = _searchListModel.name;
     self.englishNameLabel.text = _searchListModel.en_name;
 }
+- (void)setImageToCircle
+{
+    self.iconImageView.layer.cornerRadius = self.iconImageView.width/2;
+    self.iconImageView.clipsToBounds = YES;
+    self.englishNameLabel.text = _searchListModel.sub_title;
+    self.englishNameLabel.font = [UIFont systemFontOfSize:12.0];
+    [self.englishNameLabel sizeToFit];
+}
 @end

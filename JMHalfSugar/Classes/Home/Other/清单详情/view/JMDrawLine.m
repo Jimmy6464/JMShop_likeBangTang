@@ -70,7 +70,7 @@
     [self addSubview:centerView];
     
     //two top point
-    CGPoint topPoint1 = CGPointMake(centerX-18, centerX-40);
+    CGPoint topPoint1 = CGPointMake(centerX-18, centerY-40);
     CGPoint topPoint2 = CGPointMake(centerX-42, centerY-40);
     
     //right point
@@ -101,17 +101,13 @@
     [self moveAndDrawLine:path endPoint:rightPoint];
     
     NSString *text3 = titleDict[@"text3"];
-    [self addSubview:[self titleLabelWithTitle:text2 sidePoint:bottonPoint2 type:2]];
+    [self addSubview:[self titleLabelWithTitle:text3 sidePoint:bottonPoint2 type:2]];
     CGPathMoveToPoint(path, nil, centerX, centerY);
     [self moveAndDrawLine:path endPoint:bottonPoint1];
     [self moveAndDrawLine:path endPoint:bottonPoint2];
     
     drawLayer.path = path;
     [self.layer addSublayer:drawLayer];
-    
-
-    
-    
 }
 - (void)moveAndDrawLine:(CGMutablePathRef)path endPoint:(CGPoint)endPoint
 {

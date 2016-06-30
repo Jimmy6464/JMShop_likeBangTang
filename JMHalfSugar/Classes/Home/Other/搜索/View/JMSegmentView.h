@@ -19,5 +19,7 @@
 @property (nonatomic, assign)BOOL showMidelSeparator;
 @property (nonatomic, assign)BOOL  showTopBottomSeparator;
 @property (nonatomic, assign)id <JMSegmentViewDelegate> delegate;
+@property (nonatomic, strong)UIColor *normalColor;
+@property (nonatomic, strong)UIColor *highlightColor;
 - (instancetype)initWithFrame:(CGRect)frame firstTitle:(NSString *)firstTitle secondTitle:(NSString *)secondTitle;
 @end

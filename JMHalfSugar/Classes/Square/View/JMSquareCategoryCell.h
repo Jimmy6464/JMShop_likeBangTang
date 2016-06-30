@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class JMSerchLishModel;
 @interface JMSquareCategoryCell : UICollectionViewCell
-
+@property (nonatomic, strong) JMSerchLishModel *model;
 @end

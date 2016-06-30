@@ -98,12 +98,11 @@ NSTimer *_timer =nil;
 }
 - (void)starTimer
 {
-    _timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(autoMaticScroll) userInfo:nil repeats:YES];
+    _timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(autoMaticScroll) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 - (void)autoMaticScroll
 {
-
 
     if (_showScrollView.contentOffset.x == (self.bannerArray.count+1)*JMDeviceWidth) {
         //swipe to last one

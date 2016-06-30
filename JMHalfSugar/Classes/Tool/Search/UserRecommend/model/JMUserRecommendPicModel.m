@@ -31,11 +31,11 @@
         _height = height;
     }
 }
-- (void)setTag:(NSString *)tag
+- (void)setTags:(NSString *)tags
 {
-    _tag = tag;
-    if (_tag) {
-        NSData *stringData = [_tag dataUsingEncoding:NSUTF8StringEncoding];
+    _tags = tags;
+    if (_tags) {
+        NSData *stringData = [_tags dataUsingEncoding:NSUTF8StringEncoding];
         NSArray *dictArr = [NSJSONSerialization JSONObjectWithData:stringData options:NSJSONReadingAllowFragments error:nil];
         _tagDict = dictArr[0];
     }
