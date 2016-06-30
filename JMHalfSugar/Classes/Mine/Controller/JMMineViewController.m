@@ -98,6 +98,7 @@ enum ShowCollectionViewType {
 #pragma mark - initialized subviews
 - (void)initializedSubviews
 {
+
     //collectionveiwHeader
     UIView *collectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 385)];
     collectionHeaderView.backgroundColor = [UIColor clearColor];
@@ -118,7 +119,7 @@ enum ShowCollectionViewType {
         }]];
         [alert addAction:[UIAlertAction actionWithTitle:@"open album" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             NSLog(@"album");
-            [self presentViewController:[JMAlbumViewController new] animated:YES completion:nil];
+            [self presentViewController:[[JMNaviViewController alloc] initWithRootViewController:[JMAlbumViewController new]] animated:YES completion:nil];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     };

@@ -84,6 +84,7 @@
 		BFB988841D1D0481004607B6 /* JMCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB988831D1D0481004607B6 /* JMCommentViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BFB988871D1D0494004607B6 /* JMBuyProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB988861D1D0494004607B6 /* JMBuyProductViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BFBBC6741D250E1C0021E55E /* JMAlbumsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBBC6731D250E1C0021E55E /* JMAlbumsCell.m */; settings = {ASSET_TAGS = (); }; };
+		BFBC95C91D2572C900A2B831 /* JMFountionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBC95C81D2572C900A2B831 /* JMFountionView.m */; settings = {ASSET_TAGS = (); }; };
 		BFC546441D0BC20800C7EC48 /* JMCatergoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC5463F1D0BC20800C7EC48 /* JMCatergoryModel.m */; settings = {ASSET_TAGS = (); }; };
 		BFC546601D0BC3DA00C7EC48 /* 1872 in Resources */ = {isa = PBXBuildFile; fileRef = BFC546481D0BC3DA00C7EC48 /* 1872 */; settings = {ASSET_TAGS = (); }; };
 		BFC546611D0BC3DA00C7EC48 /* 1898 in Resources */ = {isa = PBXBuildFile; fileRef = BFC546491D0BC3DA00C7EC48 /* 1898 */; settings = {ASSET_TAGS = (); }; };
@@ -274,6 +275,8 @@
 		BFB988861D1D0494004607B6 /* JMBuyProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBuyProductViewController.m; sourceTree = "<group>"; };
 		BFBBC6721D250E1C0021E55E /* JMAlbumsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMAlbumsCell.h; sourceTree = "<group>"; };
 		BFBBC6731D250E1C0021E55E /* JMAlbumsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMAlbumsCell.m; sourceTree = "<group>"; };
+		BFBC95C71D2572C900A2B831 /* JMFountionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMFountionView.h; sourceTree = "<group>"; };
+		BFBC95C81D2572C900A2B831 /* JMFountionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMFountionView.m; sourceTree = "<group>"; };
 		BFC5463E1D0BC20800C7EC48 /* JMCatergoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCatergoryModel.h; sourceTree = "<group>"; };
 		BFC5463F1D0BC20800C7EC48 /* JMCatergoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCatergoryModel.m; sourceTree = "<group>"; };
 		BFC546481D0BC3DA00C7EC48 /* 1872 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1872; sourceTree = "<group>"; };
@@ -738,6 +741,8 @@
 				BF00B0351D24B2A0002F0149 /* JMDoubleLabel.m */,
 				BFBBC6721D250E1C0021E55E /* JMAlbumsCell.h */,
 				BFBBC6731D250E1C0021E55E /* JMAlbumsCell.m */,
+				BFBC95C71D2572C900A2B831 /* JMFountionView.h */,
+				BFBC95C81D2572C900A2B831 /* JMFountionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1222,6 +1227,7 @@
 				BF9090281D1A408700EA14EB /* JMListRecommendCell.m in Sources */,
 				BFB988871D1D0494004607B6 /* JMBuyProductViewController.m in Sources */,
 				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
+				BFBC95C91D2572C900A2B831 /* JMFountionView.m in Sources */,
 				BF6D1C191D127F33004992BD /* JMCommentUsersModel.m in Sources */,
 				BFF9EDAF1D1BB6C3004BEC54 /* JMDrawLine.m in Sources */,
 				BF69288A1D1D1D3B009662BD /* JMMoveToMyFavoriteViw.m in Sources */,
