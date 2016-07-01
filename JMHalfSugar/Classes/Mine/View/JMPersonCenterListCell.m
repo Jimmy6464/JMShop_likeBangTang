@@ -36,7 +36,7 @@
     _titleLabel = titleLabel;
     
     //
-    UILabel *likeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 342/2, JMDeviceWidth, 63/2)];
+    UILabel *likeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 342/2+63/2, JMDeviceWidth, 63/2)];
     likeLabel.tag = 110;
     likeLabel.font = [UIFont systemFontOfSize:16.0];
     likeLabel.textAlignment = NSTextAlignmentCenter;

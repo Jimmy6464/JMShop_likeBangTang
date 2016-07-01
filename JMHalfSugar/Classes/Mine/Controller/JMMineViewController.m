@@ -41,6 +41,7 @@ enum ShowCollectionViewType {
 @property (nonatomic, weak)UIImageView *backImageView;
 @property (nonatomic, strong)UIView *collectionHeadView;
 @property (nonatomic, weak)UICollectionView *showCollectionView;
+@property (nonatomic, weak)UIView *naviBar;
 @property (nonatomic, assign)enum ShowCollectionViewType collectionViewType;
 
 @property (nonatomic, strong)NSMutableArray *singleList;//SearchSingleGoodsModel
@@ -156,7 +157,10 @@ enum ShowCollectionViewType {
     [collectionHeaderView addSubview:titleScrollView];
     self.titleView = titleScrollView;
     _collectionHeadView = collectionHeaderView;
+    //collectionview
     [self setUpCollectionView];
+    //navigationbar
+    [self generateNavigatioBar];
 
 }
 - (void)setUpCollectionView
@@ -184,6 +188,24 @@ enum ShowCollectionViewType {
     _showCollectionView = showCollectionView;
     
 }
+- (void)generateNavigatioBar
+{
+    UIView *navBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
+    navBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+    //
+    UIButton *genderBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [genderBtn setImage:[UIImage imageNamed:@"iconfont-男人"] forState:UIControlStateNormal];
+    genderBtn.frame = CGRectMake(20, 30, 24, 24);
+    [navBar addSubview:genderBtn];
+    
+    //
+    UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [settingBtn setImage:[UIImage imageNamed:@"iconfont-shezhi"] forState:UIControlStateNormal];
+    settingBtn.frame = CGRectMake(JMDeviceWidth-24-20, 30, 24, 24);
+    [navBar addSubview:settingBtn];
+    [self.view addSubview:navBar];
+    _naviBar = navBar;
+}
 #pragma mark - JMTitleScrollViewDelegate
 - (void)clickedTitleView:(JMTitleScrollView *)titleView atIndex:(NSInteger)index
 {
@@ -192,10 +214,10 @@ enum ShowCollectionViewType {
             _collectionViewType = SingleMode;
             break;
         case 1:
-            _collectionViewType = SingleMode;
+            _collectionViewType = ListMode;
             break;
         case 2:
-            _collectionViewType = SingleMode;
+            _collectionViewType = ActivityMode;
             break;
         case 3:
             _collectionViewType = SingleMode;
@@ -223,7 +245,6 @@ enum ShowCollectionViewType {
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"ffds");
     switch (_collectionViewType) {
         case SingleMode:
         {
@@ -300,22 +321,26 @@ enum ShowCollectionViewType {
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat scrollY = scrollView.contentOffset.y;
-    
-    if (scrollY>= 0 && scrollY < 230+111) {
+    NSLog(@"%lf",scrollY);
+    if (scrollY>= 0 && scrollY < 277) {
+
+        _naviBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:scrollY/277];
         self.backImageView.y = -scrollY;
         //put the titleView back on the collectionHeaderView
         [self.titleView removeFromSuperview];
         self.titleView.frame = CGRectMake(0, 230+111, JMDeviceWidth, 45);
         [_collectionHeadView addSubview:_titleView];
     }else if (scrollY <= 0 ){
+        _naviBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0];
         CGFloat scale = (230-scrollY)/230;
         _backImageView.transform = CGAffineTransformMakeScale(scale, scale);
         _backImageView.frame = CGRectMake(-JMDeviceWidth*(scale-1)/2, 0, JMDeviceWidth*scale, scale*230);
         
-    }else if(scrollY == 341 ||(scrollY>341 && _titleView.y != 45)) {
+    }else if(scrollY == 277 ||(scrollY>277 && _titleView.y != 45)) {
+        _naviBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
         //(scrollY>341 && _titleView.y != 45) 防止滚动过快 titleView没有移除
         [_titleView removeFromSuperview];
-        _titleView.frame = CGRectMake(0, 20, JMDeviceWidth, 45);
+        _titleView.frame = CGRectMake(0, 64, JMDeviceWidth, 45);
         _titleView.layer.zPosition = 2.0;
         [self.view addSubview:_titleView];
     }
