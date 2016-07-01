@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JMProductTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="proName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3Y-fc-p78">
+                    <rect key="frame" x="10" y="260" width="300" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVi-TY-AWR">
+                    <rect key="frame" x="10" y="291" width="300" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.96862745100000003" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotline" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-Q6-8Ql">
+                    <rect key="frame" x="10" y="322" width="300" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="lC8-27-2d3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-Ob-fez">
+                    <rect key="frame" x="10" y="344" width="300" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5B-vw-hGk">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="wSh-f7-Zzb"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="OVb-WV-l5Q"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="L3Y-fc-p78" secondAttribute="trailing" constant="10" id="00g-Jj-h4d"/>
+                <constraint firstAttribute="trailing" secondItem="c5B-vw-hGk" secondAttribute="trailing" id="3Jk-Of-SBE"/>
+                <constraint firstItem="q0Z-Q6-8Ql" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="3Pj-fr-0se"/>
+                <constraint firstItem="c5B-vw-hGk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4GX-jW-0g7"/>
+                <constraint firstItem="q0Z-Q6-8Ql" firstAttribute="top" secondItem="vVi-TY-AWR" secondAttribute="bottom" constant="10" id="Aep-R4-pND"/>
+                <constraint firstItem="L3Y-fc-p78" firstAttribute="top" secondItem="c5B-vw-hGk" secondAttribute="bottom" constant="10" id="Jbt-Tm-2Fb"/>
+                <constraint firstAttribute="trailing" secondItem="G23-Ob-fez" secondAttribute="trailing" constant="10" id="JzS-3g-PNn"/>
+                <constraint firstItem="c5B-vw-hGk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NM5-VI-ezS"/>
+                <constraint firstItem="L3Y-fc-p78" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Uac-pU-UDk"/>
+                <constraint firstItem="G23-Ob-fez" firstAttribute="top" secondItem="q0Z-Q6-8Ql" secondAttribute="bottom" constant="10" id="cui-MI-bqs"/>
+                <constraint firstAttribute="trailing" secondItem="q0Z-Q6-8Ql" secondAttribute="trailing" constant="10" id="ejf-et-YqW"/>
+                <constraint firstItem="vVi-TY-AWR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="eoR-g2-XIm"/>
+                <constraint firstItem="vVi-TY-AWR" firstAttribute="top" secondItem="L3Y-fc-p78" secondAttribute="bottom" constant="10" id="v58-Uh-ZnY"/>
+                <constraint firstAttribute="trailing" secondItem="vVi-TY-AWR" secondAttribute="trailing" constant="10" id="v8C-oa-vhY"/>
+                <constraint firstItem="G23-Ob-fez" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="zfs-DZ-lUU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="G23-Ob-fez" id="6Ov-hV-svY"/>
+                <outlet property="priceLabel" destination="vVi-TY-AWR" id="z2d-ai-F3c"/>
+                <outlet property="proNameLabel" destination="L3Y-fc-p78" id="daJ-0L-6fZ"/>
+                <outlet property="scrollView" destination="c5B-vw-hGk" id="EoM-kC-GfY"/>
+                <outlet property="scrollViewHeight" destination="wSh-f7-Zzb" id="kg1-Df-5Ap"/>
+            </connections>
+            <point key="canvasLocation" x="324" y="208"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="spotline" width="148" height="15"/>
+    </resources>
+</document>

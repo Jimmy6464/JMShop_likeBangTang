@@ -36,7 +36,6 @@
     JMLabel *detailLabel = [[JMLabel alloc]initWithFrame:CGRectMake(0, 145, 145, 120) title:@"" font:[UIFont fontWithName:LightFont size:14.0] textColor:JMMainTitleColor lineSpacing:4.0 andTextEdgeInsets:UIEdgeInsetsMake(0, 7, 0, 0)];
     detailLabel.clipsToBounds = YES;
     [self.contentView addSubview:detailLabel];
-    _detailLabel = detailLabel;
     
     UIButton *likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [likeBtn setImage:[UIImage imageNamed:@"addToFavorite_selected"] forState:UIControlStateNormal];
@@ -53,7 +52,7 @@
     if (_model) {
         JMUserRecommendProductModel *product = [_model.productArray objectAtIndex:0];
         JMUserRecommendDynamicModel *dynamic = _model.dynamic;
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:product.picUrl] placeholderImage:[UIImage imageNamed:@"placeHolder"]];
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:product.url] placeholderImage:[UIImage imageNamed:@"placeHolder"]];
         self.detailLabel.title = _model.content;
         self.detailLabel.frame = CGRectMake(0, 145, 145, 47);
         
