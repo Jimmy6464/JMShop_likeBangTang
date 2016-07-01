@@ -81,6 +81,7 @@ enum ShowCollectionViewType {
     [self loadData];
     
     [self initializedSubviews];
+    [self generateNavigationBar];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -159,6 +160,13 @@ enum ShowCollectionViewType {
     [self setUpCollectionView];
 
 }
+- (void)generateNavigationBar
+{
+    UIView *navigationBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
+    navigationBar.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:navigationBar];
+    
+}
 - (void)setUpCollectionView
 {
     UICollectionViewFlowLayout *flowlayout = [[UICollectionViewFlowLayout alloc]init];
@@ -192,13 +200,13 @@ enum ShowCollectionViewType {
             _collectionViewType = SingleMode;
             break;
         case 1:
-            _collectionViewType = SingleMode;
+            _collectionViewType = ListMode;
             break;
         case 2:
-            _collectionViewType = SingleMode;
+            _collectionViewType = ActivityMode;
             break;
         case 3:
-            _collectionViewType = SingleMode;
+            _collectionViewType = PublishMode;
             break;
         default:
             break;
@@ -223,7 +231,6 @@ enum ShowCollectionViewType {
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"ffds");
     switch (_collectionViewType) {
         case SingleMode:
         {
