@@ -46,6 +46,7 @@
     _image = image;
     if (_image == nil) {
         self.imageView.image = [UIImage imageNamed:@"btn_library_camera"];
+        return;
     }
     self.imageView.image = _image;
 }

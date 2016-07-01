@@ -58,7 +58,8 @@
         //
         for (NSInteger i = 0; i < smartAlbums.count; i++) {
             PHAssetCollection *assetCollection = smartAlbums[i];
-            if ([assetCollection.localIdentifier isEqualToString:@"相机胶卷"] || [assetCollection.localIdentifier isEqualToString:@"Camera Roll"]) {
+
+            if ([assetCollection.localizedTitle isEqualToString:@"相机胶卷"] || [assetCollection.localizedTitle isEqualToString:@"Camera Roll"]) {
                 self.currentPhotoData = [PHAsset fetchAssetsInAssetCollection:assetCollection options:options];
             }
         }
@@ -67,6 +68,13 @@
 }
 - (void)initializedSubviews
 {
+    //NavigationBarItem
+    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelClicked)];
+    self.navigationItem.leftBarButtonItem = cancelItem;
+    UIBarButtonItem *confirmItem = [[UIBarButtonItem alloc]initWithTitle:@"确认" style:UIBarButtonItemStyleDone target:self action:nil];
+    self.navigationItem.rightBarButtonItem = confirmItem;
+    
+    //
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -81,6 +89,11 @@
     [self.view addSubview:showCollectionView];
     _showCollectionView = showCollectionView;
 }
+#pragma mark - navigationBarItem
+- (void)cancelClicked
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -93,9 +106,9 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     JMAlbumsCell *cell = [JMAlbumsCell cellWithCollectionView:collectionView atIndexPath:indexPath andImage:nil];
-    if (indexPath.row != 0) {
-        PHAsset *assets = self.currentPhotoData[indexPath.row - 1];
-        [self.imageManager requestImageForAsset:assets targetSize:CGSizeMake(103, 103) contentMode:PHImageContentModeAspectFit options:self.imageRequestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    if (indexPath.item != 0) {
+        PHAsset *assets = self.currentPhotoData[indexPath.item - 1];
+        [self.imageManager requestImageForAsset:assets targetSize:CGSizeMake(103, 103) contentMode:PHImageContentModeAspectFill options:self.imageRequestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             cell.image = result;
         }];
     }else {
