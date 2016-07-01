@@ -39,7 +39,7 @@
 		BF5D21B71CF80549008A6B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D21B51CF80549008A6B63 /* LaunchScreen.storyboard */; };
 		BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D51CF808DB008A6B63 /* AppDelegate.m */; };
 		BF5D21DA1CF808DB008A6B63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5D21D61CF808DB008A6B63 /* main.m */; };
-<<<<<<< HEAD
+
 		BF5E13211D24BB0900412EA7 /* JMImageOperationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E13201D24BB0900412EA7 /* JMImageOperationCenter.m */; };
 		BF5E13241D24FF6900412EA7 /* JMAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E13231D24FF6900412EA7 /* JMAlbumViewController.m */; };
 		BF69288A1D1D1D3B009662BD /* JMMoveToMyFavoriteViw.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6928891D1D1D3B009662BD /* JMMoveToMyFavoriteViw.m */; };
@@ -121,7 +121,7 @@
 		BFF0214C1D236FAD00C8EFD7 /* JMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF0214B1D236FAD00C8EFD7 /* JMSquareModel.m */; };
 		BFF9EDAF1D1BB6C3004BEC54 /* JMDrawLine.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF9EDAE1D1BB6C3004BEC54 /* JMDrawLine.m */; };
 		BFFCD8031D23BE1D0073A53C /* JMPlantGrassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCD8021D23BE1D0073A53C /* JMPlantGrassCell.m */; };
-=======
+
 		BF5E13211D24BB0900412EA7 /* JMImageOperationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E13201D24BB0900412EA7 /* JMImageOperationCenter.m */; settings = {ASSET_TAGS = (); }; };
 		BF5E13241D24FF6900412EA7 /* JMAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E13231D24FF6900412EA7 /* JMAlbumViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF69288A1D1D1D3B009662BD /* JMMoveToMyFavoriteViw.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6928891D1D1D3B009662BD /* JMMoveToMyFavoriteViw.m */; settings = {ASSET_TAGS = (); }; };
@@ -207,7 +207,7 @@
 		BFF0214C1D236FAD00C8EFD7 /* JMSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF0214B1D236FAD00C8EFD7 /* JMSquareModel.m */; settings = {ASSET_TAGS = (); }; };
 		BFF9EDAF1D1BB6C3004BEC54 /* JMDrawLine.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF9EDAE1D1BB6C3004BEC54 /* JMDrawLine.m */; settings = {ASSET_TAGS = (); }; };
 		BFFCD8031D23BE1D0073A53C /* JMPlantGrassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFCD8021D23BE1D0073A53C /* JMPlantGrassCell.m */; settings = {ASSET_TAGS = (); }; };
->>>>>>> 7c17915d91fd7532dc00502f3011021705af6b71
+        7c17915d91fd7532dc00502f3011021705af6b71
 		E6A395EF53889F538AF9CDDC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E821C7106006BF8509ED356A /* libPods.a */; };
 /* End PBXBuildFile section */
 
