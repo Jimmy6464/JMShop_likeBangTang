@@ -10,6 +10,6 @@
 
 @interface JMFountionView : UIView
 {
-    void (^buttonClicked)(NSUInteger tag);
+    @public void (^buttonClicked)(NSUInteger tag);
 }
 @end
