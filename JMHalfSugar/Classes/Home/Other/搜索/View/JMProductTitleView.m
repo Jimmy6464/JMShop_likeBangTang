@@ -29,6 +29,12 @@
     }
     return self;
 }
+- (void)awakeFromNib
+{
+    self.descriptionLabel.font = [UIFont fontWithName:LightFont size:15.0];
+    self.descriptionLabel.textColor = JMSubTitleColor;
+    self.proNameLabel.textColor = JMMainTitleColor;
+}
 - (void)setModel:(JMProductDetailModel *)model
 {
     _model = model;

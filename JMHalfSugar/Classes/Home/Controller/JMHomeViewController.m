@@ -75,7 +75,10 @@ static CGPoint  _currentContentOffSet;
 #pragma mark- load data
 - (void)loadData
 {
-    self.productArray = [[JMProductRecommend alloc] createProductRecommendModelAtCategoryIndex:0];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.productArray = [[JMProductRecommend alloc] createProductRecommendModelAtCategoryIndex:0];
+    });
+    
 }
 #pragma mark - initialized subviews
 - (void)createCustomNavgationBar
@@ -202,7 +205,8 @@ static CGPoint  _currentContentOffSet;
                 }
             }];
         }
-    }else if(scrollY>=tagetY){
+    }
+    if(scrollY>=tagetY){
         _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:1.0];
         if ([_headerView.subviews containsObject:_titleScrollView]) {
             [_titleScrollView removeFromSuperview];
@@ -215,7 +219,7 @@ static CGPoint  _currentContentOffSet;
         _signBtn.alpha = 1.0;
         [UIView animateWithDuration:0.2 animations:^{
             _searchBar.hidden = NO;
-            _searchBar.transform = CGAffineTransformMakeTranslation(300, 0);
+            _searchBar.transform = CGAffineTransformMakeTranslation(JMDeviceWidth-_signBtn.width-15*3, 0);
         }];
     }
     if (scrollY<0) {
@@ -230,7 +234,7 @@ static CGPoint  _currentContentOffSet;
 {
     JMSearchViewController *search = [JMSearchViewController new];
     [search setHidesBottomBarWhenPushed:YES];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [search.navigationController setNavigationBarHidden:NO];
     [self.navigationController pushViewController:search animated:YES];
 }
 #pragma makr -UICollectionViewDataSource
@@ -253,7 +257,6 @@ static CGPoint  _currentContentOffSet;
     }
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight-64-_titleScrollView.height) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
-//    tableView.contentInset = UIEdgeInsetsMake(64, 0, 64, 0);
     tableView.delegate = self;
     tableView.dataSource = self;
     [tableView reloadData];
@@ -334,9 +337,11 @@ static CGPoint  _currentContentOffSet;
     switch (clickType) {
         case GoodThingClickType:
             NSLog(@"goodthing");
+            
             break;
         case SearchClickType:
             NSLog(@"search");
+            [self showSearching];
             break;
             
         case PlantGrassClickType:

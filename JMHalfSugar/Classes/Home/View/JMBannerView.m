@@ -89,7 +89,7 @@ NSTimer *_timer =nil;
     for (NSInteger i = 0; i < 4; i++) {
         UIButton *goodThing = [UIButton buttonWithType:UIButtonTypeCustom];
         goodThing.frame = CGRectMake(24+45*i+margin*i, 175, 45, 70);
-        goodThing.tag = 1;
+        goodThing.tag = 1+i;
         [goodThing setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
         goodThing.adjustsImageWhenDisabled = NO;
         [goodThing addTarget:self action:@selector(clickedAction:) forControlEvents:UIControlEventTouchUpInside];

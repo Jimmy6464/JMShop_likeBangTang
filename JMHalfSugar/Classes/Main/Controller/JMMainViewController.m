@@ -12,7 +12,7 @@
 #import "JMMessageViewController.h"
 #import "JMSquareViewController.h"
 #import "JMMineViewController.h"
-#import "JMCameraViewController.h"
+#import "JMAlbumViewController.h"
 #import "JMTabBar.h"
 @interface JMMainViewController ()<JMTabBarDelegate>
 @property (nonatomic, strong) JMTabBar *customTabBar;
@@ -86,6 +86,6 @@
 - (void)tabBarDidClickAddBtn:(JMTabBar *)tabBar
 {
     //add button clicked
-    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:[JMCameraViewController new]] animated:YES completion:nil];
+    [self presentViewController:[[JMNaviViewController alloc] initWithRootViewController:[JMAlbumViewController new]] animated:YES completion:nil];
 }
 @end

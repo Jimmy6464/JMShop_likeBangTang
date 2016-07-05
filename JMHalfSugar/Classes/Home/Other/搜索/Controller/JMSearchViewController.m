@@ -18,6 +18,7 @@
 
 @interface JMSearchViewController ()<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,JMSegmentViewDelegate,JMINventoryViewDelegate>
 @property (nonatomic, weak)UISearchBar *searchBar;
+@property (nonatomic, weak)UIView *naviBgView;
 @property (nonatomic, weak)JMSegmentView *segmentView;
 @property (nonatomic, weak)JMInventoryView *inventoryView;
 @property (nonatomic, weak)UIScrollView *mainScrollView;
@@ -56,10 +57,10 @@
     [self loadData];
     [self initializedSubviews];
 }
-- (void)viewWillDisappear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [_searchBar removeFromSuperview];
-    
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -76,22 +77,23 @@
 #pragma mark - initialized subviews
 - (void)initializedSubviews
 {
+    [self createCustomNavgationBar];
+    /*//
+     UISearchBar *searchBar  = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, JMDeviceWidth-60, 44)];
+     searchBar.layer.cornerRadius = 20.0f;
+     for (UIView *view in searchBar.subviews) {
+     if ([view isKindOfClass:[UITextField class]]) {
+     view.layer.cornerRadius = 20.0f;
+     }
+     }
+     [searchBar setTintColor:[UIColor whiteColor]];
+     searchBar.delegate = self;
+     searchBar.placeholder = @"搜索单品、清单、帖子、用户";
+     [searchBar setPositionAdjustment:UIOffsetMake(30, 0) forSearchBarIcon:UISearchBarIconSearch];
+     [self.navigationController.navigationBar insertSubview:searchBar aboveSubview:self.navigationController.navigationBar];
+     _searchBar = searchBar;*/
     //
-    UISearchBar *searchBar  = [[UISearchBar alloc]initWithFrame:CGRectMake(50, 0, JMDeviceWidth-60, 44)];
-    searchBar.layer.cornerRadius = 20.0f;
-    for (UIView *view in searchBar.subviews) {
-        if ([view isKindOfClass:[UITextField class]]) {
-            view.layer.cornerRadius = 20.0f;
-        }
-    }
-    [searchBar setTintColor:[UIColor whiteColor]];
-    searchBar.delegate = self;
-    searchBar.placeholder = @"搜索单品、清单、帖子、用户";
-    [searchBar setPositionAdjustment:UIOffsetMake(30, 0) forSearchBarIcon:UISearchBarIconSearch];
-    [self.navigationController.navigationBar insertSubview:searchBar aboveSubview:self.navigationController.navigationBar];
-    _searchBar = searchBar;
-    //
-    JMSegmentView *segmentView =[[JMSegmentView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 44) firstTitle:@"清单" secondTitle:@"单品"];
+    JMSegmentView *segmentView =[[JMSegmentView alloc]initWithFrame:CGRectMake(0, _naviBgView.height, JMDeviceWidth, 44) firstTitle:@"清单" secondTitle:@"单品"];
     segmentView.delegate = self;
     [self.view addSubview:segmentView];
     _segmentView = segmentView;
@@ -129,6 +131,44 @@
     [mainScrollView addSubview:inventoryView];
     [mainScrollView addSubview:collectionView];
     _mainScrollView = mainScrollView;
+}
+- (void)createCustomNavgationBar
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    UIView *navBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
+    
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(10, 0, 28, 28);
+    backBtn.centerY = 42;
+    [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImage:[UIImage imageNamed:@"mobile-back"] forState:UIControlStateNormal];
+    [navBar addSubview:backBtn];
+    
+    CGFloat searhBarWidth = JMDeviceWidth-backBtn.width-15*2-10;
+    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(backBtn.width+15+10, 0, searhBarWidth, 44)];
+    searchBar.centerY = 42;
+    searchBar.delegate  = self;
+    searchBar.searchBarStyle =UISearchBarStyleMinimal;
+    searchBar.tintColor = [UIColor redColor];
+    searchBar.placeholder = @"searching your favorite product";
+    [navBar addSubview:searchBar];
+    for (UIView *view in searchBar.subviews) {
+        for (UIView *subView in view.subviews) {
+            if ([subView isKindOfClass:[UITextField class]]) {
+                UITextField *textField = (UITextField *)subView;
+                textField.clipsToBounds = YES;
+                textField.layer.cornerRadius = 25/2;
+            }
+        }
+    }
+    _searchBar = searchBar;
+    [self.view addSubview:navBar];
+    _naviBgView = navBar;
+}
+- (void)backAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar

@@ -27,3 +27,4 @@
 #define RegularFont @"PingFangSC-Regular"
 
 #define JMNotificationCenter [NSNotificationCenter defaultCenter]
+#define JMChangeGender @"ChangeGender"

@@ -49,7 +49,6 @@
     [_manButton setImage:[UIImage imageNamed:@"Man_unselected"] forState:UIControlStateNormal];
     [_manButton setImage:[UIImage imageNamed:@"Man_selected"] forState:UIControlStateSelected];
     _manButton.adjustsImageWhenHighlighted = false;
-    _manButton.selected = true;
     [_manButton addTarget:self action:@selector(clickCenter:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_manButton];
     
@@ -74,6 +73,14 @@
     _completeBtn.frame = CGRectMake(JMDeviceWidth/2-158/2-_completeBtn.width/2, JMDeviceHeight-64-_completeBtn.height-24-10, _completeBtn.width+158, _completeBtn.height);
     [_completeBtn addTarget:self action:@selector(clickCompleteBtn) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_completeBtn];
+    
+    //
+    NSString *object = [[NSUserDefaults standardUserDefaults] objectForKey:@"gender"];
+    if (object == nil || [object isEqualToString:@"male"]) {
+        _manButton.selected = YES;
+    }else {
+        _womanButton.selected = YES;
+    }
 }
 #pragma mark
 - (void)clickCenter:(UIButton *)btn
@@ -81,7 +88,9 @@
     if (btn.tag == 110) {
         _womanButton.selected = NO;
         _manButton.selected = YES;
+        [[NSUserDefaults standardUserDefaults] setObject:@"male" forKey:@"gender"];
     }else {
+        [[NSUserDefaults standardUserDefaults] setObject:@"female" forKey:@"gender"];
         _womanButton.selected = YES;
         _manButton.selected = NO;
     }
@@ -89,7 +98,9 @@
 }
 - (void)clickCompleteBtn
 {
+    [JMNotificationCenter postNotificationName:JMChangeGender object:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 /*
  tipLabel = UILabel(frame: CGRectZero)

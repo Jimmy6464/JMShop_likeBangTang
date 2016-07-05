@@ -14,6 +14,10 @@
 #import "JMCommentModel.h"
 @interface JMProductDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) UIView *customNavigationBar;
+@property (nonatomic, weak) UIButton *backBtn;
+@property (nonatomic, weak) UIButton *shareBtn;
+@property (nonatomic, weak) UILabel *titleLbl;
 @property (nonatomic, weak)JMProductTitleView *titleView;
 @property (nonatomic, weak)UIView *bottomView;
 @property (nonatomic, strong)NSMutableArray *comments;
@@ -36,6 +40,7 @@ static CGFloat _imageHeight = 250;
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self initializedSubviews];
+    [self setUpCustomNavigationBar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +61,7 @@ static CGFloat _imageHeight = 250;
     _scrollViewheight = _titleView.height;
 
     //tableView
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight-64-44) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight-44) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.contentInset = UIEdgeInsetsMake(titleView.height, 0, 0, 0);
@@ -94,6 +99,46 @@ static CGFloat _imageHeight = 250;
     
     [bottomView addSubview:likeBtn];
     _bottomView = bottomView;
+}
+- (void)setUpCustomNavigationBar
+{
+    UIView *navBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
+    navBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(10, 0, 28, 28);
+    [backBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"mobile-back"] forState:UIControlStateHighlighted];
+    [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    backBtn.centerY = 42;
+    [navBar addSubview:backBtn];
+    _backBtn = backBtn;
+    
+    UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(JMDeviceWidth-28-10, 0, 28, 28);
+    [shareBtn setImage:[UIImage imageNamed:@"share_normal"] forState:UIControlStateNormal];
+    [shareBtn setImage:[UIImage imageNamed:@"share_hl"] forState:UIControlStateHighlighted];
+    [shareBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    shareBtn.centerY = 42;
+    [navBar addSubview:shareBtn];
+    _shareBtn = shareBtn;
+    
+    UILabel *titleLbael = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    titleLbael.text = @"产品详情";
+    titleLbael.font = [UIFont fontWithName:RegularFont size:16.0];
+    titleLbael.textColor = [UIColor colorWithHexString:@"EC5252" alpha:0.0];
+    [titleLbael sizeToFit];
+    titleLbael.center = CGPointMake(JMDeviceWidth/2, 42);
+    [navBar addSubview:titleLbael];
+    _titleLbl = titleLbael;
+
+    [self.view addSubview:navBar];
+    _customNavigationBar = navBar;
+    
+}
+- (void)backAction:(UIButton *)btn
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)goToComment
 {
@@ -155,6 +200,28 @@ static CGFloat _imageHeight = 250;
         frame.origin.y = y;
         frame.size.height = -y;
         _titleView.frame = frame;
+    }
+    if (y < -264) {
+        _customNavigationBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+        _titleLbl.textColor = [UIColor colorWithHexString:@"EC5252" alpha:0];
+        _shareBtn.highlighted = NO;
+        _backBtn.highlighted = NO;
+        _shareBtn.alpha = 1.0;
+        _backBtn.alpha = 1.0;
+    }
+    if (y > -264 && y< -164) {
+        _customNavigationBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:y/(-264)];
+        _titleLbl.textColor = [UIColor colorWithHexString:@"EC5252" alpha:y/(-264)];
+        _shareBtn.alpha = (-264-y)/(-264);
+        _backBtn.alpha = (-264-y)/(-264);
+    }else if (y>=-164){
+        _customNavigationBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+        _titleLbl.textColor = [UIColor colorWithHexString:@"EC5252" alpha:1.0];
+        _shareBtn.alpha = 1.0;
+        _backBtn.alpha = 1.0;
+        
+        _shareBtn.highlighted = YES;
+        _backBtn.highlighted = YES;
     }
 }
 @end

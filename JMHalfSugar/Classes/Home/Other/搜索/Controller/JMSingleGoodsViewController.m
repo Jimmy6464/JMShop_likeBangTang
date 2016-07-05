@@ -30,7 +30,24 @@
     [self loadData];
     [self initializedSubviews];
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor lightGrayColor]};
+    
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES];
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"EC5252"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -43,6 +60,8 @@
 #pragma mark - initialized subviews
 - (void)initializedSubviews
 {
+    self.title = @"底装";
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.minimumInteritemSpacing = 10.0f;
@@ -59,6 +78,18 @@
     [collectionView registerNib:[UINib nibWithNibName:@"JMSingleCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"JMSingle"];
     [self.view addSubview:collectionView];
     _collectionView = collectionView;
+    
+    //
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 28, 28);
+    [btn setImage:[UIImage imageNamed:@"mobile-back"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = backItem;
+}
+- (void)backAction:(UIButton *)btn
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

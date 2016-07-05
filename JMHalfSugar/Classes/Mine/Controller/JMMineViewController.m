@@ -77,13 +77,33 @@ enum ShowCollectionViewType {
     }
     return _interationArray;
 }
++ (void)initialize
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"female" forKey:@"gender"];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [JMNotificationCenter addObserver:self selector:@selector(changeGender:) name:JMChangeGender object:nil];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
     [self loadData];
     
     [self initializedSubviews];
+}
+- (void)changeGender:(NSNotification *)ntf
+{
+    UIImage *genderImageNormal;
+    UIImage *genderImageHl;
+    NSString* object = [[NSUserDefaults standardUserDefaults] objectForKey:@"gender"];
+    if (object == nil || [object isEqualToString:@"male"]) {
+        genderImageHl = [UIImage imageNamed:@"iconfont-男人_hl"];
+        genderImageNormal = [UIImage imageNamed:@"iconfont-男人"];
+    }else if ([object isEqualToString:@"female"]){
+        genderImageHl = [UIImage imageNamed:@"iconfont-女人_hl"];
+        genderImageNormal = [UIImage imageNamed:@"iconfont-女人"];
+    }
+    [_genderBtn setImage:genderImageHl forState:UIControlStateHighlighted];
+    [_genderBtn setImage:genderImageNormal forState:UIControlStateNormal];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -192,12 +212,22 @@ enum ShowCollectionViewType {
 }
 - (void)generateNavigatioBar
 {
+    UIImage *genderImageNormal;
+    UIImage *genderImageHl;
+    NSString* object = [[NSUserDefaults standardUserDefaults] objectForKey:@"gender"];
+    if (object == nil || [object isEqualToString:@"male"]) {
+        genderImageHl = [UIImage imageNamed:@"iconfont-男人_hl"];
+        genderImageNormal = [UIImage imageNamed:@"iconfont-男人"];
+    }else if ([object isEqualToString:@"female"]){
+        genderImageHl = [UIImage imageNamed:@"iconfont-女人_hl"];
+        genderImageNormal = [UIImage imageNamed:@"iconfont-女人"];
+    }
     UIView *navBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
     navBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     //
     UIButton *genderBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [genderBtn setImage:[UIImage imageNamed:@"iconfont-男人"] forState:UIControlStateNormal];
-    [genderBtn setImage:[UIImage imageNamed:@"iconfont-男人_hl"] forState:UIControlStateHighlighted];
+    [genderBtn setImage:genderImageNormal forState:UIControlStateNormal];
+    [genderBtn setImage:genderImageHl forState:UIControlStateHighlighted];
     genderBtn.frame = CGRectMake(20, 30, 24, 24);
     [genderBtn addTarget:self action:@selector(clickedGenderBtn:) forControlEvents:UIControlEventTouchUpInside];
     [navBar addSubview:genderBtn];
@@ -377,5 +407,9 @@ enum ShowCollectionViewType {
         _titleView.layer.zPosition = 2.0;
         [self.view addSubview:_titleView];
     }
+}
+- (void)dealloc
+{
+    [JMNotificationCenter removeObserver:self name:JMChangeGender object:nil];
 }
 @end
