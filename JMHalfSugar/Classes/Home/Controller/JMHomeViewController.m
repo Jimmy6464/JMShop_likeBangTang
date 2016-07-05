@@ -14,11 +14,14 @@
 #import "JMHomeProductCell.h"
 #import "JMProductRecommend.h"
 #import "JMProductRecommendModel.h"
-@interface JMHomeViewController ()<UITableViewDataSource,UITableViewDelegate,JMBannerViewDelegate,JMTitleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface JMHomeViewController ()<UITableViewDataSource,UITableViewDelegate,JMBannerViewDelegate,JMTitleScrollViewDelegate,UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak)UITableView *tableView;
 @property (nonatomic, weak)UIScrollView *mainScrllView;
 @property (nonatomic, weak)JMBannerView *bannerView;
 @property (nonatomic, weak)UIView *navigationBarBgView;
+@property (nonatomic, weak)UISearchBar *searchBar;
+@property (nonatomic, weak)UIButton *searchBtn;
+@property (nonatomic, weak)UIButton *signBtn;
 @property (nonatomic, weak)UIView *headerView;
 @property (nonatomic, weak)UICollectionView *collectionView;
 @property (nonatomic, weak)JMTitleScrollView *titleScrollView;
@@ -29,7 +32,7 @@
 
 @implementation JMHomeViewController
 static NSInteger _titleIndex = 0;
-static CGFloat _currentContentOffSetX = 0.0f;
+static CGPoint  _currentContentOffSet;
 - (NSMutableArray *)categoryArray
 {
     if (!_categoryArray) {
@@ -53,14 +56,18 @@ static CGFloat _currentContentOffSetX = 0.0f;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
     [self loadData];
 
     [self initializedSubviews];
         [self createCustomNavgationBar];
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -77,22 +84,45 @@ static CGFloat _currentContentOffSetX = 0.0f;
     UIView *navBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 64)];
     
     UIView *navBgView = [[UIView alloc]initWithFrame:navBar.bounds];
-    navBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+    navBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.0];
     [navBar addSubview:navBgView];
     _navigationBarBgView = navBgView;
     
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
     searchButton.frame = CGRectMake(10, 0, 28, 28);
     searchButton.centerY = 42;
-    [searchButton setImage:[UIImage imageNamed:@"iconfont_search"] forState:UIControlStateNormal];
+    [searchButton addTarget:self action:@selector(showSearching) forControlEvents:UIControlEventTouchUpInside];
+    [searchButton setImage:[UIImage imageNamed:@"search_normal"] forState:UIControlStateNormal];
     [navBar addSubview:searchButton];
+    _searchBtn = searchButton;
     
     UIButton *signInBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [signInBtn setImage:[UIImage imageNamed:@"sign-in"] forState:UIControlStateNormal];
+    [signInBtn setImage:[UIImage imageNamed:@"sign_normal"] forState:UIControlStateNormal];
+    [signInBtn setImage:[UIImage imageNamed:@"sign_hl"] forState:UIControlStateHighlighted];
     signInBtn.frame = CGRectMake(JMDeviceWidth-32-10, 0, 28, 28);
     signInBtn.centerY = 42;
     [navBar addSubview:signInBtn];
+    _signBtn = signInBtn;
     
+    CGFloat searhBarWidth = JMDeviceWidth-signInBtn.width-15*3;
+    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(15-searhBarWidth, 0, searhBarWidth, 44)];
+    searchBar.centerY = 42;
+    searchBar.hidden = YES;
+    searchBar.delegate  = self;
+    searchBar.searchBarStyle =UISearchBarStyleMinimal;
+    searchBar.barTintColor = [UIColor whiteColor];
+    searchBar.placeholder = @"searching your favorite product";
+    [navBar addSubview:searchBar];
+    for (UIView *view in searchBar.subviews) {
+        for (UIView *subView in view.subviews) {
+            if ([subView isKindOfClass:[UITextField class]]) {
+                UITextField *textField = (UITextField *)subView;
+                textField.clipsToBounds = YES;
+                textField.layer.cornerRadius = 25/2;
+            }
+        }
+    }
+    _searchBar = searchBar;
     [self.view addSubview:navBar];
 }
 - (void)initializedSubviews
@@ -101,7 +131,9 @@ static CGFloat _currentContentOffSetX = 0.0f;
     mainView.delegate = self;
     [mainView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
     mainView.contentSize = CGSizeMake(JMDeviceWidth, JMDeviceHeight+293);
+
     [self.view addSubview:mainView];
+    mainView.contentOffset = CGPointZero;
     _mainScrllView = mainView;
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 257+36)];
@@ -129,7 +161,7 @@ static CGFloat _currentContentOffSetX = 0.0f;
     flowLayout.minimumInteritemSpacing = 0.0f;
     flowLayout.minimumLineSpacing = 0.0f;
     
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame), JMDeviceWidth, JMDeviceHeight) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame), JMDeviceWidth, JMDeviceHeight-64-_titleScrollView.height) collectionViewLayout:flowLayout];
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     collectionView.contentSize = CGSizeMake(_bannerArray.count*JMDeviceWidth, 0);
     collectionView.bounces = NO;
@@ -140,36 +172,65 @@ static CGFloat _currentContentOffSetX = 0.0f;
     [_mainScrllView addSubview:collectionView];
     _collectionView = collectionView;
     
-    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc]initWithTitle:@"search" style:UIBarButtonItemStyleDone target:self action:@selector(showSearching)];
-    self.navigationItem.leftBarButtonItem = searchItem;
+   
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     UIScrollView *scrollView = object;
     CGFloat scrollY = scrollView.contentOffset.y;
     CGFloat tagetY = _headerView.height-_titleScrollView.height-64;
+    if (tagetY == -64) {
+        return;
+    }
     NSLog(@"sc:%lf--------taget:%lf",scrollY,tagetY);
     if (scrollY>0&&scrollY<tagetY) {
-        
+        _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:scrollY/tagetY];
+        _searchBtn.alpha = (tagetY-scrollY)/tagetY;
+        _signBtn.highlighted = NO;
+        _signBtn.alpha  = (tagetY-scrollY)/tagetY;
         if ([self.view.subviews containsObject:_titleScrollView]) {
             [_titleScrollView removeFromSuperview];
             _titleScrollView.y = _headerView.height-_titleScrollView.height;
             [_headerView addSubview:_titleScrollView];
         }
+        if (_searchBar.hidden == NO) {
+            [UIView animateWithDuration:0.2 animations:^{
+                _searchBar.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                if (finished == YES) {
+                    _searchBar.hidden = YES;
+                }
+            }];
+        }
     }else if(scrollY>=tagetY){
+        _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:1.0];
         if ([_headerView.subviews containsObject:_titleScrollView]) {
             [_titleScrollView removeFromSuperview];
             _titleScrollView.y = 64;
             [self.view addSubview:_titleScrollView];
             [self.view bringSubviewToFront:_titleScrollView];
         }
-        
+        _searchBtn.alpha = 0.0;
+        _signBtn.highlighted = YES;
+        _signBtn.alpha = 1.0;
+        [UIView animateWithDuration:0.2 animations:^{
+            _searchBar.hidden = NO;
+            _searchBar.transform = CGAffineTransformMakeTranslation(300, 0);
+        }];
+    }
+    if (scrollY<0) {
+         _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.0];
+        _searchBar.hidden = YES;
+        _searchBtn.alpha = 1.0;
+        _signBtn.alpha = 1.0;
+        _signBtn.highlighted = NO;
     }
 }
 - (void)showSearching
 {
     JMSearchViewController *search = [JMSearchViewController new];
     [search setHidesBottomBarWhenPushed:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController pushViewController:search animated:YES];
 }
 #pragma makr -UICollectionViewDataSource
@@ -190,12 +251,13 @@ static CGFloat _currentContentOffSetX = 0.0f;
             [view removeFromSuperview];
         }
     }
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight-64-_titleScrollView.height) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
-    tableView.contentInset = UIEdgeInsetsMake(0, 0, 64+84, 0);
+//    tableView.contentInset = UIEdgeInsetsMake(64, 0, 64, 0);
     tableView.delegate = self;
     tableView.dataSource = self;
     [tableView reloadData];
+    [tableView setContentOffset:_currentContentOffSet animated:YES];
     _titleIndex = indexPath.section;
     [cell.contentView addSubview:tableView];
     return cell;
@@ -203,7 +265,7 @@ static CGFloat _currentContentOffSetX = 0.0f;
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(JMDeviceWidth, JMDeviceHeight);
+    return CGSizeMake(JMDeviceWidth, JMDeviceHeight-64-_titleScrollView.height);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
@@ -248,18 +310,24 @@ static CGFloat _currentContentOffSetX = 0.0f;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat scrollY = scrollView.contentOffset.y;
-    if ([scrollView isKindOfClass:[UITableView class]]) {
+    CGFloat scrollX = scrollView.contentOffset.x;
+    if ([scrollView isKindOfClass:[UITableView class]] && scrollView.contentOffset.x == 0) {
         if (scrollY < 0) {
             [_mainScrllView setContentOffset:CGPointMake(0, _mainScrllView.y+scrollY) ];
         }
-        if (scrollY>0 && scrollY<_headerView.height){
-            [_mainScrllView setContentOffset:CGPointMake(0, scrollY) ];
+        if (scrollY>0 && scrollY<_headerView.height-_titleScrollView.height){
+            [_mainScrllView setContentOffset:CGPointMake(0, _mainScrllView.y+scrollY) ];
             
         }
-        
+        if (scrollY>_headerView.height-_titleScrollView.height) {
+            [_mainScrllView setContentOffset:CGPointMake(0, _headerView.height-_titleScrollView.height) animated:YES];
+        }
+        _currentContentOffSet = scrollView.contentOffset;
     }
-    NSLog(@"scrollY:%lf",scrollY);
+    NSLog(@"scrollY:%lf,scrollX:%lf,_mainScorllY:%lf",scrollY,scrollX,_mainScrllView.contentOffset.y);
+
 }
+
 #pragma mark - JMBannerViewDelegate
 - (void)bannerButtonClickeWithType:(enum ClickType)clickType
 {
@@ -296,4 +364,11 @@ static CGFloat _currentContentOffSetX = 0.0f;
     }];
     
 }
+#pragma mark - 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    [self showSearching];
+    return NO;
+}
+
 @end

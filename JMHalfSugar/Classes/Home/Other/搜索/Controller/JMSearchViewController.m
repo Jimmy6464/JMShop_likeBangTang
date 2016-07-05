@@ -59,6 +59,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [_searchBar removeFromSuperview];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
