@@ -16,6 +16,7 @@
 #import "JMProductRecommendModel.h"
 @interface JMHomeViewController ()<UITableViewDataSource,UITableViewDelegate,JMBannerViewDelegate,JMTitleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak)UITableView *tableView;
+@property (nonatomic, weak)UIScrollView *mainScrllView;
 @property (nonatomic, weak)JMBannerView *bannerView;
 @property (nonatomic, weak)UIView *navigationBarBgView;
 @property (nonatomic, weak)UIView *headerView;
@@ -96,8 +97,15 @@ static CGFloat _currentContentOffSetX = 0.0f;
 }
 - (void)initializedSubviews
 {
+    UIScrollView *mainView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight)];
+    mainView.delegate = self;
+    [mainView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    mainView.contentSize = CGSizeMake(JMDeviceWidth, JMDeviceHeight+293);
+    [self.view addSubview:mainView];
+    _mainScrllView = mainView;
+    
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 257+36)];
-    [self.view addSubview:view];
+    [_mainScrllView addSubview:view];
     _headerView = view;
     
     JMBannerView *bannerView = [[JMBannerView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, 257)];
@@ -129,11 +137,34 @@ static CGFloat _currentContentOffSetX = 0.0f;
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
-    [self.view addSubview:collectionView];
+    [_mainScrllView addSubview:collectionView];
     _collectionView = collectionView;
     
     UIBarButtonItem *searchItem = [[UIBarButtonItem alloc]initWithTitle:@"search" style:UIBarButtonItemStyleDone target:self action:@selector(showSearching)];
     self.navigationItem.leftBarButtonItem = searchItem;
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    UIScrollView *scrollView = object;
+    CGFloat scrollY = scrollView.contentOffset.y;
+    CGFloat tagetY = _headerView.height-_titleScrollView.height-64;
+    NSLog(@"sc:%lf--------taget:%lf",scrollY,tagetY);
+    if (scrollY>0&&scrollY<tagetY) {
+        
+        if ([self.view.subviews containsObject:_titleScrollView]) {
+            [_titleScrollView removeFromSuperview];
+            _titleScrollView.y = _headerView.height-_titleScrollView.height;
+            [_headerView addSubview:_titleScrollView];
+        }
+    }else if(scrollY>=tagetY){
+        if ([_headerView.subviews containsObject:_titleScrollView]) {
+            [_titleScrollView removeFromSuperview];
+            _titleScrollView.y = 64;
+            [self.view addSubview:_titleScrollView];
+            [self.view bringSubviewToFront:_titleScrollView];
+        }
+        
+    }
 }
 - (void)showSearching
 {
@@ -216,59 +247,18 @@ static CGFloat _currentContentOffSetX = 0.0f;
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if ([scrollView isKindOfClass:[UICollectionView class]]) {
-        NSInteger x =_collectionView.contentOffset.x;
-        
-        if (( x% (NSInteger)JMDeviceWidth )== 0) {
-            _titleIndex = _collectionView.contentOffset.x/JMDeviceWidth;
-            [_titleScrollView setBottomViewAtIndex:_titleIndex];
+    CGFloat scrollY = scrollView.contentOffset.y;
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        if (scrollY < 0) {
+            [_mainScrllView setContentOffset:CGPointMake(0, _mainScrllView.y+scrollY) ];
         }
-        _currentContentOffSetX = _collectionView.contentOffset.x;
-        
-    }else {
-//        if (_headerView.y >= 0) {
-//            [UIView animateWithDuration:0.3 animations:^{
-//                [self.navigationController setNavigationBarHidden:NO animated:YES];
-//                
-//                _headerView.y = _headerView.y - _bannerView.height;
-//                _collectionView.y = CGRectGetMaxY(_headerView.frame);
-//            }];
-//            
-//        }
-//        return;
-        
-        if (_headerView.y == -257+64) {
-            //make the naviBar to be tranclent;
-            _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
-        }else{
-            //show the Bar;
-            _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0];
+        if (scrollY>0 && scrollY<_headerView.height){
+            [_mainScrllView setContentOffset:CGPointMake(0, scrollY) ];
+            
         }
-        if (_headerView.y > -257+64 && scrollView.contentOffset.y > 0) {
-            if (scrollView.contentOffset.y /43.0 < 1.0) {
-                //change th bar.alpha
-                _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:scrollView.contentOffset.y/43.0];
-            }
-            _collectionView.frame = CGRectMake(0, _collectionView.y-scrollView.contentOffset.y, JMDeviceWidth, JMDeviceHeight);
-            _headerView.center = CGPointMake(JMDeviceWidth/2, _headerView.y-scrollView.contentOffset.y);
-            if (_headerView.y < -257+64) {
-                _headerView.frame = CGRectMake(0, -257+64, JMDeviceWidth, 293);
-                _collectionView.frame = CGRectMake(0, 64+36, JMDeviceWidth, JMDeviceHeight);
-            }
-        }else if (_headerView.y <= 0 && _collectionView.y <= 293 && scrollView.contentOffset.y < 0){
-            if (-scrollView.y/43.0 < 1.0 && _headerView.y< 0) {
-                //change the bar.alpha
-                _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha: -scrollView.contentOffset.y/43.0];
-            }
-            _collectionView.center = CGPointMake(_collectionView.centerX, _collectionView.centerY-scrollView.contentOffset.y);
-            _headerView.center = CGPointMake(JMDeviceWidth/2, _headerView.centerY-scrollView.contentOffset.y);
-            if (_headerView.frame.origin.y > 0) {
-                _headerView.frame = CGRectMake(0, 0, JMDeviceWidth, 293);
-                _collectionView.frame = CGRectMake(0, CGRectGetMaxY(_headerView.frame), JMDeviceWidth, JMDeviceHeight);
-                _navigationBarBgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0];
-            }
-        }
+        
     }
+    NSLog(@"scrollY:%lf",scrollY);
 }
 #pragma mark - JMBannerViewDelegate
 - (void)bannerButtonClickeWithType:(enum ClickType)clickType

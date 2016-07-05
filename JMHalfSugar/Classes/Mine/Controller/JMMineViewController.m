@@ -7,7 +7,7 @@
 //
 
 #import "JMMineViewController.h"
-
+#import "JMGenderSelectedViewController.h"
 #import "JMAlbumViewController.h"
 
 #import "JMPersonCenterHeaderImageView.h"
@@ -42,6 +42,8 @@ enum ShowCollectionViewType {
 @property (nonatomic, strong)UIView *collectionHeadView;
 @property (nonatomic, weak)UICollectionView *showCollectionView;
 @property (nonatomic, weak)UIView *naviBar;
+@property (nonatomic, weak)UIButton *genderBtn;
+@property (nonatomic, weak)UIButton *settingBtn;
 @property (nonatomic, assign)enum ShowCollectionViewType collectionViewType;
 
 @property (nonatomic, strong)NSMutableArray *singleList;//SearchSingleGoodsModel
@@ -195,16 +197,32 @@ enum ShowCollectionViewType {
     //
     UIButton *genderBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [genderBtn setImage:[UIImage imageNamed:@"iconfont-男人"] forState:UIControlStateNormal];
+    [genderBtn setImage:[UIImage imageNamed:@"iconfont-男人_hl"] forState:UIControlStateHighlighted];
     genderBtn.frame = CGRectMake(20, 30, 24, 24);
+    [genderBtn addTarget:self action:@selector(clickedGenderBtn:) forControlEvents:UIControlEventTouchUpInside];
     [navBar addSubview:genderBtn];
+    _genderBtn = genderBtn;
     
     //
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [settingBtn setImage:[UIImage imageNamed:@"iconfont-shezhi"] forState:UIControlStateNormal];
+    [settingBtn setImage:[UIImage imageNamed:@"iconfont-shezhi_hl"] forState:UIControlStateHighlighted];
     settingBtn.frame = CGRectMake(JMDeviceWidth-24-20, 30, 24, 24);
+    [settingBtn addTarget:self action:@selector(clickedSettingBtn:) forControlEvents:UIControlEventTouchUpInside];
     [navBar addSubview:settingBtn];
+    _settingBtn = settingBtn;
+    
     [self.view addSubview:navBar];
     _naviBar = navBar;
+}
+#pragma mark - navigation button event
+- (void)clickedGenderBtn:(UIButton *)btn
+{
+    [self presentViewController:[[JMNaviViewController alloc] initWithRootViewController:[JMGenderSelectedViewController new]] animated:YES completion:nil];
+}
+- (void)clickedSettingBtn:(UIButton *)btn
+{
+    
 }
 #pragma mark - JMTitleScrollViewDelegate
 - (void)clickedTitleView:(JMTitleScrollView *)titleView atIndex:(NSInteger)index
@@ -332,12 +350,27 @@ enum ShowCollectionViewType {
         [_collectionHeadView addSubview:_titleView];
     }else if (scrollY <= 0 ){
         _naviBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0];
+        _genderBtn.highlighted = NO;
+        _settingBtn.highlighted = NO;
+        [UIView animateWithDuration:0.5 animations:^{
+            
+            _genderBtn.transform = CGAffineTransformMakeScale(0.95, 0.95);
+            _settingBtn.transform = CGAffineTransformMakeScale(0.95, 0.95);
+            
+        } completion:^(BOOL finished) {
+            _genderBtn.transform = CGAffineTransformIdentity;
+            _settingBtn.transform = CGAffineTransformIdentity;
+        }];
+        
         CGFloat scale = (230-scrollY)/230;
         _backImageView.transform = CGAffineTransformMakeScale(scale, scale);
         _backImageView.frame = CGRectMake(-JMDeviceWidth*(scale-1)/2, 0, JMDeviceWidth*scale, scale*230);
         
     }else if(scrollY == 277 ||(scrollY>277 && _titleView.y != 45)) {
         _naviBar.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+        _settingBtn.highlighted = YES;
+        _genderBtn.highlighted = YES;
+       
         //(scrollY>341 && _titleView.y != 45) 防止滚动过快 titleView没有移除
         [_titleView removeFromSuperview];
         _titleView.frame = CGRectMake(0, 64, JMDeviceWidth, 45);

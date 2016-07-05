@@ -29,9 +29,9 @@ typedef enum : NSUInteger {
 @interface JMListDetailViewController ()<JMSegmentViewDelegate,UITableViewDataSource,UITableViewDelegate,JMListDetailCellDelegate,JMListRecommendCellDelegate>
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) JMListHeaderView *headerview;
+@property (nonatomic, weak) JMSegmentView *segmentView;
 @property (nonatomic, strong) JMListModel *listModel;
 @property (nonatomic, assign) TableViewMode tableViewMode;
-
 
 @property (nonatomic, strong)NSMutableArray *recommendArray;
 @property (nonatomic, strong)UIView *customBar;
@@ -42,7 +42,6 @@ typedef enum : NSUInteger {
 
 
 @end
-static CGFloat _headerViewH ;
 @implementation JMListDetailViewController
 
 - (void)viewDidLoad {
@@ -64,11 +63,7 @@ static CGFloat _headerViewH ;
         }];
     }
 }
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-}
+
 #pragma mark - loadData
 - (void)loadData
 {
@@ -86,16 +81,16 @@ static CGFloat _headerViewH ;
     CGRect frame = headerView.frame;
     frame.size.height +=45;
     headerView.frame = frame;
-    [self.view addSubview:headerView];
-    _headerview = headerView;
+
     
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_headerview.frame), JMDeviceWidth, JMDeviceHeight) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, JMDeviceWidth, JMDeviceHeight) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
-//    tableView.tableHeaderView = headerView;
+    tableView.tableHeaderView = headerView;
     [self.view addSubview:tableView];
     _tableView = tableView;
+    _headerview = headerView;
 
     
     [self.view bringSubviewToFront:_navBackView];
@@ -104,8 +99,10 @@ static CGFloat _headerViewH ;
 - (void)buildSegmentView
 {
     JMSegmentView *segmentView = [[JMSegmentView alloc]initWithFrame:CGRectMake(0, _headerview.height, JMDeviceWidth, 45) firstTitle:@"半糖精选" secondTitle:@"用户推荐"];
+    _segmentView.backgroundColor = [UIColor whiteColor];
     segmentView.delegate = self;
     [_headerview addSubview:segmentView];
+    _segmentView = segmentView;
 }
 - (void)createCustomBar
 {
@@ -331,11 +328,20 @@ static CGFloat _headerViewH ;
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (scrollView.contentOffset.y < 0) {
-//        _headerview.y = scrollView.contentOffset.y;
+    CGFloat scrollY = scrollView.contentOffset.y;
+    NSLog(@"%lf",scrollY);
+    if (scrollY>= 0 && scrollY < _headerview.height-64-_segmentView.height) {
+        _navBackView.backgroundColor = [UIColor colorWithHexString:@"EC5252" alpha:scrollY/(_headerview.height-64-_segmentView.height)];
+        [_segmentView removeFromSuperview];
+        _segmentView.y = _headerview.height-_segmentView.height;
+        [_headerview addSubview:_segmentView];
+    }else if (scrollY <= 0 ){
+
+    }else if(scrollY == _headerview.height-64-_segmentView.height ||scrollY>_headerview.height-64-_segmentView.height ) {
+        _navBackView.backgroundColor = JMCustomBarTintColor;
+        _segmentView.y = 64;
+        [self.view addSubview:_segmentView];
         
-    }else {
-//        _headerview.y -= scrollView.contentOffset.y;
     }
     NSLog(@"%lf",scrollView.contentOffset.y);
 }

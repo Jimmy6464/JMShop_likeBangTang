@@ -79,6 +79,7 @@
 		BF9090251D1A406E00EA14EB /* JMListDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9090241D1A406E00EA14EB /* JMListDetailCell.m */; settings = {ASSET_TAGS = (); }; };
 		BF9090281D1A408700EA14EB /* JMListRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9090271D1A408700EA14EB /* JMListRecommendCell.m */; settings = {ASSET_TAGS = (); }; };
 		BF90902B1D1A617000EA14EB /* JMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF90902A1D1A617000EA14EB /* JMLabel.m */; settings = {ASSET_TAGS = (); }; };
+		BF9997061D2A665600D8A4A6 /* JMGenderSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9997051D2A665600D8A4A6 /* JMGenderSelectedViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF9A40851D1920830018FA37 /* JMListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9A40831D1920830018FA37 /* JMListDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BF9A40881D1920A30018FA37 /* JMListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9A40871D1920A30018FA37 /* JMListHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		BFB988841D1D0481004607B6 /* JMCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB988831D1D0481004607B6 /* JMCommentViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -268,6 +269,8 @@
 		BF9090271D1A408700EA14EB /* JMListRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMListRecommendCell.m; sourceTree = "<group>"; };
 		BF9090291D1A617000EA14EB /* JMLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLabel.h; sourceTree = "<group>"; };
 		BF90902A1D1A617000EA14EB /* JMLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLabel.m; sourceTree = "<group>"; };
+		BF9997041D2A665600D8A4A6 /* JMGenderSelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMGenderSelectedViewController.h; sourceTree = "<group>"; };
+		BF9997051D2A665600D8A4A6 /* JMGenderSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMGenderSelectedViewController.m; sourceTree = "<group>"; };
 		BF9A40821D1920830018FA37 /* JMListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMListDetailViewController.h; sourceTree = "<group>"; };
 		BF9A40831D1920830018FA37 /* JMListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMListDetailViewController.m; sourceTree = "<group>"; };
 		BF9A40861D1920A30018FA37 /* JMListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMListHeaderView.h; sourceTree = "<group>"; };
@@ -728,6 +731,8 @@
 			children = (
 				BF6CD72E1CFC78EA00E4C691 /* JMMineViewController.h */,
 				BF6CD72F1CFC78EA00E4C691 /* JMMineViewController.m */,
+				BF9997041D2A665600D8A4A6 /* JMGenderSelectedViewController.h */,
+				BF9997051D2A665600D8A4A6 /* JMGenderSelectedViewController.m */,
 				BF5E13221D24FF6900412EA7 /* JMAlbumViewController.h */,
 				BF5E13231D24FF6900412EA7 /* JMAlbumViewController.m */,
 			);
@@ -1241,6 +1246,7 @@
 				BF79B3381D1131A300560DD8 /* JMAuthor.m in Sources */,
 				BF5D21D91CF808DB008A6B63 /* AppDelegate.m in Sources */,
 				BF9090281D1A408700EA14EB /* JMListRecommendCell.m in Sources */,
+				BF9997061D2A665600D8A4A6 /* JMGenderSelectedViewController.m in Sources */,
 				BFB988871D1D0494004607B6 /* JMBuyProductViewController.m in Sources */,
 				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
 				BFBC95C91D2572C900A2B831 /* JMFountionView.m in Sources */,

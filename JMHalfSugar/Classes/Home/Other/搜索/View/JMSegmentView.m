@@ -24,6 +24,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         self.normalColor = JMColor(109, 109, 109);
         self.firstTitle = firstTitle;
         self.secondTitle = secondTitle;

@@ -26,3 +26,4 @@
 #define LightFont @"PingFangSC-Light"
 #define RegularFont @"PingFangSC-Regular"
 
+#define JMNotificationCenter [NSNotificationCenter defaultCenter]
