@@ -28,3 +28,6 @@
 
 #define JMNotificationCenter [NSNotificationCenter defaultCenter]
 #define JMChangeGender @"ChangeGender"
+#define JMChangeAvatar @"JMChangeAvatar"
+#define JMOpenTheCamera @"JMOpenTheCamera"
+
