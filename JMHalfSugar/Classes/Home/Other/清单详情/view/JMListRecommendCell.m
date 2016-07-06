@@ -111,6 +111,7 @@ static NSIndexPath *currentIndexPath;
 {
     if ([sender isKindOfClass:[UITapGestureRecognizer class]]) {
         [self.delegate listRecommendClickCenter:AllowComment_type atIndexPath:currentIndexPath];
+        return;
     }
     [self.delegate listRecommendClickCenter:BuyThisProduct_type atIndexPath:currentIndexPath];
     

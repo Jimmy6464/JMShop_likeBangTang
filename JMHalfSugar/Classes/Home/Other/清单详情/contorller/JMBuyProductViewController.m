@@ -13,7 +13,16 @@
 @end
 
 @implementation JMBuyProductViewController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -21,11 +30,10 @@
     webView.delegate = self;
     [self.view addSubview:webView];
     _webView = webView;
-}
-- (void)setProductURL:(NSString *)productURL
-{
-    _productURL = productURL;
-    if (!_productURL) {
+    
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(backToLastPage)];
+    self.navigationItem.backBarButtonItem = back;
+    if (_productURL) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_productURL]];
         [_webView loadRequest:request];
     }else {
@@ -33,6 +41,16 @@
             [self.navigationController popViewControllerAnimated:YES];
         }];
     }
+    
+}
+- (void)backToLastPage
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)setProductURL:(NSString *)productURL
+{
+    _productURL = productURL;
+    
 }
 
 @end

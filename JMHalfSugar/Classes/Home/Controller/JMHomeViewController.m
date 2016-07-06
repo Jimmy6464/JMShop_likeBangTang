@@ -61,7 +61,7 @@ static CGPoint  _currentContentOffSet;
     [self loadData];
 
     [self initializedSubviews];
-        [self createCustomNavgationBar];
+    [self createCustomNavgationBar];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -182,7 +182,8 @@ static CGPoint  _currentContentOffSet;
     UIScrollView *scrollView = object;
     CGFloat scrollY = scrollView.contentOffset.y;
     CGFloat tagetY = _headerView.height-_titleScrollView.height-64;
-    if (tagetY == -64) {
+    if (tagetY == -64 || scrollY == -20) {
+        [_mainScrllView setContentOffset:CGPointMake(0, 0) animated:YES];
         return;
     }
     NSLog(@"sc:%lf--------taget:%lf",scrollY,tagetY);

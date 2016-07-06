@@ -20,9 +20,9 @@
     if (self) {
 
         self.navigationBar.translucent = NO;
-        self.navigationBar.barTintColor = [UIColor colorWithHexString:@"EC5252"];
-        self.navigationBar.tintColor = [UIColor whiteColor];
-        self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+        self.navigationBar.tintColor = [UIColor colorWithHexString:@"EC5252"];
+        self.navigationBar.barTintColor = [UIColor whiteColor];
+        self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor lightGrayColor]};
         /*
          self.backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.navigationBar.width, self.navigationBar.height+20)];
          self.backgroundView.backgroundColor = [UIColor whiteColor];

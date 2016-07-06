@@ -50,7 +50,19 @@
     [self loadData];
     [self initializedSubviews];
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:@"EC5252"];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -119,8 +131,8 @@
     segmentView.showMidelSeparator= NO;
     segmentView.showIndicator = YES;
     segmentView.showTopBottomSeparator = YES;
-    segmentView.normalColor = [UIColor whiteColor];
-    segmentView.highlightColor = [UIColor blackColor];
+    segmentView.normalColor = [UIColor lightGrayColor];
+    segmentView.highlightColor = [UIColor colorWithHexString:@"EC5252"];
     segmentView.currentIndex = 0;
     self.navigationItem.titleView = [UIView new];
     self.navigationItem.titleView = segmentView;
