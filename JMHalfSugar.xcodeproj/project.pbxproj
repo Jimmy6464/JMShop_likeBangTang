@@ -72,6 +72,10 @@
 		BF79B3411D11387F00560DD8 /* JMUserRecommendPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79B3401D11387F00560DD8 /* JMUserRecommendPicModel.m */; };
 		BF79B3441D113B8400560DD8 /* JMUserRecommendTagsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79B3431D113B8400560DD8 /* JMUserRecommendTagsModel.m */; };
 		BF79B3471D113C8200560DD8 /* JMUserRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF79B3461D113C8200560DD8 /* JMUserRecommendModel.m */; };
+		BF7D16B51D2CE42D00A33223 /* JMSignInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7D16B31D2CE42D00A33223 /* JMSignInCell.m */; };
+		BF7D16B61D2CE42D00A33223 /* JMSignInCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7D16B41D2CE42D00A33223 /* JMSignInCell.xib */; };
+		BF7D16BA1D2CE44F00A33223 /* JMScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7D16B81D2CE44F00A33223 /* JMScoreCell.m */; };
+		BF7D16BB1D2CE44F00A33223 /* JMScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7D16B91D2CE44F00A33223 /* JMScoreCell.xib */; };
 		BF7EBC141D0E4D1600CBF517 /* JMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7EBC131D0E4D1600CBF517 /* JMSearchBar.m */; };
 		BF87CEC21CFC4380001F1E35 /* JMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC11CFC4380001F1E35 /* JMMainViewController.m */; };
 		BF87CEC51CFC4418001F1E35 /* JMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87CEC41CFC4418001F1E35 /* JMTabBar.m */; };
@@ -256,6 +260,12 @@
 		BF79B3431D113B8400560DD8 /* JMUserRecommendTagsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMUserRecommendTagsModel.m; sourceTree = "<group>"; };
 		BF79B3451D113C8200560DD8 /* JMUserRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMUserRecommendModel.h; sourceTree = "<group>"; };
 		BF79B3461D113C8200560DD8 /* JMUserRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMUserRecommendModel.m; sourceTree = "<group>"; };
+		BF7D16B21D2CE42D00A33223 /* JMSignInCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSignInCell.h; sourceTree = "<group>"; };
+		BF7D16B31D2CE42D00A33223 /* JMSignInCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSignInCell.m; sourceTree = "<group>"; };
+		BF7D16B41D2CE42D00A33223 /* JMSignInCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMSignInCell.xib; sourceTree = "<group>"; };
+		BF7D16B71D2CE44F00A33223 /* JMScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMScoreCell.h; sourceTree = "<group>"; };
+		BF7D16B81D2CE44F00A33223 /* JMScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMScoreCell.m; sourceTree = "<group>"; };
+		BF7D16B91D2CE44F00A33223 /* JMScoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JMScoreCell.xib; sourceTree = "<group>"; };
 		BF7EBC121D0E4D1600CBF517 /* JMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSearchBar.h; sourceTree = "<group>"; };
 		BF7EBC131D0E4D1600CBF517 /* JMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSearchBar.m; sourceTree = "<group>"; };
 		BF87CEC01CFC4380001F1E35 /* JMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMainViewController.h; sourceTree = "<group>"; };
@@ -482,6 +492,12 @@
 			children = (
 				BF0C5EE21D2B9783005B2BA1 /* JMSignInViewController.h */,
 				BF0C5EE31D2B9783005B2BA1 /* JMSignInViewController.m */,
+				BF7D16B21D2CE42D00A33223 /* JMSignInCell.h */,
+				BF7D16B31D2CE42D00A33223 /* JMSignInCell.m */,
+				BF7D16B41D2CE42D00A33223 /* JMSignInCell.xib */,
+				BF7D16B71D2CE44F00A33223 /* JMScoreCell.h */,
+				BF7D16B81D2CE44F00A33223 /* JMScoreCell.m */,
+				BF7D16B91D2CE44F00A33223 /* JMScoreCell.xib */,
 			);
 			path = "签到";
 			sourceTree = "<group>";
@@ -1121,6 +1137,7 @@
 				BFC546681D0BC3DA00C7EC48 /* json_Guide in Resources */,
 				BFC5466C1D0BC3DA00C7EC48 /* json_Party in Resources */,
 				BFC546771D0BC3DA00C7EC48 /* 种草小分队 in Resources */,
+				BF7D16B61D2CE42D00A33223 /* JMSignInCell.xib in Resources */,
 				BF5D21B41CF80549008A6B63 /* Assets.xcassets in Resources */,
 				BFC546721D0BC3DA00C7EC48 /* 底妆 in Resources */,
 				BFC546671D0BC3DA00C7EC48 /* json_Gift in Resources */,
@@ -1139,6 +1156,7 @@
 				BFC546601D0BC3DA00C7EC48 /* 1872 in Resources */,
 				BFC5466F1D0BC3DA00C7EC48 /* refreshGif.gif in Resources */,
 				BFC546651D0BC3DA00C7EC48 /* json_Dormitory in Resources */,
+				BF7D16BB1D2CE44F00A33223 /* JMScoreCell.xib in Resources */,
 				BFE410A61D1BCC8A0002BC36 /* JMListRecommendCell.xib in Resources */,
 				BFC546641D0BC3DA00C7EC48 /* json_Design in Resources */,
 				BFC546741D0BC3DA00C7EC48 /* 搜索清单 in Resources */,
@@ -1255,6 +1273,7 @@
 				BFB988871D1D0494004607B6 /* JMBuyProductViewController.m in Sources */,
 				BF0C5EE41D2B9783005B2BA1 /* JMSignInViewController.m in Sources */,
 				BF6CD73D1CFC7E0100E4C691 /* NSObject+JMModel.m in Sources */,
+				BF7D16B51D2CE42D00A33223 /* JMSignInCell.m in Sources */,
 				BFBC95C91D2572C900A2B831 /* JMFountionView.m in Sources */,
 				BF6D1C191D127F33004992BD /* JMCommentUsersModel.m in Sources */,
 				BFF9EDAF1D1BB6C3004BEC54 /* JMDrawLine.m in Sources */,
@@ -1281,6 +1300,7 @@
 				BF2CC4771D0C5D1A00E7A79A /* JMListDetailTool.m in Sources */,
 				BFE32DCE1D260C4000698F60 /* JMPersonCenterSingleCell.m in Sources */,
 				BF9A40881D1920A30018FA37 /* JMListHeaderView.m in Sources */,
+				BF7D16BA1D2CE44F00A33223 /* JMScoreCell.m in Sources */,
 				BF34CD311CFED9770099A951 /* JMHomeSectionHeaderView.m in Sources */,
 				BF1894261D10F86600291F62 /* JMSearchSingleGoodsModel.m in Sources */,
 				BF79B3411D11387F00560DD8 /* JMUserRecommendPicModel.m in Sources */,
