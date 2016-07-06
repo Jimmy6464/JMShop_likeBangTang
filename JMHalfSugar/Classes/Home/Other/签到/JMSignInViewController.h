@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JMSignInViewController : UIViewController
+@interface JMSignInViewController : UITableViewController
 
 @end

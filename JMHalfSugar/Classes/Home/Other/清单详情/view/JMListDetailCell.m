@@ -170,7 +170,7 @@
     UIButton *likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     likeBtn.frame = CGRectMake(254/2, 14, 20+likeNum_length*12, 23);
     [likeBtn setImage:[UIImage imageNamed:@"addToFavoriteBtn"] forState:UIControlStateNormal];
-    [likeBtn setImage:[UIImage imageNamed:@"addToFavorite_selected"] forState:UIControlStateHighlighted];
+    [likeBtn setImage:[UIImage imageNamed:@"addToFavorite_selected"] forState:UIControlStateSelected];
     [likeBtn setTitle:_model.likeNumbers forState:UIControlStateNormal];
     [likeBtn setTitle:@"收入心愿单" forState:UIControlStateSelected];
     [likeBtn setTitleColor:JMTitleGrayColor forState:UIControlStateNormal];
@@ -253,11 +253,7 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath withModel:(JMListDetailProductModel *)model
 {
     static NSString *reuseIdentifier = @"JMListDetailCell";
-//    JMListDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-//    if (!cell) {
-//        cell = [[JMListDetailCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    }
+
     JMListDetailCell* cell = [[JMListDetailCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     for (UIView *view in cell.contentView.subviews) {

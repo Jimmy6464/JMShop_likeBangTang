@@ -8,6 +8,7 @@
 
 #import "JMHomeViewController.h"
 #import "JMSearchViewController.h"
+#import "JMSignInViewController.h"
 #import "JMListDetailViewController.h"
 #import "JMBannerView.h"
 #import "JMTitleScrollView.h"
@@ -104,6 +105,7 @@ static CGPoint  _currentContentOffSet;
     [signInBtn setImage:[UIImage imageNamed:@"sign_hl"] forState:UIControlStateHighlighted];
     signInBtn.frame = CGRectMake(JMDeviceWidth-32-10, 0, 28, 28);
     signInBtn.centerY = 42;
+    [signInBtn addTarget:self action:@selector(goToSignIn) forControlEvents:UIControlEventTouchUpInside];
     [navBar addSubview:signInBtn];
     _signBtn = signInBtn;
     
@@ -238,6 +240,11 @@ static CGPoint  _currentContentOffSet;
     [search.navigationController setNavigationBarHidden:NO];
     [self.navigationController pushViewController:search animated:YES];
 }
+- (void)goToSignIn
+{
+    JMSignInViewController *signIn = [JMSignInViewController new];
+    [self.navigationController pushViewController:signIn animated:YES];
+}
 #pragma makr -UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -315,6 +322,14 @@ static CGPoint  _currentContentOffSet;
 {
     CGFloat scrollY = scrollView.contentOffset.y;
     CGFloat scrollX = scrollView.contentOffset.x;
+    if(scrollView == _collectionView){
+        //当前显示页面 全部加载到scrollview里面
+        NSInteger contentOffsetX = _collectionView.contentOffset.x;
+        if( contentOffsetX %(NSInteger)JMDeviceWidth == 0){
+            NSInteger currentIndex = contentOffsetX/JMDeviceWidth;
+            [_titleScrollView setBottomViewAtIndex:currentIndex];
+        }
+    }
     if ([scrollView isKindOfClass:[UITableView class]] && scrollView.contentOffset.x == 0) {
         if (scrollY < 0) {
             [_mainScrllView setContentOffset:CGPointMake(0, _mainScrllView.y+scrollY) ];
@@ -338,7 +353,7 @@ static CGPoint  _currentContentOffSet;
     switch (clickType) {
         case GoodThingClickType:
             NSLog(@"goodthing");
-            
+            [UIAlertController showAlertTips:@"nothing can be catched" onView:self.view alertStyle:UIAlertControllerStyleAlert timeInterval:1.0 compeletion:nil];
             break;
         case SearchClickType:
             NSLog(@"search");
@@ -347,10 +362,12 @@ static CGPoint  _currentContentOffSet;
             
         case PlantGrassClickType:
             NSLog(@"plant");
+            [UIAlertController showAlertTips:@"nothing can be catched" onView:self.view alertStyle:UIAlertControllerStyleAlert timeInterval:1.0 compeletion:nil];
             break;
             
         case SignInClickType:
             NSLog(@"signIn");
+            [UIAlertController showAlertTips:@"nothing can be catched" onView:self.view alertStyle:UIAlertControllerStyleAlert timeInterval:1.0 compeletion:nil];
             break;
             
         default:

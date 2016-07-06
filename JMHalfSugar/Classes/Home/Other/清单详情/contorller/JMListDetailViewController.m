@@ -141,7 +141,7 @@ typedef enum : NSUInteger {
     UIButton *favBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     favBtn.frame = CGRectMake(476/2, 30, 20, 20);
     [favBtn setImage:[UIImage imageNamed:@"favorite"] forState:UIControlStateNormal];
-    [favBtn setImage:[UIImage imageNamed:@"favorite_hl" ] forState:UIControlStateHighlighted];
+    [favBtn setImage:[UIImage imageNamed:@"favorite_hl" ] forState:UIControlStateSelected];
     [favBtn addTarget:self action:@selector(favoriteBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [_customBar addSubview:favBtn];
     [favBtn autoSetDimensionsToSize:CGSizeMake(20, 20)];
@@ -172,7 +172,7 @@ typedef enum : NSUInteger {
 }
 - (void)shareBtnAction:(UIButton *)sender
 {
-    [UIAlertController showAlertTips:@"wait" onView:self.view alertStyle:UIAlertControllerStyleAlert timeInterval:1.0f compeletion:nil];
+    [UIAlertController showAlertTips:@"Nothing can be catched" onView:self.view alertStyle:UIAlertControllerStyleAlert timeInterval:1.0f compeletion:nil];
 }
 - (void)backToController:(UIButton *)btn
 {
