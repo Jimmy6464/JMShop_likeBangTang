@@ -10,7 +10,7 @@
 **Mine**  
 ![mine.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/mine.gif)  
 **Square**  
-![comment.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/square.gif) 
+![square.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/square.gif)  
 **Search**  
 ![posting.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/search.gif)    
 
