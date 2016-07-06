@@ -57,7 +57,7 @@
     UILabel *bioLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_nameLabel.frame)+13, JMDeviceWidth, 15)];
     bioLabel.font = [UIFont fontWithName:LightFont size:13.0];
     bioLabel.textColor = [UIColor whiteColor];
-    bioLabel.text = @"qqeeeeeeeeeeeeeeeeeeeeeeeee";
+    bioLabel.text = @"Nothing is impossible";
     bioLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:bioLabel];
     self.bioLable = bioLabel;
@@ -82,5 +82,11 @@
 {
     NSLog(@"avatar");
     clickedImage();
+}
+- (void)changeAvatar:(UIImage *)image
+{
+    self.avatarImage = image;
+    [self.headerButton setImage:self.avatarImage forState:UIControlStateNormal];
+    [self.headerButton setImage:self.avatarImage forState:UIControlStateHighlighted];
 }
 @end

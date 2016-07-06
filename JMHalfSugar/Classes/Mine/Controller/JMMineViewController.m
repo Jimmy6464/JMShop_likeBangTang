@@ -84,10 +84,11 @@ enum ShowCollectionViewType {
 - (void)viewDidLoad {
     [super viewDidLoad];
     [JMNotificationCenter addObserver:self selector:@selector(changeGender:) name:JMChangeGender object:nil];
+    [JMNotificationCenter addObserver:self selector:@selector(changeAvatar:) name:JMChangeAvatar object:nil];
+    [JMNotificationCenter addObserver:self selector:@selector(openTheCamera) name:JMOpenTheCamera object:nil];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
     [self loadData];
-    
     [self initializedSubviews];
 }
 - (void)changeGender:(NSNotification *)ntf
@@ -268,7 +269,7 @@ enum ShowCollectionViewType {
             _collectionViewType = ActivityMode;
             break;
         case 3:
-            _collectionViewType = SingleMode;
+            _collectionViewType = PublishMode;
             break;
         default:
             break;
@@ -365,6 +366,7 @@ enum ShowCollectionViewType {
     }
     return reuseView;
 }
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -406,6 +408,28 @@ enum ShowCollectionViewType {
         _titleView.frame = CGRectMake(0, 64, JMDeviceWidth, 45);
         _titleView.layer.zPosition = 2.0;
         [self.view addSubview:_titleView];
+    }
+}
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    [_topView changeAvatar:info[UIImagePickerControllerOriginalImage]];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)changeAvatar:(NSNotification *)ntf
+{
+    NSDictionary *dict = ntf.userInfo;
+    [_topView changeAvatar:dict[@"image"]];
+}
+- (void)openTheCamera
+{
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+    imagePicker.delegate = self;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }else {
+        NSLog(@"nothing");
     }
 }
 - (void)dealloc

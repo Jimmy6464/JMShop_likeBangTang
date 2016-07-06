@@ -12,4 +12,5 @@
 {
    @public void (^clickedImage)(void);
 }
+- (void)changeAvatar:(UIImage *)image;
 @end

@@ -125,4 +125,21 @@
 {
     return UIEdgeInsetsMake(4, 2, 0, 2);
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.item == 0) {
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            [JMNotificationCenter postNotificationName:JMOpenTheCamera object:nil];
+        }];
+        return;
+    }
+    PHAsset *assets = self.currentPhotoData[indexPath.item - 1];
+    [self.imageManager requestImageForAsset:assets targetSize:CGSizeMake(103, 103) contentMode:PHImageContentModeAspectFill options:self.imageRequestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        [JMNotificationCenter postNotificationName:JMChangeAvatar object:nil userInfo:@{@"image":result}];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+    }];
+}
 @end
