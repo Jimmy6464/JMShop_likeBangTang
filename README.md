@@ -12,5 +12,6 @@
 **Square**  
 ![square.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/square.gif)  
 **Search**  
-![posting.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/search.gif)    
+![posting.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/search.gif) 
+##Welcome to fork,thanks!##
 
