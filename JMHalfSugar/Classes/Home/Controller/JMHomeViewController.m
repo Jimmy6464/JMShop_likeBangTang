@@ -377,8 +377,6 @@ static CGPoint  _currentContentOffSet;
 #pragma mark - JMTitleScrollViewDelegate
 - (void)clickedTitleView:(JMTitleScrollView *)titleView atIndex:(NSInteger)index
 {
-    
-//    [self.tableView reloadData];
 
     _titleIndex = index;
     __weak JMHomeViewController *weakSelf = self;
