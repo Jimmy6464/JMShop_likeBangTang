@@ -435,5 +435,7 @@ enum ShowCollectionViewType {
 - (void)dealloc
 {
     [JMNotificationCenter removeObserver:self name:JMChangeGender object:nil];
+    [JMNotificationCenter removeObserver:self name:JMChangeAvatar object:nil];
+    [JMNotificationCenter removeObserver:self name:JMOpenTheCamera object:nil];
 }
 @end
