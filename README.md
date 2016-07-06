@@ -3,14 +3,15 @@
 *BeginedDate:*May,30,2016	
 *EndDate:*TBD
 **Renderings**  
-![home.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/author.gif)  
+![home.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/home.gif)  
 **Home**  
-![home.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/home.gif)  
+![home.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/home.gif)  
 **Message**  
-![message.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/message.gif)  
+![message.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/home.gif)  
 **Mine**  
-![mine.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/mine.gif)  
+![mine.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/home.gif)  
 **comment**  
-![comment.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/comment.gif)  **PostBlog**  
-![posting.gif](https://github.com/Jimmy6464/MicroBlog/blob/master/posting.gif)    
+![comment.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/home.gif) 
+**PostBlog**  
+![posting.gif](https://github.com/Jimmy6464/JMShop_likeBangTang/blob/master/home.gif)    
 
